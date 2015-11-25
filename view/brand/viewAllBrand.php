@@ -18,7 +18,10 @@
 
     }
     echo '</tr>';
+
+    // !! l'image est doit être en format jpg
     ?>
+
 </table>
 
 

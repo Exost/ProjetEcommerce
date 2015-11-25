@@ -19,5 +19,10 @@ switch ($action){
         $view='';
         require("{$ROOT}{$DS}view{$DS}view.php");
         break;
+    case 'create':
+        $view ='Create';
+        $tab_Brand = modelArticle::getAll();
+        $tab_Cat = modelArticle::getAll();
+        break;
 
 }

@@ -1,4 +1,4 @@
-<?php
+h<?php
 
 /**
  * Created by PhpStorm.
@@ -45,8 +45,8 @@ class modelModele extends Model
             $this->stock_Mod = $stock_Mod;
             $this->name_Brand = $name_Brand;
 
-            $this->array =  array($id_Mod,$name_Mod, $price_Mod, $desc_Mod, $stock_Mod,
-                $cat_Mod, $name_Brand);
+            //$this->array =  array($id_Mod,$name_Mod, $price_Mod, $desc_Mod, $stock_Mod,
+                //$cat_Mod, $name_Brand);
         }
 
     }
