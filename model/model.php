@@ -29,12 +29,8 @@ class Model{
             $req_prep->execute();
             $nomModel =  'model'.substr(static::$table , 3) ;
             $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
-            if ($req_prep->rowCount()==0){
-                return null;
-                die();// Vérifier si $req_prep->rowCount() != 0
-            }else{
-                $rslt = $req_prep->fetch();
-                return $rslt;}
+
+                return $req_prep->fetch();;
         } catch(PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
@@ -43,6 +39,7 @@ class Model{
             }
             die();
         }
+
     }
 
 
@@ -85,6 +82,7 @@ class Model{
         }
         return $req_prep->fetch();
     }
+
 
 
 

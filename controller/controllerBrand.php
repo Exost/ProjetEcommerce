@@ -17,9 +17,9 @@ switch ($action){
         $brand = modelBrand::select($_GET['idBrand']);
         break;
 
-    case 'articleOf':
-        $view= 'ArticleOf';
-        $tab_article = modelBrand::getArticleOfBrand($_GET['brand']);
+    case 'modelOf':
+        $view= 'ModelOf';
+        $tab_modele = modelBrand::getArticleOfBrand($_GET['brand']);
         break;
 }
 require("{$ROOT}{$DS}view{$DS}view.php");

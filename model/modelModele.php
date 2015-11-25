@@ -20,6 +20,7 @@ class modelModele extends Model
 
     static $table = "pw_Modele" ;
     static $primary = "id_mod" ;
+   private $array;
 
     /**
      * modelModicle constructor.
@@ -43,6 +44,9 @@ class modelModele extends Model
             $this->cat_Mod = $cat_Mod;
             $this->stock_Mod = $stock_Mod;
             $this->name_Brand = $name_Brand;
+
+            $this->array =  array($id_Mod,$name_Mod, $price_Mod, $desc_Mod, $stock_Mod,
+                $cat_Mod, $name_Brand);
         }
 
     }

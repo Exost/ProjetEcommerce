@@ -18,7 +18,7 @@ switch ($action){
 
     case 'read':
         $id =$_GET['idMod'];
-        $article = modelModele::select($id);
+        $modele = modelModele::select($id);
         $view='';
         break;
 

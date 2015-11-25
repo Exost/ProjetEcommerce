@@ -14,7 +14,7 @@ class modelBrand extends Model
 
 
     static $table = "pw_Brand" ;
-    static $primary = "id_mod" ;
+    static $primary = "id_Brand" ;
 
     /**
      * @return mixed
@@ -76,8 +76,8 @@ class modelBrand extends Model
 
     public static function getArticleOfBrand ($id_brand){
         $sql = 'SELECT *
-                FROM pw_Article A
-                WHERE A.id_Marque = :br';
+                FROM pw_Modele M
+                WHERE M.name_Brand = :br';
 
         try {
             $req_prep = Model::$pdo->prepare($sql);
