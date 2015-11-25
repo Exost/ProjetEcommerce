@@ -7,7 +7,7 @@ $title = 'sneaker';
 require ("header.php");
 ?>
 
-<link href="<?php echo "style{$DS}style.css";?>"
+<link href="<?php echo "CSS{$DS}stylesheet.css";?>"
       rel="stylesheet" type="text/css" media="all" />
 <body>
 <nav class="navigation">
