@@ -1,0 +1,32 @@
+
+
+
+<body>
+<table class="org_table">
+    <?php
+    /**
+     * Created by PhpStorm.
+     * User: enzo
+     * Date: 21/10/15
+     * Time: 12:48
+     */
+    echo'<tr>';
+    foreach($tabModele as $a){
+
+        $idMod =$a->getIdMod();
+        echo "<td><a href='index.php?action=read&idMod={$idMod}'>";
+           echo"<img src='img{$DS}modele{$DS}{$idMod}.jpg' alt='{$a->getNameMod()}'
+            style='width:304px;height:228px;'>
+           </a>";
+        echo "</Br><i>by {$a->getNameBrand()}</i>";
+
+    }
+    echo '</tr>';
+    ?>
+</table>
+
+</body>
+
+</html>
+
+
