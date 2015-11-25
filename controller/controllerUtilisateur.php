@@ -11,6 +11,9 @@ switch ($action){
     case 'signIn':
         $view = 'SignIn';
         break;
+    case 'signed':
+
+        break;
     case 'logIn':
         break;
     case 'logOut':

@@ -1,4 +1,4 @@
-<form method="post" action="index.php?controller=utilisateur&action=">
+<form method="post" action="index.php?controller=utilisateur&action=signed">
     <fieldset>
         <legend>Inscription :</legend> <p>
             <label for="prenom" class="label">Prenom</label>
