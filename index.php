@@ -33,8 +33,8 @@
         case 'brand':
             require ("controller{$DS}controllerBrand.php");
             break;
-        case 'utilisateur':
-            require ("controller{$DS}controllerUtilisateur.php");
+        case 'user':
+            require ("controller{$DS}controllerUser.php");
             break;
 
     }

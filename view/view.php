@@ -21,7 +21,7 @@ require ("header.php");
         <li><a href=""> News</a> </li>
         <li><a href=""> Category</a> </li>
         <li><a href="index.php?controller=brand"> Brand</a></li>
-        <li><a href="index.php?controller=utilisateur&action=signIn">Sign In</a> </li>
+        <li><a href="index.php?controller=user&action=signIn">Sign In</a> </li>
         <li><a href="">Log in</a></li>
     </ul>
 </nav>
