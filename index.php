@@ -34,7 +34,7 @@
             require ("controller{$DS}controllerBrand.php");
             break;
         case 'utilisateur':
-            require ("controller{$DS}controllerUtilisateur.php");
+            require ("controller{$DS}controllerUser.php");
             break;
 
     }
