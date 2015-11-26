@@ -22,10 +22,22 @@ switch ($action){
         $view='';
         break;
 
-    case 'create':
-        $view ='Create';
-        $tab_Brand = modelBrand::getAll();
-        $tab_Cat = modelCategory::getAll();
+    case 'save':
+        $view ='create';
+        //$tab_Brand = modelBrand::getAll();
+        //$tab_Cat = modelCategory::getAll();// TODO WTF ?!!
+        $pagetitle = "Enregistrer un Modele";
+        $controller = "Modele";
+        $idM = $_GET['idMod'];
+        $nameM = $_GET['nameMod'];
+        $priceM = $_GET['priceMod'];
+        $descM = $_GET['descMod'];
+        $stockM = $_GET['stockMod'];
+        $newM = New modelModele($idM, $nameM ,$priceM ,$descM ,$stockM ) ;
+        $tabModele = modelModele::insert( $newM);
+        require ("{$ROOT}{$DS}view{$DS}view.php");
+        break;
+
         break;
 
     case 'created':

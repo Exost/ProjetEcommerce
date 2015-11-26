@@ -19,7 +19,13 @@
     }
     echo '</tr>';
 
-    // !! l'image est doit être en format jpg
+
+    //////
+
+    // !! l'image est doit être en format jpg et probleme au niveau de des droits users !!!
+
+
+    /// Faire gaffe au niveau des droits
     ?>
 
 </table>
