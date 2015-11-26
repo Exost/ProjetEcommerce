@@ -128,7 +128,7 @@ class modelModele extends Model
 
 
 
-    public function saveModele (){
+   /* public function saveModele (){
         $sql = 'INSERT INTO pw_Modele
                 VALUES(id_Mod,name_Mod,price_Mod,desc_Mod,name_Cat,stock_Mod,name_Brand)
                 (:id,:name,:price,:desc,:cat,:stock,:idMarque)';
@@ -150,7 +150,7 @@ class modelModele extends Model
                 echo "Une erreur est survenue veuillez recommencer la procédure ou vous réferez à'
                         . '<a href=''>Inscription</a>";
         }die();
-    }
+    } */
 
 
     /**
