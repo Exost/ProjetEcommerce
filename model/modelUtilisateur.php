@@ -9,6 +9,6 @@ require("model.php");
  */
 class modelUtilisateur extends Model
 {
-    static $table = "pw_utilisateur" ;
+    static $table = "pw_Utilisateur" ;
     static $primary = "" ;
 }
