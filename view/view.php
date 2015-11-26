@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html>
+
 <?php
 $title = 'sneaker';
 require ("header.php");
@@ -27,4 +27,6 @@ require "{$filepath}{$filename}";
 
 </body>
 
-</html>
+<?php
+require ('Footer.php');
+?>

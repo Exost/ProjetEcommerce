@@ -14,7 +14,8 @@
            echo"<img src='ressources{$DS}img{$DS}modele{$DS}{$idMod}.jpg' alt='{$a->getNameMod()}'
             style='width:304px;height:228px;'>
            </a>";
-        echo "</Br><i>by {$a->getNameBrand()}</i>";
+        echo "</Br><i>by <a href='index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}'>
+            {$a->getNameBrand()}</a></i>";
 
     }
     echo '</tr>';

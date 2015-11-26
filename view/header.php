@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <title><?php echo $title ?></title>
 </head>
-<link href="<?php echo "ressources{$DS}CSS{$DS}stylesheet.css";?>"
+<link href="<?php echo "ressources{$DS}style{$DS}stylesheet.css";?>"
       rel="stylesheet" type="text/css" media="all" />
 <body>
 <nav class="navigation">
