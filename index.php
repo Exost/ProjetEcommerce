@@ -36,6 +36,8 @@
         case 'user':
             require ("controller{$DS}controllerUser.php");
             break;
+        case 'category':
+            break;
 
     }
 

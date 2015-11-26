@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <link rel="icon" type="image/png" href="
@@ -12,7 +11,7 @@
 <nav class="navigation">
     <a href="index.php">
         <div class="flotte">
-            <img src='img/favicon.png' alt='icone'>
+            <img src='ressources/img/favicon.png' alt='icone'>
         </div>
         SneakHer</a>
     <div id="menu_horizontal">

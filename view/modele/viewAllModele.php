@@ -8,7 +8,6 @@
      */
     echo'<tr>';
     foreach($tabModele as $a){
-
         $idMod =$a->getIdMod();
         echo "<td><a href='index.php?action=read&idMod={$idMod}'>";
            echo"<img src='ressources{$DS}img{$DS}modele{$DS}{$idMod}.jpg' alt='{$a->getNameMod()}'
