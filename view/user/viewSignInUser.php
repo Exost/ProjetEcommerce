@@ -4,10 +4,10 @@
             <label for="identifiant" id="label">Identifiant </label>
             <input type="text" placeholder="Ex: aLiLi" name="identifiant" id="identifiant"
                    required />
-            <label for="firstname" class="label">Prenom</label>
+            <label for="firstname" class="label">First Name</label>
             <input type="text" placeholder="Ex : Alice" name="firstname"
                    id="firstname"  required/></Br>
-            <label for="name" id="label">Nom</label>
+            <label for="name" id="label">Name </label>
             <input type="text" placeholder="Ex : Toirdrol" name="name" id="name"  class="test" required />
             </Br>
         </p><p>

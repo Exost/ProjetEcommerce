@@ -13,26 +13,30 @@ switch ($action){
         break;
     case 'signed':
         $id = $_POST['identifiant'];
+        echo $id;
         $name = $_POST['name'];
         $fname = $_POST['firstname'];
         $age = $_POST['age'];
         $sexe = $_POST['sexe'];
         $mail = $_POST['mail'];
-        $pwd = $_POST['password'];
-        $pwd2 = $_POST['password2'];
-        if(modelUser::exist($id)){
+        $numTel = $_POST['numTel'];
+        $pwd = $_POST['passwd'];
+        $pwd2 = $_POST['passwd2'];
+        if($pwd != $pwd2){
             $view="Eror";
-            $erreur ='Id already exists';
-        }else if($pwd != $pwd2){
-            $view="Eror";
-            $erreur ='password different';
+            $error ='password different';
         }else{
             $pwd = sha1($pwd);
-            $tab = array($id,$name,$fname,$age,$sexe,$mail,$pwd);
+            $tab = array($id,$name,$fname,$age,$sexe,$mail,$numTel,$pwd);
             modelUser::insert($tab);
+            echo 'done';
         }
         break;
     case 'logIn':
+        $view ='Login';
+        break;
+    case 'logged':
+
         break;
     case 'logOut':
         break;

@@ -19,7 +19,7 @@ switch ($action){
 
     case 'modelOf':
         $view= 'ModelOf';
-        $tab_modele = modelBrand::getArticleOfBrand($_GET['brand']);
+        $tab_modele = modelBrand::getModelOfBrand($_GET['brand']);
         break;
 }
 require("{$ROOT}{$DS}view{$DS}view.php");

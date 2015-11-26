@@ -6,26 +6,10 @@
 $title = 'sneaker';
 require ("header.php");
 ?>
-
-<link href="<?php echo "CSS{$DS}stylesheet.css";?>"
-      rel="stylesheet" type="text/css" media="all" />
-<body>
-<nav class="navigation">
-    <a href="index.php">
-    <div class="flotte">
-        <img src='img/favicon.png' alt='icone'>
-    </div>
-    SneakHer</a>
-    <ul id="menu_horizontal">
-        <li><a href=""> Shop</a></li>
-        <li><a href=""> News</a> </li>
-        <li><a href=""> Category</a> </li>
-        <li><a href="index.php?controller=brand"> Brand</a></li>
-        <li><a href="index.php?controller=user&action=signIn">Sign In</a> </li>
-        <li><a href="">Log in</a></li>
-    </ul>
-</nav>
+<a href="index.php?controller=user&action=signIn">Sign In</a>
+<a href="index.php?controller=user&action=logIn">Log in</a>
 <p></p>
+<body>
 <?php
 /**
  * Created by PhpStorm.

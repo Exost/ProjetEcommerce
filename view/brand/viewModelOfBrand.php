@@ -12,9 +12,7 @@
             echo "<td><a href='index.php?action=read&idMod={$modele->getIdMod()}'>";
             echo"<img src='img{$DS}modele{$DS}{$modele->getIdMod()}.jpg' alt='{$modele->getNameMod()}'
             style='width:304px;height:228px;'>
-           </a></Br>";
-          echo "{$modele->getNameBrand()}";
-
+           </a>";
         }
         echo '</tr>';
     }

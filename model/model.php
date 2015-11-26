@@ -19,30 +19,6 @@ class Model{
 
     }
 
-
-
-    static function select($para) {
-        $sql = "SELECT * from ".static::$table." WHERE ".static::$primary."=:nom_var";
-        try{
-            $req_prep = Model::$pdo->prepare($sql);
-            $req_prep->bindParam(":nom_var", $para);
-            $req_prep->execute();
-            $nomModel =  'model'.substr(static::$table , 3) ;
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
-
-                return $req_prep->fetch();;
-        } catch(PDOException $e) {
-            if (Conf::getDebug()) {
-                echo $e->getMessage(); // affiche un message d'erreur
-            } else {
-                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
-            }
-            die();
-        }
-
-    }
-
-
     public static function getAll(){
         $SQL="SELECT * FROM ".static::$table." ";
         //echo $SQL ;
@@ -63,7 +39,6 @@ class Model{
         }
     }
 
-
     public static function countElem (){
         $sql = 'SELECT count(:elem) AS ResCount
                 FROM '.static::$table.'';
@@ -83,47 +58,46 @@ class Model{
         return $req_prep->fetch();
     }
 
+    public static function exist ($key){
+        $sql = 'SELECT *
+                FROM '.static::$table.'
+                WHERE '.static::$primary.'=:key';
+        try{
+            $req_prep =  Model::$pdo->prepare($sql);
+            $req_prep->bindParam(':key', $key);
+        }catch (PDOException $e){
+            if(Conf::getDebug())
+                echo $e->getMessage(); // affiche un message d'erreur
+            else
+                echo "une erreur est survenue <a href='index.php> retour à la page d\'accueil</a>";
+            die();
+        }
+        $res = true;
+        if($req_prep == null){
+            // si le resultat de la requete est vide
+            $res = false;
+        }
+        return $res;
 
+    }
 
+    // verifie si un element existe dans une table
 
-
-    static function insert($objet)
-    {
-        $sql = "INSERT INTO " . static::$table . " "; // INSERT INTO
-        /*foreach ($tab as $cle => $valeur){ // Get les noms des champs
-            $sql .="".$cle.",";
+    static function insert($tab){
+        $sql = "INSERT INTO ".static::$table." VALUES(";
+        foreach ($tab as $cle => $valeur){
+            $sql .=" :".$cle.",";
         }
         $sql=rtrim($sql,",");
-        $sql.=") ";
-        */
-        $sql .= "VALUES ("; // VALUES
-        /*foreach ($tab as $cle => $valeur){ // get les valeurs des champs
-            $sql .="".$valeur.",";
-        }
-        $sql=rtrim($sql,",");
-        $sql.=") (";*/
-        //echo $sql." YOLO" ;
-        foreach ($objet as $cle => $valeur) { // get les binders
-            $sql .= " :" . $cle . ",";
-        }
-        $sql = rtrim($sql, ",");
-        $sql .= ") ";
-        //echo $sql."SWAG";
-        try {
-            $req_prep = Model::$pdo->prepare($sql); // TODO BINDER LA REQUËTE
+        $sql.=");";
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
             $values = array();
-            //$compteur =  0 ;
-            foreach ($objet as $cle => $valeur) {
-                $values[":" . $cle] = $valeur;
-                //print_r( "\n" );
-                //print_r( $values  ) ;
-                //$compteur ++;
-                //echo $compteur ;
+            foreach ($tab as $cle => $valeur){
+                $values[":".$cle] = $valeur;
             }
-            //print_r( $req_prep );
-            //print_r( $values );
             $req_prep->execute($values);
-        } catch (PDOException $e) {
+        }catch(PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
             } else {
@@ -131,9 +105,7 @@ class Model{
             }
             die();
         }
-
     }
-
 
     function delete($para) {
         $sql = "DELETE FROM ".static::$table." WHERE ".static::$primary."=:nom_var";
@@ -177,33 +149,30 @@ class Model{
         }
     }
 
-    /**
-     * @param $key
-     * @return bool
-     * return true if the value exists, false otherwise
-     */
-    public static function exist ($key){
-        $sql = 'SELECT *
-                FROM '.static::$table.'
-                WHERE '.static::$primary.'=:key';
+    static function select($para) {
+        $sql = "SELECT * from ".static::$table." WHERE ".static::$primary."=:nom_var";
         try{
-            $req_prep =  Model::$pdo->prepare($sql);
-            $req_prep->bindParam(':key', $key);
-        }catch (PDOException $e){
-            if(Conf::getDebug())
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->bindParam(":nom_var", $para);
+            $req_prep->execute();
+            $nomModel =  'model'.substr(static::$table , 3) ;
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
+            if ($req_prep->rowCount()==0){
+                return null;
+                die();// Vérifier si $req_prep->rowCount() != 0
+            }else{
+                $rslt = $req_prep->fetch();
+                return $rslt;}
+        } catch(PDOException $e) {
+            if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
-            else
-                echo "une erreur est survenue <a href='index.php> retour à la page d\'accueil</a>";
+            } else {
+                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+            }
             die();
         }
-        $res = true;
-        if($req_prep == null){
-            // si le resultat de la requete est vide
-            $res = false;
-        }
-        return $res;
-
     }
+
 
 
 }

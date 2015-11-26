@@ -12,7 +12,7 @@
 
         $id =$b->getIdBrand();
         echo "<td><a href='index.php?controller=brand&action=read&idBrand={$id}'>";
-        echo"<img src='img{$DS}brand{$DS}{$id}.jpg' alt='{$b->getIdBrand()}'
+        echo"<img src='ressources{$DS}img{$DS}brand{$DS}{$id}.jpg' alt='{$b->getIdBrand()}'
             style='width:304px;height:228px;'>
            </a></td>";
 

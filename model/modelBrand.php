@@ -74,7 +74,7 @@ class modelBrand extends Model
 
 
 
-    public static function getArticleOfBrand ($id_brand){
+    public static function getModelOfBrand ($id_brand){
         $sql = 'SELECT *
                 FROM pw_Modele M
                 WHERE M.name_Brand = :br';

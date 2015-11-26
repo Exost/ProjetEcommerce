@@ -1,7 +1,7 @@
 
 
 
-<body>
+
 <table class="org_table">
     <?php
     /**
@@ -15,7 +15,7 @@
 
         $idMod =$a->getIdMod();
         echo "<td><a href='index.php?action=read&idMod={$idMod}'>";
-           echo"<img src='img{$DS}modele{$DS}{$idMod}.jpg' alt='{$a->getNameMod()}'
+           echo"<img src='ressources{$DS}img{$DS}modele{$DS}{$idMod}.jpg' alt='{$a->getNameMod()}'
             style='width:304px;height:228px;'>
            </a>";
         echo "</Br><i>by {$a->getNameBrand()}</i>";
@@ -25,8 +25,5 @@
     ?>
 </table>
 
-</body>
-
-</html>
 
 

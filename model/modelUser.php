@@ -7,7 +7,7 @@ require("model.php");
  * Date: 25/11/15
  * Time: 12:23
  */
-class modelUtilisateur extends Model
+class modelUser extends Model
 {
     static $table = "pw_User" ;
     static $primary = "id_User" ;
