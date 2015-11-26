@@ -1,7 +1,3 @@
-
-
-
-
 <table class="org_table">
     <?php
     /**

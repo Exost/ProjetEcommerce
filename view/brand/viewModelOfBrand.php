@@ -14,7 +14,7 @@
             style='width:304px;height:228px;'>
            </a>";
         }
-        echo '</tr>';
+
     }
     else
         echo "<i>Actuellement aucun modele n'est proposé par cette marque</i>";
