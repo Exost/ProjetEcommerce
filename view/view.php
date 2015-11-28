@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <?php
 $title = 'sneaker';
 require ("header.php");

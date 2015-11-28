@@ -1,4 +1,43 @@
 { padding:0; margin:0; outline:0; }
+
+/* Mon css */
+h1{
+	text-align: center;
+	text-decoration: underline;
+	color: #890000;
+}
+/* permet d'afficher toute les chaussure en ligne
+avec retour à la ligne automatique */
+.table{
+	display: inline;
+	padding: 1%;
+}
+
+.table div{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	padding:0px;
+	margin:0px;
+}
+
+.table div img{
+	width:90%;
+	height: 250px;
+}
+
+/* j'ai copié sur nico je sais pas si c'est vraiment utilse
+*/
+.table p{
+	display: block;
+	-webkit-margin-before: 1em;
+}
+
+/*le template
+*/
+
+
+
 body {
 	background:#fff;
 	font-family: Arial, sans-serif;

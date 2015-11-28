@@ -23,7 +23,7 @@ class modelModele extends Model
    private $array;
 
     /**
-     * modelModicle constructor.
+     * modelModelz constructor.
      * @param $id_Mod
      * @param $name_Mod
      * @param $price_Mod

@@ -1,25 +1,27 @@
-<table class="org_table">
+<h1>All Models</h1>
+<div class="table">
     <?php
-    /**
-     * Created by PhpStorm.
-     * User: enzo
-     * Date: 21/10/15
-     * Time: 12:48
-     */
-    echo'<tr>';
     foreach($tabModele as $a){
         $idMod =$a->getIdMod();
-        echo "<td><a href='index.php?action=read&idMod={$idMod}'>";
-           echo"<img src='ressources{$DS}img{$DS}modele{$DS}{$idMod}.jpg' alt='{$a->getNameMod()}'
-            style='width:304px;height:228px;'>
-           </a>";
-        echo "</Br><i>by <a href='index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}'>
-            {$a->getNameBrand()}</a></i>";
-
-    }
-    echo '</tr>';
     ?>
-</table>
+        <div>
+            <a href=<?php echo "index.php?action=read&idMod={$idMod}"; ?>>
+                <img src=<?php echo "ressources{$DS}img{$DS}modele{$DS}{$idMod}.jpg"; ?>
+                     alt=<?php echo "{$a->getNameMod()}";?>
+                    ></a>
+            <p>
+                <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
+                        > <?php echo "{$a->getNameBrand()}";?>
+                    </a></i>
+            </p>
+        </div>
+
+
+
+    <?php
+    }
+    ?>
+</div>
 
 
 
