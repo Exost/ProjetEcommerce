@@ -1,5 +1,5 @@
 
 
-<footer>made by fabre enzo  vagnier lucas jeferson afanou</footer>
+<footer>made by Fabre Enzo  Vagnier Lucas Afanou Jefferson</footer>
 
 </html>

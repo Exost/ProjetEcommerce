@@ -22,7 +22,7 @@ switch ($action){
         $view='';
         break;
 
-    case 'create': // WTF t'as fais quoi la ?
+    case 'create':
         $view ='create';
         //$tab_Brand = modelBrand::getAll();
         //$tab_Cat = modelCategory::getAll();// TODO WTF ?!!

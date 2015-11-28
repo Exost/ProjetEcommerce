@@ -1,7 +1,8 @@
 <html>
 <head>
+    <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="
-    <?php echo "ressources{$DS}img{$DS}favicon.png"?>"/>
+    <?php echo "ressources{$DS}img{$DS}SneakIconXS.png"?>"/>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <title><?php echo $title ?></title>
 </head>
@@ -11,7 +12,7 @@
 <nav class="navigation">
     <a href="index.php">
         <div class="flotte">
-            <img src='ressources/img/favicon.png' alt='icone'>
+            <img src='ressources/img/SneakIconXS.png' alt='icone'>
         </div>
         SneakHer</a>
     <div id="menu_horizontal">

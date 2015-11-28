@@ -27,8 +27,8 @@ class Model{
             //print_r( $req_prep );
             $nomModel =  'model'.substr(static::$table , 3) ;
             $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
-            $all_Art = $req_prep->fetchAll(); ;
-            return $all_Art ;
+            $all_Item = $req_prep->fetchAll(); ;
+            return $all_Item ;
         } catch(PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
