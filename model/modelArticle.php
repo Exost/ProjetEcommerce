@@ -6,50 +6,51 @@
  * Date: 30/10/15
  * Time: 02:23
  */
-class modelArticle extends Model
+class modelItemicle extends Model
 {
-    private $id_Art ;
-    private $id_Model ;
-    private $size_Art ;
-    private $color_Art ;
+    private $id_Item ;
+    private $id_Item ;
+    private $size_Item ;
+    private $color_Item ;
+    private $stock_Item ;
 
-    static $table = "pw_Article" ;
-    static $primary = "id_Art" ;
+    static $table = "pw_Itemicle" ;
+    static $primary = "id_Item" ;
 
 
     /**
-     * modelArticle constructor.
+     * modelItemicle constructor.
      * @param $id_Model
-     * @param $id_Art
-     * @param $size_Art
-     * @param $color_Art
+     * @param $id_Item
+     * @param $size_Item
+     * @param $color_Item
      * @param $array
      */
-    public function __construct($id_Model, $id_Art, $size_Art, $color_Art, $array)
+    public function __construct($id_Model, $id_Item, $size_Item, $color_Item, $array)
     {
-        if(!is_null($id_Art) && !is_null($id_Model) && !is_null($size_Art)&& !is_null($color_Art))
+        if(!is_null($id_Item) && !is_null($id_Model) && !is_null($size_Item)&& !is_null($color_Item))
         {
                 $this->id_Model = $id_Model;
-                $this->id_Art = $id_Art;
-                $this->size_Art = $size_Art;
-                $this->color_Art = $color_Art;
+                $this->id_Item = $id_Item;
+                $this->size_Item = $size_Item;
+                $this->color_Item = $color_Item;
         }
     }
 
     /**
      * @return mixed
      */
-    public function getIdArt()
+    public function getIdItem()
     {
-        return $this->id_Art;
+        return $this->id_Item;
     }
 
     /**
-     * @param mixed $id_Art
+     * @param mixed $id_Item
      */
-    public function setIdArt($id_Art)
+    public function setIdItem($id_Item)
     {
-        $this->id_Art = $id_Art;
+        $this->id_Item = $id_Item;
     }
 
     /**
@@ -71,33 +72,33 @@ class modelArticle extends Model
     /**
      * @return mixed
      */
-    public function getSizeArt()
+    public function getSizeItem()
     {
-        return $this->size_Art;
+        return $this->size_Item;
     }
 
     /**
-     * @param mixed $size_Art
+     * @param mixed $size_Item
      */
-    public function setSizeArt($size_Art)
+    public function setSizeItem($size_Item)
     {
-        $this->size_Art = $size_Art;
+        $this->size_Item = $size_Item;
     }
 
     /**
      * @return mixed
      */
-    public function getColorArt()
+    public function getColorItem()
     {
-        return $this->color_Art;
+        return $this->color_Item;
     }
 
     /**
-     * @param mixed $color_Art
+     * @param mixed $color_Item
      */
-    public function setColorArt($color_Art)
+    public function setColorItem($color_Item)
     {
-        $this->color_Art = $color_Art;
+        $this->color_Item = $color_Item;
     }
 
 

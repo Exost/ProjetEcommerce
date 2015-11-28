@@ -14,12 +14,17 @@
         <div class="flotte">
             <img src='ressources/img/SneakIconXS.png' alt='icone'>
         </div>
-        SneakHer</a>
+        Sneaker</a>
     <div id="menu_horizontal">
         <a href=""> Shop</a>
         <a href=""> News</a>
         <a href=""> Category</a>
-        <a href="index.php?controller=brand"> Brand</a>
+        <a href="index.php?controller=brand" > Brand         </a>
+        <a href="index.php?controller=modele&action=create"> New_Modele </a>
+
+        <a href="index.php?controller=user&action=signIn">Sign In</a>
+        <a href="index.php?controller=user&action=logIn">Log in</a>
+
     </div>
 </nav>
 <?php

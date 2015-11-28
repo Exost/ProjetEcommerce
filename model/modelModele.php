@@ -10,17 +10,16 @@ h<?php
 require_once ('model.php');
 class modelModele extends Model
 {
-    private $id_Mod;
-    private $name_Mod;
-    private $price_Mod;
-    private $desc_Mod;
-    private $cat_Mod;
-    private $stock_Mod;
-    private $name_Brand;
+    public $id_Mod;
+    public $name_Mod;
+    public $price_Mod;
+    public $desc_Mod;
+    public $cat_Mod;
+    public $name_Brand;
 
     static $table = "pw_Modele" ;
-    static $primary = "id_mod" ;
-   private $array;
+    static $primary = "id_Mod" ;
+    //private $array;
 
     /**
      * modelModelz constructor.

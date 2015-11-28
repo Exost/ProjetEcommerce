@@ -33,7 +33,7 @@ class Model{
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
             } else {
-                echo 'Une erreur est survenue <a href="www.google.com"> retour a la page d\'accueil </a>';
+                echo 'Une erreur est survenue <a href=" {$ROOT} "> retour a la page d\'accueil </a>';
             }
             die();
         }
@@ -51,7 +51,7 @@ class Model{
             if(Conf::getDebug())
                 echo $e->getMessage(); // affiche un message d'erreur
             else
-                echo "une erreur est survenue <a href='index.php> retour à la page d\'accueil</a>";
+                echo "une erreur est survenue <a href=index.php> retour à la page d\'accueil</a>";
             die();
 
         }
@@ -83,30 +83,57 @@ class Model{
 
     // verifie si un element existe dans une table
 
-    static function insert($tab){
-        $sql = "INSERT INTO ".static::$table." VALUES(";
-        foreach ($tab as $cle => $valeur){
-            $sql .=" :".$cle.",";
+
+    static function insert($objet)
+    {
+        $sql = "INSERT INTO " . static::$table . "( "; // INSERT INTO
+
+        foreach ($objet as $cle => $valeur){ // Get les noms des champs
+            $sql .="".$cle.",";
         }
         $sql=rtrim($sql,",");
-        $sql.=");";
-        try{
-            $req_prep = Model::$pdo->prepare($sql);
+        $sql.=") ";
+
+        $sql .= "VALUES ("; // VALUES
+        foreach ($objet as $cle => $valeur){ // get les valeurs des champs
+            $sql .="".$valeur.",";
+        }
+        $sql=rtrim($sql,",");
+        $sql.=") (";
+        //echo $sql." YOLO" ;
+        foreach ($objet as $cle => $valeur) { // get les binders
+            $sql .= " :" . $cle . ",";
+        }
+        $sql = rtrim($sql, ",");
+        $sql .= ") ";
+        //echo $sql."SWAG";
+        try {
+            $req_prep = Model::$pdo->prepare($sql); // TODO BINDER LA REQUËTE
             $values = array();
-            foreach ($tab as $cle => $valeur){
-                $values[":".$cle] = $valeur;
+            //$compteur =  0 ;
+            foreach ($objet as $cle => $valeur) {
+                $values[":" . $cle] = $valeur;
+                //print_r( "\n" );
+                //print_r( $values  ) ;
+                //echo "//////--------------//////" ;
+                //$compteur ++;
+                //echo $compteur ;
             }
+            print_r( $req_prep );
+            echo "//////--------------//////" ;
+            print_r( $values );
             $req_prep->execute($values);
-        }catch(PDOException $e) {
+        } catch (PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
             } else {
-                echo 'Une erreur est survenue <a href="
-{ROOT}"> retour a la page d\'accueil </a>';
+                echo 'Une erreur est survenue <a href="https://infolimon.iutmontp.univ-montp2.fr/~contremoulinp/TD6/index.php"> retour a la page d\'accueil </a>';
             }
             die();
         }
+
     }
+
 
     function delete($para) {
         $sql = "DELETE FROM ".static::$table." WHERE ".static::$primary."=:nom_var";

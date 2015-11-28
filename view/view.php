@@ -10,8 +10,6 @@ $title = 'sneaker';
 require ("header.php");
 ?>
 
-<a href="index.php?controller=user&action=signIn">Sign In</a>
-<a href="index.php?controller=user&action=logIn">Log in</a>
 <p></p>
 
 <?php

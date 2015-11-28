@@ -1,19 +1,24 @@
-<form method="post" action="index.php?action=created">
+<form method="post" action="index.php?controller=modele&action=created">
     <fieldset>
         <legend>Nouveau modele :</legend>
-            <label for="name" class="label">Name</label>
+
+        <label for="name" class="label">Name</label>
             <input type="text"  name="name"
                    id="name"  required/></Br>
-            <label for="price" class="label">Price</label>
+
+        <label for="price" class="label">Price</label>
             <input type="number"  name="price"
                    id="name"  required/></Br>
-            <label for="description" class="label">Description</label>
+
+        <label for="description" class="label">Description</label>
             <input type="text"  name="description"
-                   id="name"  required/></Br>
-            <label for="stock" class="label">Stock</label>
+                   id="description"  required/></Br>
+
+        <label for="stock" class="label">Stock</label>
             <input type="number"  name="stock"
                    id="name"  required/></Br>
-            <label for="category" class="label">Category</label>
+
+        <label for="category" class="label">Category</label>
              <select  name="category" id="category">
                  <?php
                  foreach($tab_Cat as $a)

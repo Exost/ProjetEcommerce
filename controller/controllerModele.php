@@ -23,34 +23,31 @@ switch ($action){
         break;
 
     case 'create':
-        $view ='create';
-        //$tab_Brand = modelBrand::getAll();
-        //$tab_Cat = modelCategory::getAll();// TODO WTF ?!!
+        $view ='Create';
+        $tab_Brand = modelBrand::getAll();
+        $tab_Cat = modelCategory::getAll();
         $pagetitle = "Enregistrer un Modele";
-        $controller = "Modele";
-        $idM = $_GET['idMod'];
-        $nameM = $_GET['nameMod'];
-        $priceM = $_GET['priceMod'];
-        $descM = $_GET['descMod'];
-        $stockM = $_GET['stockMod'];
-        $newM = New modelModele($idM, $nameM ,$priceM ,$descM ,$stockM ) ;
-        $tabModele = modelModele::insert( $newM);
         require ("{$ROOT}{$DS}view{$DS}view.php");
         break;
 
         break;
 
     case 'created':
+        $pagetitle = "Modele Enregistré";
         $view = 'created';
         $m = modelModele::countElem();
         $idModele =$m['ResCount']+1;
         $name = $_POST['name'];
         $price = $_POST['price'];
+        $desc_Mod = $_POST['description'] ;
         $stock = $_POST['stock'];
         $nameCat = $_POST['category'];
         $nameBrand = $_POST['brand'];
-        $mdl = new modelModele($idModele,$name,$price,$stock,$nameCat,$nameBrand);
-        $mdl->insert($mdl);
+        //echo ( " $idModele , $name , $price , $desc_Mod ,$nameCat , $stock , $nameBrand ");
+        $newModel = new modelModele($idModele,$name,$price, $desc_Mod, $nameCat, $stock ,$nameBrand);
+        //print_r( $newModel );
+        $newModel->insert($newModel);
+        echo ( " Modèle enregistré ! ");
         break;
 
 }

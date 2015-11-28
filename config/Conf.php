@@ -8,13 +8,13 @@
 	    'hostname' => 'localhost',
 	    // A l'IUT, vous avez une BDD nommee comme votre login
 	    // Sur votre machine, vous devrez creer une BDD
-	    'database' => 'ProjetWeb',
+	    'database' => 'Sneaker',
 	    // A l'IUT, c'est votre login
 	    // Sur votre machine, vous avez surement un compte 			'root'
-	    'login' => 'exost',
+	    'login' => 'root',
 	    // A l'IUT, c'est votre mdp (INE par defaut)
 	    // Sur votre machine personelle, vous avez creez ce 		mdp a l'installation
-	    'password' => 'samsam34'
+	    'password' => ''
 	  	);
 
 		// la variable debug est un boolean
@@ -42,7 +42,7 @@
 	}
 
 	static public function getPassword() {
-		// retourne le password de l'usr ( login ) 			soit ... 'Samsam34' 
+		// retourne le password de l'usr ( login ) 			soit ... ''
 		return self::$databases['password'];
 	}
 
