@@ -101,16 +101,16 @@ class Model{
         }
         $sql = rtrim($sql, ",");
         $sql .= "";
-        //echo $sql."SWAG";
+
         try {
             $req_prep = Model::$pdo->prepare($sql); // TODO BINDER LA REQUËTE
             $values = array();
             foreach ($objet as $cle => $valeur) {
                 $values[":" . $cle] = $valeur;
             }
-            print_r( $req_prep );
-            echo "//////--------------//////" ;
-            print_r( $values );
+           // print_r( $req_prep ); // POUR TEST
+            //echo "//////--------------//////" ; // POUR TEST
+            //print_r( $values ); // pour TEST
             $req_prep->execute($values);
         } catch (PDOException $e) {
             if (Conf::getDebug()) {
