@@ -19,7 +19,7 @@
         <a href=""> Shop</a>
         <a href=""> News</a>
         <a href=""> Category</a>
-        <a href="index.php?controller=brand" > Brand         </a>
+        <a href="index.php?controller=brand" > Brands         </a>
         <a href="index.php?controller=modele&action=create"> New_Modele </a>
 
         <a href="index.php?controller=user&action=signIn">Sign In</a>

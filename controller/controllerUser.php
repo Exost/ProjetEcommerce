@@ -22,12 +22,13 @@ switch ($action){
         $numTel = $_POST['numTel'];
         $pwd = $_POST['passwd'];
         $pwd2 = $_POST['passwd2'];
+        $adress = $_POST['adress'];
         if($pwd != $pwd2){
             $view="Eror";
             $error ='password different';
         }else{
             $pwd = sha1($pwd);
-            $tab = array($id,$name,$fname,$age,$sexe,$mail,$numTel,$pwd);
+            $tab = array($id,$name,$fname,$age,$sexe,$mail,$numTel,$pwd,$adress);
             modelUser::insert($tab);
             echo 'done';
         }

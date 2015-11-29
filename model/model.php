@@ -62,9 +62,14 @@ class Model{
         $sql = 'SELECT *
                 FROM '.static::$table.'
                 WHERE '.static::$primary.'=:key';
-        try{
+        try
+        {
             $req_prep =  Model::$pdo->prepare($sql);
-            $req_prep->bindParam(':key', $key);
+            //$req_prep->bindParam(':key', $key);
+            $req_prep->execute( array( ':key' => "$key" ));
+            $nomModel =  'model'.substr(static::$table , 3) ;
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
+            $LFitem = $req_prep->fetchAll();
         }catch (PDOException $e){
             if(Conf::getDebug())
                 echo $e->getMessage(); // affiche un message d'erreur
@@ -72,10 +77,11 @@ class Model{
                 echo "une erreur est survenue <a href='index.php> retour à la page d\'accueil</a>";
             die();
         }
-        $res = true;
-        if($req_prep == null){
+            //if ( $LFitem == NULL )
+        $res = false;
+        if($LFitem != null){
             // si le resultat de la requete est vide
-            $res = false;
+            $res = true;
         }
         return $res;
 
@@ -86,15 +92,14 @@ class Model{
 
     static function insert($objet)
     {
-        $sql = "INSERT INTO " . static::$table . "( "; // INSERT INTO
+        $sql = "INSERT INTO " . static::$table . " ( "; // INSERT INTO
 
         foreach ($objet as $cle => $valeur){ // Get les noms des champs
             $sql .="".$cle.",";
         }
         $sql=rtrim($sql,",");
-        $sql.=") ";
 
-        $sql .= "VALUES ("; // VALUES
+        $sql .= ") VALUES ("; // VALUES
 
         foreach ($objet as $cle => $valeur) { // get les binders
             $sql .= " :" . $cle . ",";
@@ -108,16 +113,17 @@ class Model{
             foreach ($objet as $cle => $valeur) {
                 $values[":" . $cle] = $valeur;
             }
-           // print_r( $req_prep ); // POUR TEST
-            //echo "//////--------------//////" ; // POUR TEST
-            //print_r( $values ); // pour TEST
+            print_r( $req_prep ); // POUR TEST
+            echo "//////--------------//////" ; // POUR TEST
+            print_r( $values ); // pour TEST
             $req_prep->execute($values);
+
         } catch (PDOException $e) {
-            if (Conf::getDebug()) {
+            //if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
-            } else {
-                echo 'Une erreur est survenue <a href="https://infolimon.iutmontp.univ-montp2.fr/~contremoulinp/TD6/index.php"> retour a la page d\'accueil </a>';
-            }
+            //} else {
+              //  echo 'Une erreur est survenue <a href="https://infolimon.iutmontp.univ-montp2.fr/~contremoulinp/TD6/index.php"> retour a la page d\'accueil </a>';
+            //}
             die();
         }
 

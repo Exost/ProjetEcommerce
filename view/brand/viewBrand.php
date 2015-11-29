@@ -12,5 +12,7 @@
     echo "{$brand->getLibBrand()}</Br>";
     echo "voir <a href='index.php?controller=brand&action=modelOf&brand={$brand->getIdBrand()}'>
             articles de la marque<a/>";
+
+
 ?>
 

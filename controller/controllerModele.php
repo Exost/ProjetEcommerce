@@ -14,12 +14,14 @@ switch ($action){
     case 'readAll':
         $tabModele = modelModele::getAll();
         $view = "All";
+        require ("{$ROOT}{$DS}view{$DS}view.php");
         break;
 
     case 'read':
         $id =$_GET['idMod'];
         $modele = modelModele::select($id);
         $view='';
+        require ("{$ROOT}{$DS}view{$DS}view.php");
         break;
 
     case 'create':
@@ -49,7 +51,7 @@ switch ($action){
 
 
         $checkNew = modelModele::exist($idModele);
-        if ( $checkNew ) // Si return true alors existe
+        if ( $checkNew == true ) // Si return true alors existe
         {
             require("{$ROOT}{$DS}view{$DS}view.php");
         }

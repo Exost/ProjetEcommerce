@@ -17,7 +17,7 @@ class modelModele extends Model
     public $name_Cat;
     public $name_Brand;
 
-    static $table = "pw_Modele" ;
+    static $table = "pw_modele" ;
     static $primary = "id_Mod" ;
     //private $array;
 
