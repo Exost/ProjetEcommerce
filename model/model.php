@@ -27,13 +27,13 @@ class Model{
             //print_r( $req_prep );
             $nomModel =  'model'.substr(static::$table , 3) ;
             $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
-            $all_Item = $req_prep->fetchAll(); ;
-            return $all_Item ;
+            $all_Art = $req_prep->fetchAll(); ;
+            return $all_Art ;
         } catch(PDOException $e) {
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
             } else {
-                echo 'Une erreur est survenue <a href=" {$ROOT} "> retour a la page d\'accueil </a>';
+                echo 'Une erreur est survenue <a href="www.google.com"> retour a la page d\'accueil </a>';
             }
             die();
         }
@@ -51,7 +51,7 @@ class Model{
             if(Conf::getDebug())
                 echo $e->getMessage(); // affiche un message d'erreur
             else
-                echo "une erreur est survenue <a href=index.php> retour à la page d\'accueil</a>";
+                echo "une erreur est survenue <a href='index.php> retour à la page d\'accueil</a>";
             die();
 
         }
@@ -62,14 +62,9 @@ class Model{
         $sql = 'SELECT *
                 FROM '.static::$table.'
                 WHERE '.static::$primary.'=:key';
-        try
-        {
+        try{
             $req_prep =  Model::$pdo->prepare($sql);
-            //$req_prep->bindParam(':key', $key);
-            $req_prep->execute( array( ':key' => "$key" ));
-            $nomModel =  'model'.substr(static::$table , 3) ;
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, $nomModel );
-            $LFitem = $req_prep->fetchAll();
+            $req_prep->bindParam(':key', $key);
         }catch (PDOException $e){
             if(Conf::getDebug())
                 echo $e->getMessage(); // affiche un message d'erreur
@@ -77,11 +72,10 @@ class Model{
                 echo "une erreur est survenue <a href='index.php> retour à la page d\'accueil</a>";
             die();
         }
-            //if ( $LFitem == NULL )
-        $res = false;
-        if($LFitem != null){
+        $res = true;
+        if($req_prep == null){
             // si le resultat de la requete est vide
-            $res = true;
+            $res = false;
         }
         return $res;
 
@@ -89,46 +83,30 @@ class Model{
 
     // verifie si un element existe dans une table
 
-
-    static function insert($objet)
-    {
-        $sql = "INSERT INTO " . static::$table . " ( "; // INSERT INTO
-
-        foreach ($objet as $cle => $valeur){ // Get les noms des champs
-            $sql .="".$cle.",";
+    static function insert($tab){
+        $sql = "INSERT INTO ".static::$table." VALUES(";
+        foreach ($tab as $cle => $valeur){
+            $sql .=" :".$cle.",";
         }
         $sql=rtrim($sql,",");
-
-        $sql .= ") VALUES ("; // VALUES
-
-        foreach ($objet as $cle => $valeur) { // get les binders
-            $sql .= " :" . $cle . ",";
-        }
-        $sql = rtrim($sql, ",");
-        $sql .= "";
-
-        try {
-            $req_prep = Model::$pdo->prepare($sql); // TODO BINDER LA REQUËTE
+        $sql.=");";
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
             $values = array();
-            foreach ($objet as $cle => $valeur) {
-                $values[":" . $cle] = $valeur;
+            foreach ($tab as $cle => $valeur){
+                $values[":".$cle] = $valeur;
             }
-            print_r( $req_prep ); // POUR TEST
-            echo "//////--------------//////" ; // POUR TEST
-            print_r( $values ); // pour TEST
             $req_prep->execute($values);
-
-        } catch (PDOException $e) {
-            //if (Conf::getDebug()) {
+        }catch(PDOException $e) {
+            if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
-            //} else {
-              //  echo 'Une erreur est survenue <a href="https://infolimon.iutmontp.univ-montp2.fr/~contremoulinp/TD6/index.php"> retour a la page d\'accueil </a>';
-            //}
+            } else {
+                echo 'Une erreur est survenue <a href="
+{ROOT}"> retour a la page d\'accueil </a>';
+            }
             die();
         }
-
     }
-
 
     function delete($para) {
         $sql = "DELETE FROM ".static::$table." WHERE ".static::$primary."=:nom_var";
