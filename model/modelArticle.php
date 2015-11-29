@@ -9,7 +9,7 @@
 class modelItemicle extends Model
 {
     private $id_Item ;
-    private $id_Item ;
+    private $id_Model ;
     private $size_Item ;
     private $color_Item ;
     private $stock_Item ;
@@ -26,7 +26,7 @@ class modelItemicle extends Model
      * @param $color_Item
      * @param $array
      */
-    public function __construct($id_Model, $id_Item, $size_Item, $color_Item, $array)
+    public function __construct($id_Model, $id_Item, $size_Item, $color_Item, $stock )
     {
         if(!is_null($id_Item) && !is_null($id_Model) && !is_null($size_Item)&& !is_null($color_Item))
         {
@@ -34,6 +34,7 @@ class modelItemicle extends Model
                 $this->id_Item = $id_Item;
                 $this->size_Item = $size_Item;
                 $this->color_Item = $color_Item;
+                $this->stock_Item = $stock ;
         }
     }
 

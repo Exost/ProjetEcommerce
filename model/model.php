@@ -95,29 +95,18 @@ class Model{
         $sql.=") ";
 
         $sql .= "VALUES ("; // VALUES
-        foreach ($objet as $cle => $valeur){ // get les valeurs des champs
-            $sql .="".$valeur.",";
-        }
-        $sql=rtrim($sql,",");
-        $sql.=") (";
-        //echo $sql." YOLO" ;
+
         foreach ($objet as $cle => $valeur) { // get les binders
             $sql .= " :" . $cle . ",";
         }
         $sql = rtrim($sql, ",");
-        $sql .= ") ";
+        $sql .= "";
         //echo $sql."SWAG";
         try {
             $req_prep = Model::$pdo->prepare($sql); // TODO BINDER LA REQUËTE
             $values = array();
-            //$compteur =  0 ;
             foreach ($objet as $cle => $valeur) {
                 $values[":" . $cle] = $valeur;
-                //print_r( "\n" );
-                //print_r( $values  ) ;
-                //echo "//////--------------//////" ;
-                //$compteur ++;
-                //echo $compteur ;
             }
             print_r( $req_prep );
             echo "//////--------------//////" ;

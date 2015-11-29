@@ -14,10 +14,6 @@
             <input type="text"  name="description"
                    id="description"  required/></Br>
 
-        <label for="stock" class="label">Stock</label>
-            <input type="number"  name="stock"
-                   id="name"  required/></Br>
-
         <label for="category" class="label">Category</label>
              <select  name="category" id="category">
                  <?php

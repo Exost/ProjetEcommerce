@@ -14,7 +14,7 @@ class modelModele extends Model
     public $name_Mod;
     public $price_Mod;
     public $desc_Mod;
-    public $cat_Mod;
+    public $name_Cat;
     public $name_Brand;
 
     static $table = "pw_Modele" ;
@@ -26,26 +26,25 @@ class modelModele extends Model
      * @param $id_Mod
      * @param $name_Mod
      * @param $price_Mod
-     * @param $des_Mod
-     * @param $cat_Mod
+     * @param $desc_Mod
+     * @param $name_Cat
      * @param $stock_Mod
      * @param $name_Brand
      */
     public function __construct($id_Mod=NULL, $name_Mod=NULL, $price_Mod=NULL, $desc_Mod=NULL,
-                                $cat_Mod=NULL, $stock_Mod=NULL, $name_Brand=NULL)
+                                $name_Cat=NULL , $name_Brand=NULL)
     {
-        if(!is_null($id_Mod)&& !is_null($name_Mod)&& !is_null($price_Mod)&& !is_null($desc_Mod)&& !is_null($cat_Mod)
-        && !is_null($stock_Mod) && !is_null($name_Brand)){
+        if(!is_null($id_Mod)&& !is_null($name_Mod)&& !is_null($price_Mod)&& !is_null($desc_Mod)&& !is_null($name_Cat) && !is_null($name_Brand)){
             $this->id_Mod = $id_Mod;
             $this->name_Mod = $name_Mod;
             $this->price_Mod = $price_Mod;
-            $this->des_Mod = $desc_Mod;
-            $this->cat_Mod = $cat_Mod;
-            $this->stock_Mod = $stock_Mod;
+            $this->desc_Mod = $desc_Mod;
+            $this->name_Cat = $name_Cat;
+
             $this->name_Brand = $name_Brand;
 
             //$this->array =  array($id_Mod,$name_Mod, $price_Mod, $desc_Mod, $stock_Mod,
-                //$cat_Mod, $name_Brand);
+                //$name_Cat, $name_Brand);
         }
 
     }
@@ -89,14 +88,6 @@ class modelModele extends Model
     public function getCatMod()
     {
         return $this->cat_Mod;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStockMod()
-    {
-        return $this->stock_Mod;
     }
 
     /**

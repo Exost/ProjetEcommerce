@@ -39,12 +39,11 @@ switch ($action){
         $idModele =$m['ResCount']+1;
         $name = $_POST['name'];
         $price = $_POST['price'];
-        $desc_Mod = $_POST['description'] ;
-        $stock = $_POST['stock'];
+        $description = $_POST['description'] ;
         $nameCat = $_POST['category'];
         $nameBrand = $_POST['brand'];
-        //echo ( " $idModele , $name , $price , $desc_Mod ,$nameCat , $stock , $nameBrand ");
-        $newModel = new modelModele($idModele,$name,$price, $desc_Mod, $nameCat, $stock ,$nameBrand);
+        echo ( " $idModele , $name , $price , $description ,$nameCat  , $nameBrand ");
+        $newModel = new modelModele($idModele,$name,$price, $description , $nameCat ,$nameBrand);
         //print_r( $newModel );
         $newModel->insert($newModel);
         echo ( " Modèle enregistré ! ");
