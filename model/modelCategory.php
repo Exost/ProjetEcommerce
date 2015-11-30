@@ -12,7 +12,7 @@ class modelCategory extends Model
     private $name_Cat;
     private $desc_Cat;
 
-    static $table = "pw_Category" ;
+    static $table = "pw_category" ;
     static $primary = "name_Cat" ;
 
     /**

@@ -9,7 +9,7 @@ require("model.php");
  */
 class modelUser extends Model
 {
-    static $table = "pw_User" ;
+    static $table = "pw_user" ;
     static $primary = "id_User" ;
 
     private $id_User;

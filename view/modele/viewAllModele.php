@@ -2,11 +2,13 @@
 <div class="table">
     <?php
     foreach($tabModele as $a){
-        $idMod =$a->getNameMod();
-        $idModSansEspace=str_replace(' ','_',$idMod); // permet d'enlever les espace pour retrouver le nom des img
+        $idMod =$a->getIdMod();
+        $model =modelModele::select($idMod);
+        $nameModel = $model->getNameMod();
+        $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
         ?>
         <div>
-            <a href=<?php echo "index.php?action=read&idMod={$idModSansEspace}"; ?>>
+            <a href=<?php echo "index.php?action=read&idMod={$idMod}"; ?>>
                 <img src=<?php echo "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg"; ?>
                      alt=<?php echo "{$idModSansEspace}";?>
                     ></a>

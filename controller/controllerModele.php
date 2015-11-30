@@ -19,6 +19,7 @@ switch ($action){
 
     case 'read':
         $id =$_GET['idMod'];
+        echo $id;
         $modele = modelModele::select($id);
         $view='';
         require ("{$ROOT}{$DS}view{$DS}view.php");

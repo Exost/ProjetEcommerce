@@ -14,7 +14,7 @@ class modelItemicle extends Model
     private $color_Item ;
     private $stock_Item ;
 
-    static $table = "pw_Itemicle" ;
+    static $table = "pw_item" ;
     static $primary = "id_Item" ;
 
 

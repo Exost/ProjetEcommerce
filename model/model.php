@@ -101,8 +101,7 @@ class Model{
             if (Conf::getDebug()) {
                 echo $e->getMessage(); // affiche un message d'erreur
             } else {
-                echo 'Une erreur est survenue <a href="
-{ROOT}"> retour a la page d\'accueil </a>';
+                echo 'Une erreur est survenue <a href="https://infolimon.iutmontp.univ-montp2.fr/~contremoulinp/TD6/index.php"> retour a la page d\'accueil </a>';
             }
             die();
         }

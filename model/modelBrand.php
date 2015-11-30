@@ -13,7 +13,7 @@ class modelBrand extends Model
     private $lib_Brand;
 
 
-    static $table = "pw_Brand" ;
+    static $table = "pw_brand" ;
     static $primary = "id_Brand" ;
 
     /**
