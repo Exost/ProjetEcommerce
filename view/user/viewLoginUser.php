@@ -13,6 +13,8 @@
         <input type="text"  name="id" required/><p></p>
         <label for="passwd" class="label"  >password</label>
         <input type="password"  name="passwd" required/><p></p>
-        <input type="submit" value="connexion" /> </p>
+        <input type="submit" value="connexion" /> <p></p>
+        <a href="">mot de passe oublié ?</a>
     </fieldset>
 </form>
+<a href="index.php?controller=user&action=signIn">vous n'avez pas encore de compte?</a>
