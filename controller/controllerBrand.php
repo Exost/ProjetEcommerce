@@ -15,12 +15,13 @@ switch ($action){
         break;
 
     case 'read':
+        $pagetitle =  $_GET['idBrand'];
         $brand = modelBrand::select($_GET['idBrand']);
         require ("{$ROOT}{$DS}view{$DS}view.php");
         break;
 
     case 'modelOf':
-        $pagetitle = "Modèle de la marque". $_GET['brand'];
+        $pagetitle =  $_GET['brand'];
         $view= 'ModelOf';
         $tab_modele = modelBrand::getModelOfBrand($_GET['brand']);
         require ("{$ROOT}{$DS}view{$DS}view.php");

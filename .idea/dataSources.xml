@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3249998401">
+  <component name="DataSourceManagerImpl" format="xml" hash="2573362435">
     <data-source source="LOCAL" name="MySQL - ProjetWeb@localhost" uuid="83cfa453-4195-4b80-8cac-a98a1f5dd1c4">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -15,7 +15,7 @@
       </driver-properties>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="MySQL - Sneaker@localhost" uuid="6c4cd214-ff16-4de3-889f-5f9402f30697">
+    <data-source source="LOCAL" name="MySQL - Sneaker@localhost [2]" uuid="925a3869-b70d-4ad8-8805-dc0340459759">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

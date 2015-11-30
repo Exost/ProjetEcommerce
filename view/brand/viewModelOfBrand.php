@@ -1,6 +1,5 @@
 
 
-
 <div clas="table">
     <?php
     require "{$ROOT}{$DS}model{$DS}modelModele.php";

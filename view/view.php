@@ -9,6 +9,11 @@
 $title = 'sneaker';
 require ("header.php");
 ?>
+<p></p>
+<form method="post" action="index.php?controller=search">
+    <input type="search" placeholder="search a model a brand or category?" />
+    <input type="submit" value="search""/>
+</form>
 
 <p></p>
 

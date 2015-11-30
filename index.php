@@ -38,6 +38,9 @@
             break;
         case 'category':
             break;
+        case 'search':
+            require ("controller{$DS}controllerSearch.php");
+            break;
 
     }
 

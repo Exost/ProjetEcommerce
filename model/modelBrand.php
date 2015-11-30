@@ -74,28 +74,23 @@ class modelBrand extends Model
 
 
 
-    public static function getModelOfBrand ($id_brand){
-        $sql = 'SELECT *
-                FROM pw_Modele M
-                WHERE M.name_Brand = :br';
-
-        try {
-            $req_prep = Model::$pdo->prepare($sql);
-        } catch (PDOException $e) {
-            if (Conf::getDebug()) {
-                echo $e->getMessage(); // affiche un message d'erreur
-            } else {
-                echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
-            }
-            die();
-        }
-
-        $req_prep->bindParam(":br", $id_brand);
-        $req_prep->execute();
-
-      //   $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelArticle');
-
-        return $req_prep->fetchAll();
-    }
-
+   public static function getModelOfBrand($brand){
+       $sql = 'SELECT *
+                FROM pw_modele
+                 WHERE name_Brand =:brand';
+       try{
+         $req_prep = Model::$pdo->prepare($sql);
+       }catch (PDOException $e){
+           if (Conf::getDebug()) {
+               echo $e->getMessage(); // affiche un message d'erreur
+           } else {
+               echo 'Une erreur est survenue <a href=""> retour a la page d\'accueil </a>';
+           }
+           die();
+       }
+       $req_prep->bindParam(':brand',$brand);
+       $req_prep->execute();
+       $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele'); // création de voiture
+       return $req_prep->fetchAll();
+   }
 }
