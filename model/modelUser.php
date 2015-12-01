@@ -12,33 +12,44 @@ class modelUser extends Model
     static $table = "pw_user" ;
     static $primary = "id_User" ;
 
-    private $id_User;
-    private $name;
-    private $firstName;
-    private $age;
-    private $sexe;
-    private $numTel;
-    private $password;
+    public $id_User;
+    public $name;
+    public $firstName;
+    public $age;
+    public $sexe;
+    public $mail;
+    public $numTel;
+    public $password;
+    public $adresse;
 
     /**
-     * modelUtilisateur constructor.
+     * modelUser constructor.
      * @param $id_User
      * @param $name
      * @param $firstName
      * @param $age
      * @param $sexe
+     * @param $mail
      * @param $numTel
      * @param $password
+     * @param $adress
      */
-    public function __construct($id_User, $name, $firstName, $age, $sexe, $numTel, $password)
+    public function __construct($id_User=NULL, $name=NULL, $firstName=NULL, $age=NULL, $sexe=NULL,
+                                $mail=NULL, $numTel=NULL, $password=NULL, $adress = NULL)
     {
-        $this->id_User = $id_User;
-        $this->name = $name;
-        $this->firstName = $firstName;
-        $this->age = $age;
-        $this->sexe = $sexe;
-        $this->numTel = $numTel;
-        $this->password = $password;
+        if(!is_null($id_User)&&!is_null($name)&&!is_null($firstName)&&!is_null($age)&&!is_null($sexe)
+            &&!is_null($mail)&&!is_null($numTel)&&!is_null($password)&&!is_null($adress)){
+            $this->id_User = $id_User;
+            $this->name = $name;
+            $this->firstName = $firstName;
+            $this->age = $age;
+            $this->sexe = $sexe;
+            $this->mail = $mail;
+            $this->numTel = $numTel;
+            $this->password = $password;
+            $this->adresse = $adress;
+        }
+
     }
 
     /**
@@ -84,9 +95,9 @@ class modelUser extends Model
     /**
      * @return mixed
      */
-    public function getPassword()
+    public function getMail()
     {
-        return $this->password;
+        return $this->mail;
     }
 
     /**
@@ -96,6 +107,16 @@ class modelUser extends Model
     {
         return $this->numTel;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+
 
 
 }

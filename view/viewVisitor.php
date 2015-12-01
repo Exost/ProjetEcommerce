@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link href="<?php echo "ressources{$DS}style{$DS}stylesheet.css";?>"
-          rel="stylesheet" type="text/css" media="all" />
-    <meta charset="UTF-8">
-    <title><?php echo $pagetitle; ?></title>
-</head>
+<?php
+    require ('head.php');
+?>
 <body>
 <?php
-require ("header.php");
-?>
-<p></p>
-<form method="post" action="index.php?controller=search">
-    <input type="search" placeholder="search a model a brand or category?" name="the_research" />
-    <input type="submit" value="search""/>
-</form>
 
-<p></p>
+    require ("header.php");
 
-<?php
 /**
  * Created by PhpStorm.
  * User: enzo
@@ -39,3 +28,4 @@ require "{$filepath}{$filename}";
 <?php
 require ('Footer.php');
 ?>
+</html>

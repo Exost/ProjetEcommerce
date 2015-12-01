@@ -12,4 +12,4 @@ require("{$ROOT}{$DS}model{$DS}modelSearch.php");
 $view ='Result';
 $array = modelSearch::search($_POST['the_research']);
 
-require("{$ROOT}{$DS}view{$DS}view.php");
+require("{$ROOT}{$DS}view{$DS}{$layout}.php");

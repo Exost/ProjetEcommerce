@@ -5,6 +5,7 @@
  * Date: 28/10/15
  * Time: 13:48
  */
+$layout ='viewVisitor'; // pour choisir la vue générique
 require ("{$ROOT}{$DS}model{$DS}modelUser.php");
 
 switch ($action){
@@ -37,9 +38,23 @@ switch ($action){
         $view ='Login';
         break;
     case 'logged':
+        $id =$_POST['id'];
+        if(modelUser::exist($id)){ // s'il existe
+            $usr =modelUser::select($id);
+            $pwd = sha1($_POST['passwd']);
+            if($pwd == $usr->getPassword()){
+                $_SESSION['id']= $usr->getIdUser();
+                $_SESSION['name'] = $usr->getFirstName();
+            }
+        }
+        $layout ='viewConnected';
+        $view = 'Logged';
 
         break;
     case 'logOut':
+        $name = $_SESSION['name'];
+        session_destroy();
+        $view ='LogOut';
         break;
 }
-require("{$ROOT}{$DS}view{$DS}view.php");
+require("{$ROOT}{$DS}view{$DS}{$layout}.php");

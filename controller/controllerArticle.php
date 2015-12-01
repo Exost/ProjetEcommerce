@@ -11,13 +11,13 @@ switch ($action){
     case 'readAll':
         $tabArticles = modelArticle::getAllarticles();
         $view = "All";
-        require("{$ROOT}{$DS}view{$DS}view.php");
+        require("{$ROOT}{$DS}view{$DS}viewVisitor.php");
         break;
     case 'read':
         $id =$_GET['idArt'];
         $article = modelArticle::getArtById($id);
         $view='';
-        require("{$ROOT}{$DS}view{$DS}view.php");
+        require("{$ROOT}{$DS}view{$DS}viewVisitor.php");
         break;
     case 'create':
         $view ='Create';

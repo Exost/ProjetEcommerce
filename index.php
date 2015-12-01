@@ -5,7 +5,7 @@
  * Date: 26/10/15
  * Time: 13:08
  */
-
+session_start();
 
     $ROOT = __DIR__;  /*  Correspond à /var/www/html/private/TD4
                                permet de le rendre portable
@@ -19,13 +19,16 @@
     else
         $action = $_GET["action"]; // on recupère l'action
 
-    if(!isset($_GET["controller"]))
+    if(!isset($_GET["controller"])) // par defaut
         $controller = 'modele';
     else
         $controller = $_GET["controller"];
 
     $view ='';
-
+$layout='viewVisitor';
+if(isset($_SESSION['id'])){
+    $layout ='viewConnected';
+}
     switch ($controller){
         case 'modele':
             require("controller{$DS}controllerModele.php");

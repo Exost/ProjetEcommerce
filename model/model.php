@@ -73,6 +73,7 @@ class Model{
             die();
         }
         $res = true;
+        $req_prep->execute();
         if($req_prep == null){
             // si le resultat de la requete est vide
             $res = false;
@@ -172,7 +173,6 @@ class Model{
             die();
         }
     }
-
 
 
 }

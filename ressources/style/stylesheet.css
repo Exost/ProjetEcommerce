@@ -32,9 +32,55 @@ avec retour à la ligne automatique */
 	display: block;
 	-webkit-margin-before: 1em;
 }
+header {
+    margin-bottom: 5%;
+}
 
-/*le template
-*/
+header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header li {float: left}
+header li a{
+    display: block;
+    color: #890000;
+    text-decoration: none;
+    padding: 8px 0 8px 16px;
+}
+
+header li a:hover{
+    background-color: crimson;
+    color: white;
+}
+/* gestion dropdown menu */
+header .dropdown{
+    display: none;
+    border-radius: 0px;
+    padding: 0;
+}
+
+header .dropdown li {
+    float: none;
+    position: relative;
+    border-top: 1px solid #6b727c;
+}
+
+header .dropdown li a:hover{
+    background-color: #6b727c;
+}
+
+header ul li:hover > ul {
+    display: block;
+}
+
+header ul:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
 
 .viewModelOfBrand img{
     width:50%;
@@ -46,6 +92,8 @@ footer{
 	background-color: slategray; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
 }
+
+
 
 
 /* Test

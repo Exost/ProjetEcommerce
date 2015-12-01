@@ -5,6 +5,8 @@
  * Date: 21/10/15
  * Time: 12:55
  */
+
+
 require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelBrand.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelCategory.php");
@@ -14,7 +16,7 @@ switch ($action){
     case 'readAll':
         $tabModele = modelModele::getAll();
         $view = "All";
-        require ("{$ROOT}{$DS}view{$DS}view.php");
+        require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 
     case 'read':
@@ -22,7 +24,7 @@ switch ($action){
         $modele = modelModele::select($id);
         $view='';
         $pagetitle = "{$modele->getNameMod()} - {$modele->getNameBrand()}";
-        require ("{$ROOT}{$DS}view{$DS}view.php");
+        require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 
     case 'create':
@@ -30,7 +32,7 @@ switch ($action){
         $tab_Brand = modelBrand::getAll();
         $tab_Cat = modelCategory::getAll();
         $pagetitle = "Enregistrer un Modele";
-        require ("{$ROOT}{$DS}view{$DS}view.php");
+        require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 
 
@@ -53,7 +55,7 @@ switch ($action){
         $checkNew = modelModele::exist($idModele);
         if ( $checkNew == true ) // Si return true alors existe
         {
-            require("{$ROOT}{$DS}view{$DS}view.php");
+            require("{$ROOT}{$DS}view{$DS}{$layout}.php");
         }
         break;
 
