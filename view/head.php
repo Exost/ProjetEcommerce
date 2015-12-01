@@ -1,4 +1,7 @@
 <head>
+    <?php
+        require_once "{$ROOT}{$DS}model{$DS}modelBrand.php";
+    ?>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="
     <?php echo "ressources{$DS}img{$DS}SneakIconXS.png"?>"/>

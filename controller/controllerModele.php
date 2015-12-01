@@ -14,6 +14,7 @@ require_once ("{$ROOT}{$DS}model{$DS}modelCategory.php");
 
 switch ($action){
     case 'readAll':
+        $pagetitle ='Sneaker';
         $tabModele = modelModele::getAll();
         $view = "All";
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");

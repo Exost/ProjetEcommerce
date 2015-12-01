@@ -10,6 +10,7 @@ require ("{$ROOT}{$DS}model{$DS}modelUser.php");
 
 switch ($action){
     case 'signIn':
+        $pagetitle='Sign In';
         $view = 'SignIn';
         break;
     case 'signed':
@@ -35,6 +36,7 @@ switch ($action){
         }
         break;
     case 'logIn':
+        $pagetitle='Login';
         $view ='Login';
         break;
     case 'logged':
@@ -52,6 +54,7 @@ switch ($action){
 
         break;
     case 'logOut':
+        $pagetitle='Logged Out';
         $name = $_SESSION['name'];
         session_destroy();
         $view ='LogOut';

@@ -10,6 +10,7 @@ require "{$ROOT}{$DS}model{$DS}modelBrand.php";
 switch ($action){
     case 'readAll':
         $view = 'All';
+        $pagetitle = 'Brand page';
         $tab_brand = modelBrand::getAll();
         break;
 
