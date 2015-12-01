@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="<?php echo "ressources{$DS}style{$DS}stylesheet.css";?>"
+          rel="stylesheet" type="text/css" media="all" />
     <meta charset="UTF-8">
     <title><?php echo $pagetitle; ?></title>
 </head>
 <body>
 <?php
-$title = 'sneaker';
 require ("header.php");
 ?>
 <p></p>

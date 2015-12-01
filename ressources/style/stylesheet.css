@@ -1,4 +1,4 @@
-{ padding:0; margin:0; outline:0; }
+
 
 /* Mon css */
 h1{
@@ -41,4 +41,44 @@ avec retour à la ligne automatique */
     height: 200px;
 }
 
+footer{
+	padding:25px 0px;/*Marge verticale*/
+	background-color: slategray; /*Couleur de fond*/
+	text-align:center;/*texte centré*/
+}
+
+
+/* Test
+.prepOnglet{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 0 0 65px #CDBE9F inset, 0 0 20px #BEAE8C inset,
+    0 0 3px #816F47;
+    overflow: hidden;
+
+}
+
+.prepOnglet  a{
+    background-repeat: no-repeat;
+    text-decoration: none;
+}
+
+.prepOnglet figcaption {
+    position: absolute;
+    left: 0;
+    bottom: -1em;width: 200px;
+    height: 2.6em;
+    line-height: 1.5em;
+    text-align: center;
+    color: cadetblue;
+    overflow: hidden;
+    /* preparation de la transition
+    transition: all 0.7s;
+}
+
+#prepOnglet figcaption span {display: block}
+
+
+*/
 

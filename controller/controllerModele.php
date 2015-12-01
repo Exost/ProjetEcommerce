@@ -19,9 +19,9 @@ switch ($action){
 
     case 'read':
         $id =$_GET['idMod'];
-        echo $id;
         $modele = modelModele::select($id);
         $view='';
+        $pagetitle = "{$modele->getNameMod()} - {$modele->getNameBrand()}";
         require ("{$ROOT}{$DS}view{$DS}view.php");
         break;
 
@@ -33,7 +33,6 @@ switch ($action){
         require ("{$ROOT}{$DS}view{$DS}view.php");
         break;
 
-        break;
 
     case 'created':
         $pagetitle = "Modele Enregistré";

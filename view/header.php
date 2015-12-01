@@ -4,12 +4,11 @@
     <link rel="icon" type="image/png" href="
     <?php echo "ressources{$DS}img{$DS}SneakIconXS.png"?>"/>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
-    <title><?php echo $title ?></title>
+
 </head>
-<link href="<?php echo "ressources{$DS}style{$DS}stylesheet.css";?>"
-      rel="stylesheet" type="text/css" media="all" />
+
 <body>
-<nav class="navigation">
+<header class="navigation">
     <a href="index.php">
         <div class="flotte">
             <img src='ressources/img/SneakIconXS.png' alt='icone'>
@@ -26,7 +25,7 @@
         <a href="index.php?controller=user&action=logIn">Log in</a>
 
     </div>
-</nav>
+</header>
 <?php
 /**
  * Created by PhpStorm.
