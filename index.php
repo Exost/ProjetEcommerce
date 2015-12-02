@@ -25,7 +25,10 @@ session_start();
         $controller = $_GET["controller"];
 
     $view ='';
-$layout='viewVisitor';
+
+    $layout='viewVisitor';
+
+
 if(isset($_SESSION['id'])){
     $layout ='viewConnected';
 }
@@ -40,6 +43,7 @@ if(isset($_SESSION['id'])){
             require ("controller{$DS}controllerUser.php");
             break;
         case 'category':
+            require ("controller{$DS}controllerUser.php");
             break;
         case 'search':
             require ("controller{$DS}controllerSearch.php");

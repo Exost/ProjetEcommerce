@@ -12,7 +12,7 @@
             <a href=""> News</a>
         </li>
         <li>
-            <a href=""> Category</a>
+            <a href="index.php?controller=category"> Category</a>
         </li>
         <li>
             <a href="index.php?controller=brand" > Brands </a>
@@ -31,7 +31,9 @@
         <li>
             <a href="index.php?controller=modele&action=create"> New_Modele </a>
         </li>
-
+        <li>
+            <a href="index.php?controller=category&action=create"> New_Category </a>
+        </li>
         <ul style="float: right;list-style: none;">
             <li>
                 <form id="recherche" method="post" action="index.php?controller=search">
