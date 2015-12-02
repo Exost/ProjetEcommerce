@@ -45,7 +45,16 @@ Sneaker</a>
                     </form>
                 </li>
                 <li>
-                    <a href="index.php?controller=user&action=logOut">Log Out</a>
+                    <a>
+                        <?php echo $_SESSION['name']; ?>
+                    </a>
+                    <ul class="dropdown">
+                        <li><a >Panier</a></li>
+                        <li>
+                            <a href="index.php?controller=user&action=logOut">Log Out</a>
+                        </li>
+                    </ul>
+
                 </li>
 
             </ul>
@@ -55,13 +64,5 @@ Sneaker</a>
 
 
 
-    <?php
-    /**
-     * Created by PhpStorm.
-     * User: enzo
-     * Date: 26/10/15
-     * Time: 13:05
-     */
-        echo $_SESSION['name'];
-    ?>
+
 </header>
