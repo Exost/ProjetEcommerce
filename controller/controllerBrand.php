@@ -25,5 +25,6 @@ switch ($action){
         $view= 'ModelOf';
         $tab_modele = modelBrand::getModelOfBrand($_GET['brand']);
         break;
+
 }
 require ("{$ROOT}{$DS}view{$DS}{$layout}.php");

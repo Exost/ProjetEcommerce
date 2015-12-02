@@ -93,4 +93,9 @@ class modelBrand extends Model
        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele'); // création de voiture
        return $req_prep->fetchAll();
    }
+
+
+
+
+
 }
