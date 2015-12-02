@@ -43,7 +43,7 @@ if(isset($_SESSION['id'])){
             require ("controller{$DS}controllerUser.php");
             break;
         case 'category':
-            require ("controller{$DS}controllerUser.php");
+            require ("controller{$DS}controllerCategory.php");
             break;
         case 'search':
             require ("controller{$DS}controllerSearch.php");

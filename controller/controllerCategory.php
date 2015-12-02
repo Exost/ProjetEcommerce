@@ -16,12 +16,12 @@ switch ($action){
         $pagetitle ='Category';
         $tabCat = modelCategory::getAll();
         $view = "All";
-        print_r( "test" );
+
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 
     case 'read':
-        $nameCat =$_GET['cat'];
+        $nameCat =$_GET['nameCat'];
         $category = modelModele::select($nameCat);
         $view='';
         $pagetitle = "{$category->getNameCat()}";
@@ -59,5 +59,13 @@ switch ($action){
             require("{$ROOT}{$DS}view{$DS}{$layout}.php");
         }
         break;
+
+    case 'brandOf':
+        $pagetitle =  $_GET['category'];
+        $view= 'brandOf';
+        $tab_modele = modelBrand::getModelOfBrand($_GET['brand']);
+        break;
+
+
 
 }
