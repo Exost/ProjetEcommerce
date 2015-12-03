@@ -28,6 +28,7 @@ class modelCategory extends Model
      */
     public function getDescCat()
     {
+        //echo "( test {$this->desc_Cat} test )";
         return $this->desc_Cat;
     }
 

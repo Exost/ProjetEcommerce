@@ -22,7 +22,7 @@ switch ($action){
 
     case 'read':
         $nameCat =$_GET['nameCat'];
-        $category = modelModele::select($nameCat);
+        $category = modelCategory::select($nameCat);
         $view='';
         $pagetitle = "{$category->getNameCat()}";
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
