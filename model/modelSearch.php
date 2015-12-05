@@ -23,9 +23,13 @@ class modelSearch
         $modeles = static::searchModele($param);
         $brands = static::searchBrand($param);
         $category= static::searchCategory($param);
-        $res = array("modeles"=>$modeles,
-            "brands"=>$brands,
-            "category"=>$category);
+        $res = array();
+        if(!empty($modeles) | !empty($brands) | !empty($category)){
+            $res = array("modeles"=>$modeles,
+                "brands"=>$brands,
+                "category"=>$category);
+        }
+
         return $res;
     }
 

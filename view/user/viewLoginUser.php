@@ -9,7 +9,7 @@
 
 ?>
 <form method="post" action="index.php?controller=user&action=logged">
-    <legend>Connection</legend>
+    <legend>Connexion</legend>
     <fieldset>
         <label for="id" class="label"  >Identifiant</label>
         <input type="text"  name="id" required/><p></p>
@@ -20,3 +20,6 @@
     </fieldset>
 </form>
 <a href="index.php?controller=user&action=signIn">vous n'avez pas encore de compte?</a>
+<?php
+    echo $error;
+?>

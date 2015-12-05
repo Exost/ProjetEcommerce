@@ -45,11 +45,11 @@ Sneaker</a>
                     </form>
                 </li>
                 <li>
-                    <a>
+                    <a href=<?php echo "index.php?controller=user&action=read&id={$_SESSION['id']}"?> >
                         <?php echo $_SESSION['name']; ?>
                     </a>
                     <ul class="dropdown">
-                        <li><a >Panier</a></li>
+                        <li><a href="index.php?controller=basket&action=readAll">basket</a></li>
                         <li>
                             <a href="index.php?controller=user&action=logOut">Log Out</a>
                         </li>

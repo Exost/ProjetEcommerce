@@ -48,6 +48,9 @@ if(isset($_SESSION['id'])){
         case 'search':
             require ("controller{$DS}controllerSearch.php");
             break;
+        case 'basket':
+            require ("controller{$DS}controllerBasket.php");
+            break;
 
     }
 

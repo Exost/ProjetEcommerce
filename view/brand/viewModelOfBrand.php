@@ -1,6 +1,6 @@
 
 
-<div class="viewModelOfBrand">
+<div class="table">
     <?php
     require "{$ROOT}{$DS}model{$DS}modelModele.php";
     if(!empty($tab_modele)){
@@ -14,8 +14,7 @@
             <div>
                 <a href=<?php echo"index.php?action=read&idMod={$modele->getIdMod()}"; ?>
                     >
-                        <img class="viewModelOfBrand"
-
+                        <img
                             src=<?php echo"ressources/img{$DS}modele{$DS}{$nomImg}.jpg";?>
                             alt=<?php echo"{$modele->getNameMod()}"; ?>
                         >

@@ -39,6 +39,21 @@ class modelItemicle extends Model
     }
 
     /**
+     * obtenir le prix de l'article
+     * @return mixed
+     */
+    public function getPriceArt(){
+        $sql = 'SELECT price_Mod
+                FROM pw_modele
+                 WHERE id_Mod =:id';
+        $req_prep = Model::$pdo->prepare($sql);
+        $req_prep->bindParam(':id',$this->id_Model);
+        $req_prep->execute();
+        return $req_prep->fetch();
+
+
+    }
+    /**
      * @return mixed
      */
     public function getIdItem()

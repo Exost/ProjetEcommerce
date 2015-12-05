@@ -6,6 +6,7 @@
  * Time: 13:48
  */
 $layout ='viewVisitor'; // pour choisir la vue générique
+$error ='';
 require ("{$ROOT}{$DS}model{$DS}modelUser.php");
 
 switch ($action){
@@ -15,7 +16,6 @@ switch ($action){
         break;
     case 'signed':
         $id = $_POST['identifiant'];
-        echo $id;
         $name = $_POST['name'];
         $fname = $_POST['firstname'];
         $age = $_POST['age'];
@@ -30,9 +30,13 @@ switch ($action){
             $error ='password different';
         }else{
             $pwd = sha1($pwd);
-            $tab = array($id,$name,$fname,$age,$sexe,$mail,$numTel,$pwd,$adress);
-            modelUser::insert($tab);
-            echo 'done';
+            $code = md5(microtime(TRUE)*100000);
+            $tab = array($id,$name,$fname,$age,$sexe,$mail,$numTel,$pwd,$adress,'en Attente','user',$code);
+            if(modelUser::insertUsr($tab,$id,$mail,$code)){
+                $view='AToutFaire';
+                $message ='Un mail de confirmation vient de vous être envoyé';
+            }
+
         }
         break;
     case 'logIn':
@@ -40,24 +44,62 @@ switch ($action){
         $view ='Login';
         break;
     case 'logged':
-        $id =$_POST['id'];
-        if(modelUser::exist($id)){ // s'il existe
-            $usr =modelUser::select($id);
-            $pwd = sha1($_POST['passwd']);
-            if($pwd == $usr->getPassword()){
-                $_SESSION['id']= $usr->getIdUser();
-                $_SESSION['name'] = $usr->getFirstName();
+        if(!isset($_POST['id'])|!isset($_POST['passwd'])){ // si on n'a rien recuperer
+            $view = 'Login';
+            mail('zozo.fabre@gmail.com', 'nothing','rien');
+            mail('enzo.fabre@outlook.com', 'nothing','rien');
+            $layout = 'viewVisitor';
+            $pagetitle ='Login';
+        }else{
+            $id =$_POST['id'];
+            if(modelUser::exist($id)){ // s'il existe
+                $usr =modelUser::select($id);
+                if($usr->getStateUsr() == 'en Attente' ){
+                    $view = 'Login';
+                    $error= 'le compte n\'est pas activé';
+                }else if($usr->getRank() == 'admin'){ // si l'admin ce co
+                    $layout ='viewAdmin';
+                    $view = 'Logged';
+                }
+                else{
+                    $pwd = sha1($_POST['passwd']);
+                    if($pwd == $usr->getPassword()){
+                        $_SESSION['id']= $usr->getIdUser();
+                        $_SESSION['name'] = $usr->getFirstName();
+                        $layout ='viewConnected';
+                        $view = 'Logged';
+                        $pagetitle = "bonjour {$usr->getFirstName()}";
+
+                    }
+                }
+
             }
         }
-        $layout ='viewConnected';
-        $view = 'Logged';
+
 
         break;
     case 'logOut':
-        $pagetitle='Logged Out';
-        $name = $_SESSION['name'];
-        session_destroy();
-        $view ='LogOut';
+        if(isset($_SESSION['id'])){
+            $pagetitle='Logged Out';
+            $name = $_SESSION['name'];
+            session_destroy();
+            $view ='LogOut';
+        }else{
+            $pagetitle ='Login';
+            $view='Login';
+        }
+
+
+        break;
+
+    case 'read':
+        $view='ToutFaire';
+        $message=' Vous n\'êtes pas autorisé ';
+        if(isset($_SESSION['id']) && $_GET['id']==isset($_SESSION['id']) ){
+            $view='';
+            $layout ='viewConnected';
+            $usr = modelUser::select($_SESSION['id']);
+        }
         break;
 }
 require("{$ROOT}{$DS}view{$DS}{$layout}.php");
