@@ -25,6 +25,12 @@ switch ($action){
         $category = modelCategory::select($nameCat);
         $view='';
         $pagetitle = "{$category->getNameCat()}";
+        //$pagetitle = "{$category->getDescCat()}";
+        //print_r( $category);
+        //print_r( " {$category->getNameCat() } " ) ;
+        //print_r( " {$category->getDescCat() } wtf " ) ;
+        $tabModelOfCat = $category->getModelOfCategory($nameCat);
+        print_r( $tabModelOfCat );
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 

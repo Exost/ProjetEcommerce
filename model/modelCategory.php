@@ -29,7 +29,7 @@ class modelCategory extends Model
     public function getDescCat()
     {
         //echo "( test {$this->desc_Cat} test )";
-        return $this->desc_Cat;
+        return $this->Desc_Cat;
     }
 
 
@@ -43,31 +43,8 @@ class modelCategory extends Model
 
     }
 
-    public static function getBrandOfCategory($category){
 
-        $sql = 'SELECT *
-                        FROM pw_Brand
-                         WHERE name_Cat =:cat';
-        try{
-        $req_prep = Model::$pdo->prepare($sql);
-        }catch (PDOException $e){
-            if (Conf::getDebug()) {
-                echo $e->getMessage(); // affiche un message d'erreur
-            } else {
-                echo 'Une erreur est survenue <a href="index.php"> retour a la page d\'accueil </a>';
-            }
-            die();
-        }
-                $req_prep->bindParam(':cat',$category);
-                $req_prep->execute();
-                $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelCategory'); // création de la catégory
-                return $req_prep->fetchAll();
-            }
-
-
-
-
-    public static function  getModelOfCategory($category)
+    public static function  getModelOfCategory($category )
     {
         $sql = 'SELECT *
                         FROM pw_modele
@@ -85,7 +62,7 @@ class modelCategory extends Model
             }
             die();
         }
-                $req_prep->bindParam(':brand',$category);
+                $req_prep->bindParam(':category',$category);
                 $req_prep->execute();
                 $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelCategory'); // création de voiture
                 return $req_prep->fetchAll();

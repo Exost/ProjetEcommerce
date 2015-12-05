@@ -14,8 +14,33 @@ echo "Category : {$nameCat}
     {$category->getDescCat()}
     </Br> ";
 
-/*echo "Marques disponibles : {$category->getBrandOfCategory()}
-        <i><a href='index.php?controller=brand&action=read&idBrand={$modele->getNameBrand()}'>
-           voir marque</a></i>"; */
-?>
+echo "Marques disponibles :";
 
+foreach($tabModelOfCat as $model ) {
+
+$idMod =$a->getIdMod();
+$model =modelModele::select($idMod);
+$nameModel = $model->getNameMod();
+$idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
+
+    /*echo "
+        <div class ='prepOnglet'>
+            <a href= index.php?action=read&idMod={$idMod} >
+                <img src=  "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg ?>
+                     alt= "{$idModSansEspace}";?>
+                    >
+                <figcaption> <span>test</span></figcaption>
+            </a>
+            <p>
+                <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
+                        > <?php echo "{$a->getNameBrand()}";?>
+                    </a></i>
+            </p>
+        </div>
+        " ;
+    */
+    require ( {$ROOT}view{$DS}viewModele?
+
+}
+
+?>

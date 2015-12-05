@@ -2,7 +2,8 @@
 <h1>All Category</h1>
 <div class="table">
     <?php
-    foreach($tabCat as $a){
+    foreach($tabCat as $a)
+    {
         $nameCat =$a->getNameCat();
         $category =modelCategory::select($nameCat);
         //$nameModel = $model->getNameMod();
@@ -16,16 +17,15 @@
                 <figcaption> <span><?php echo "$nameCat" ?></span></figcaption>
             </a>
             <p>
-
         </div>
 
 
 
-    <?php
-    /* <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
-    > <?php echo "{$a->getNameBrand()}";?>
-    </a></i>
-    </p> */ // voir affichage marque d'une catégorie
+        <?php
+        /* <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
+        > <?php echo "{$a->getNameBrand()}";?>
+        </a></i>
+        </p> */ // voir affichage marque d'une catégorie
     }
     ?>
 </div>
