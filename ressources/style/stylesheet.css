@@ -2,6 +2,15 @@
 
 
 /* Mon css */
+html{
+    background-color: darkred; /* ce n'est qu'un test !!!
+    modifie ici */
+}
+
+body{ /* IDEM */
+    border:solid 1px;
+    background-color: antiquewhite;
+}
 h1{
 	text-align: center;
 	text-decoration: underline;
@@ -36,7 +45,9 @@ avec retour à la ligne automatique */
 	-webkit-margin-before: 1em;
 }
 header {
-    margin-bottom: 5%;
+    margin-bottom:2%;
+    border-radius: 2px;
+    border:outset 5px red;
 }
 
 header ul{
@@ -46,7 +57,11 @@ header ul{
     border-radius: 10px;
 }
 
-header li {float: left}
+header li {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 header li a{
     display: block;
     color: #890000;
@@ -86,21 +101,20 @@ header ul:after{
 }
 
 
+
 .viewModelOfBrand img{
     width:50%;
     height: 200px;
 }
 
 footer{
-	padding:25px 0px;/*Marge verticale*/
-	background-color: slategray; /*Couleur de fond*/
+	padding:10px 0px;/*Marge verticale*/
+	background-color: darkkhaki; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
+    border-radius: 6px;
+    border:solid 1px;
 }
 
-#recherche{
-    border:solid;
-    background-color: red;
-}
 
 
 /* Test
@@ -136,4 +150,51 @@ footer{
 
 
 */
+
+#slideshow {
+    position: relative;
+    width: 80%;
+    height: 2%;
+    padding: 15px;
+    margin: 0 auto 2em;
+    background-color: #FFF;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    background: linear-gradient(#FFF, #FF 20%, #EE 80%, #DDD);
+}
+
+#slideshow:before,
+#slideshow:after{
+    position: absolute;
+    bottom: 16px;
+    z-index: -10;
+    width: 50%;
+    height: 20px;
+    content: " ";
+    background: rosybrown;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.4), 0 20px 10px rgba(0,0,0,0.7);
+}
+
+#slideshow:before{
+    left: 0;
+    transform: rotate(-4deg);
+}
+
+#slideshow:after{
+    right: 0;
+    transform: rotate(4deg);
+}
+
+#slideshow .container{
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 310px;
+}
+
+.imageSlide{
+    width: 90%;
+    height: 310px;
+}
 

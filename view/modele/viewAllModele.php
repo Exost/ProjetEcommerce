@@ -1,3 +1,6 @@
+<?php
+require ("{$ROOT}{$DS}view{$DS}imgDefilante.php");
+?>
 <h1>All Models</h1>
 <div class="table">
     <?php

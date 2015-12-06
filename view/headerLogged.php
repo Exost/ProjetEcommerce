@@ -34,29 +34,31 @@ Sneaker</a>
                 </ul>
             </li>
             <li>
-                <a href="index.php?controller=modele&action=create"> New_Modele </a>
+
+            </li>
+            <li>
+                <ul style="float: right;list-style: none;">
+                    <li>
+                        <?php
+                        require('searchBar.php');
+                        ?>
+                    </li>
+                    <li>
+                        <a href=<?php echo "index.php?controller=user&action=read&id={$_SESSION['id']}"?> >
+                            <?php echo $_SESSION['name']; ?>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="index.php?controller=basket&action=readAll">Panier</a></li>
+                            <li>
+                                <a href="index.php?controller=user&action=logOut">Log Out</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                </ul>
             </li>
 
-            <ul style="float: right;list-style: none;">
-                <li>
-                    <?php
-                        require ('searchBar.php');
-                    ?>
-                </li>
-                <li>
-                    <a href=<?php echo "index.php?controller=user&action=read&id={$_SESSION['id']}"?> >
-                        <?php echo $_SESSION['name']; ?>
-                    </a>
-                    <ul class="dropdown">
-                        <li><a href="index.php?controller=basket&action=readAll">Panier</a></li>
-                        <li>
-                            <a href="index.php?controller=user&action=logOut">Log Out</a>
-                        </li>
-                    </ul>
-
-                </li>
-
-            </ul>
 
         </ul>
     <p></p>
