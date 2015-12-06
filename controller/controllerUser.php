@@ -96,10 +96,26 @@ switch ($action){
         $view='ToutFaire';
         $message=' Vous n\'êtes pas autorisé ';
         if(isset($_SESSION['id']) && $_GET['id']==isset($_SESSION['id']) ){
+            $pagetitle = $_SESSION['id'];
             $view='';
             $layout ='viewConnected';
             $usr = modelUser::select($_SESSION['id']);
         }
+        break;
+    case 'activation':
+        $view='ToutFaire';
+        $pagetitle='Activation compte';
+        $code = $_GET['code'];
+        $id = $_GET['idUsr'];
+        $usr = modelUser::select($id);
+        if($code == $usr->getCodAct()){
+            $message ="Bienvenue sur Sneaker {$usr->getName()}";
+            $layout ='viewConnected';
+            $_SESSION['id']= $usr->getIdUser();
+            $_SESSION['name'] = $usr->getFirstName();
+
+        }else
+            $message ='Une erreur est survenue';
         break;
 }
 require("{$ROOT}{$DS}view{$DS}{$layout}.php");

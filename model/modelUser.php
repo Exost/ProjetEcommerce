@@ -125,6 +125,15 @@ class modelUser extends Model
     /**
      * @return null
      */
+    public function getCodAct()
+    {
+        return $this->cod_Act;
+    }
+
+
+    /**
+     * @return null
+     */
     public function getRank()
     {
         return $this->rank;
@@ -187,7 +196,7 @@ class modelUser extends Model
         Pour activer votre compte, veuillez cliquer sur le lien ci dessous
         ou copier/coller dans votre navigateur internet.
 
-        index.php?controller=user&action=activation&idUsr='.urlencode($id).'&cle='.urlencode($code).'
+        index.php?controller=user&action=activation&idUsr='.urlencode($id).'&code='.urlencode($code).'
 
 
         ---------------

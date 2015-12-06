@@ -39,17 +39,16 @@ Sneaker</a>
 
             <ul style="float: right;list-style: none;">
                 <li>
-                    <form method="post" action="index.php?controller=search">
-                        <input type="search" placeholder="search a model a brand or category?" name="the_research" />
-                        <input type="submit" value="search""/>
-                    </form>
+                    <?php
+                        require ('searchBar.php');
+                    ?>
                 </li>
                 <li>
                     <a href=<?php echo "index.php?controller=user&action=read&id={$_SESSION['id']}"?> >
                         <?php echo $_SESSION['name']; ?>
                     </a>
                     <ul class="dropdown">
-                        <li><a href="index.php?controller=basket&action=readAll">basket</a></li>
+                        <li><a href="index.php?controller=basket&action=readAll">Panier</a></li>
                         <li>
                             <a href="index.php?controller=user&action=logOut">Log Out</a>
                         </li>

@@ -1,5 +1,6 @@
 
 
+
 /* Mon css */
 h1{
 	text-align: center;
@@ -96,7 +97,10 @@ footer{
 	text-align:center;/*texte centré*/
 }
 
-
+#recherche{
+    border:solid;
+    background-color: red;
+}
 
 
 /* Test
