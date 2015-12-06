@@ -18,10 +18,13 @@ echo "Marques disponibles :";
 
 foreach($tabModelOfCat as $model ) {
 
-$idMod =$a->getIdMod();
+$idMod = $model->getIdMod();
 $model =modelModele::select($idMod);
 $nameModel = $model->getNameMod();
 $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
+
+// TODO Affichage liste modèles
+
 
     /*echo "
         <div class ='prepOnglet'>
@@ -39,7 +42,8 @@ $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace
         </div>
         " ;
     */
-    require ( {$ROOT}view{$DS}viewModele?
+
+
 
 }
 

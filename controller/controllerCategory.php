@@ -44,22 +44,17 @@ switch ($action){
 
 
     case 'created':
-        $pagetitle = "Modele Enregistré";
+        $pagetitle = "Categorie Enregistré";
         $view = 'created';
-        $m = modelModele::countElem();
-        $idModele =$m['ResCount']+1;
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $description = $_POST['description'] ;
-        $nameCat = $_POST['category'];
-        $nameBrand = $_POST['brand'];
-        //echo ( " $idModele , $name , $price , $description ,$nameCat  , $nameBrand "); // POUR TEST
-        $newModel = new modelModele($idModele,$name,$price, $description , $nameCat ,$nameBrand);
-        //print_r( $newModel );
+        $m = modelCategory::countElem();
+        $idCat =$m['ResCount']+1;
+        $description = $_POST['desc'] ;
+        $nameCat = $_POST['nameCat'];
+        $newModel = new modelCategory($idCat,$nameCat,$description);
         $newModel->insert($newModel);
 
 
-        $checkNew = modelModele::exist($idModele);
+        $checkNew = modelCategory::exist($idCat);
         if ( $checkNew == true ) // Si return true alors existe
         {
             require("{$ROOT}{$DS}view{$DS}{$layout}.php");
@@ -70,6 +65,7 @@ switch ($action){
         $pagetitle =  $_GET['category'];
         $view= 'brandOf';
         $tab_modele = modelBrand::getModelOfBrand($_GET['brand']);
+        require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 
 

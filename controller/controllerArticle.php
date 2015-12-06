@@ -11,6 +11,7 @@ switch ($action){
     case 'readAll':
         $tabArticles = modelArticle::getAllarticles();
         $view = "All";
+        $pagetitle = "Liste Articles";
         require("{$ROOT}{$DS}view{$DS}viewVisitor.php");
         break;
     case 'read':

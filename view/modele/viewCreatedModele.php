@@ -7,3 +7,5 @@
  */
 
 echo ( " Modèle enregistré ! ");
+
+?>
