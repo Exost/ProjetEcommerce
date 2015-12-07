@@ -20,6 +20,23 @@ h1{
 
 /* permet d'afficher toute les chaussure en ligne
 avec retour à la ligne automatique */
+
+.header a {
+
+	display : inline;
+	ont-family: Garamond, serif;
+
+}
+
+#underHeader {
+	background-color: lightgray;
+	height: 0.3em;
+	width: 100%;
+}
+
+
+
+
 .table{
 	display: inline;
 	padding: 1%;
@@ -104,7 +121,11 @@ header ul:after{
 
 .viewModelOfBrand img{
     width:50%;
-    height: 200px;
+    height: 50%;
+}
+
+.header {
+
 }
 
 footer{

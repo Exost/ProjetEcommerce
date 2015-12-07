@@ -18,8 +18,8 @@ echo "Marques disponibles :";
 
 foreach($tabModelOfCat as $model ) {
 
-$idMod = $model->getIdMod();
-$model =modelModele::select($idMod);
+    $idMod = $model->getNameMod();
+    $model =modelModele::select($idMod);
 $nameModel = $model->getNameMod();
 $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
 
