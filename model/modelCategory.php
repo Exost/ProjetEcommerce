@@ -44,7 +44,7 @@ class modelCategory extends Model
     }
 
 
-    public static function  getModelOfCategory($category )
+    public static function  getModelOfCategory($category)
     {
         $sql = 'SELECT *
                         FROM pw_modele
@@ -64,7 +64,7 @@ class modelCategory extends Model
         }
                 $req_prep->bindParam(':category',$category);
                 $req_prep->execute();
-                $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelCategory'); // création de voiture
+                $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele'); // on cast les fetch en modèles
                 return $req_prep->fetchAll();
     }
 
