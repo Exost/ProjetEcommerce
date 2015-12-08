@@ -30,6 +30,17 @@ avec retour à la ligne automatique */
 	width: 100%;
 }
 
+.block{
+    margin: 1%;
+    padding: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+}
+.image{
+    width: 40% ; float: left;
+    clear: both;
+}
+
 
 
 
@@ -125,11 +136,13 @@ header ul:after{
 }
 
 footer{
-	padding:10px 0px;/*Marge verticale*/
 	background-color: darkkhaki; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
     border-radius: 6px;
     border:solid 1px;
+    position: relative;
+    clear: both;
+    bottom: 0;
 }
 
 
