@@ -8,5 +8,14 @@
 
 if(!empty($_SESSION['basket'])){
 
-}else ?>
-    <h3> the basket is empty</h3>
+}else { ?>
+    <div style="text-align: center;">
+        le panier est vide :(
+        <p>
+            <a href="index.php?action=readAll">ajouter des articles au panier?</a>
+        </p>
+
+    </div>
+    <?php
+}
+?>

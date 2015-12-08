@@ -20,7 +20,7 @@ avec retour à la ligne automatique */
 .header a {
 
 	display : inline;
-	ont-family: Garamond, serif;
+	font-family: Garamond, serif;
 
 }
 
@@ -131,7 +131,6 @@ footer{
     border-radius: 6px;
     border:solid 1px;
 }
-
 
 
 /* Test
