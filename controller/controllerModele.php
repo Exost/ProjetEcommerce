@@ -10,6 +10,7 @@
 require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelBrand.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelCategory.php");
+require_once ("{$ROOT}{$DS}model{$DS}modelItem.php");
 
 
 switch ($action){
@@ -23,6 +24,7 @@ switch ($action){
     case 'read':
         $id =$_GET['idMod'];
         $modele = modelModele::select($id);
+        $tabItem = modelItem::getItemByBrand($id); // tous les article
         $view='';
         $pagetitle = "{$modele->getNameMod()} - {$modele->getNameBrand()}";
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");

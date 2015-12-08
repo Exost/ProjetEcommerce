@@ -17,7 +17,32 @@ echo "Prix: {$modele->getPriceMod()} euros</Br>";
 echo "Marque: {$modele->getNameBrand()}
         <i><a href='index.php?controller=brand&action=read&idBrand={$modele->getNameBrand()}'>
            voir marque</a></i>";
+
+if(!empty($tabItem)){
+
+
 ?>
 
+<form>
+    <select  name="taille" id="category">
+        <?php
+            foreach($tabItem as $item){
+                echo "<option value='{$item->getSizeItem()}'>{$item->getSizeItem()}</option>";
 
+            }
+        ?>
+    </select>
+    <select>
+        <?php
+        foreach($tabItem as $item){
+            echo "<option value=''>{$item->getColorItem()}</option>";
 
+        }
+
+        ?>
+    </select>
+</form>
+<?php
+}else {?>
+<div style="color: red; text-align: center;">produit épuisé</div>
+<?php } ?>
