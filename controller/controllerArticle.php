@@ -5,7 +5,7 @@
  * Date: 21/10/15
  * Time: 12:55
  */
-require("{$ROOT}{$DS}model{$DS}modelArticle.php");
+require("{$ROOT}{$DS}model{$DS}modelItem.php");
 
 switch ($action){
     case 'readAll':

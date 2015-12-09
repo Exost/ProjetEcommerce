@@ -5,7 +5,7 @@
  * Date: 02/12/15
  * Time: 10:38
  */
-if(isset($_SESSION['id'])){ // si la session existe
+
     $pagetitle= 'Basket';
     switch($action){
         case 'readAll':
@@ -20,5 +20,5 @@ if(isset($_SESSION['id'])){ // si la session existe
 
     }
     require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
-}
+
 
