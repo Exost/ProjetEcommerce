@@ -18,7 +18,7 @@
                 foreach(modelCategory::getAll() as $c){
                     ?>
                     <li>
-                        <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$c->getNameCat()}";  ?>>
+                        <a href=<?php echo "index.php?controller=category&action=read&nameCat={$c->getNameCat()}";  ?>>
                             <?php echo $c->getNameCat();  ?>
                         </a>
                     </li>
