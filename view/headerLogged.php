@@ -36,8 +36,8 @@ Sneaker</a>
             <li>
 
             </li>
-            <li>
-                <ul >
+
+                <ul style="float: right;list-style: none">
                     <li>
                         <?php
                         require('searchBar.php');
@@ -57,7 +57,6 @@ Sneaker</a>
                     </li>
 
                 </ul>
-            </li>
 
 
         </ul>

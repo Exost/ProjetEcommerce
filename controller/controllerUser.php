@@ -46,8 +46,6 @@ switch ($action){
     case 'logged':
         if(!isset($_POST['id'])|!isset($_POST['passwd'])){ // si on n'a rien recuperer
             $view = 'Login';
-            mail('zozo.fabre@gmail.com', 'nothing','rien');
-            mail('enzo.fabre@outlook.com', 'nothing','rien');
             $layout = 'viewVisitor';
             $pagetitle ='Login';
         }else{
@@ -57,16 +55,17 @@ switch ($action){
                 if($usr->getStateUsr() == 'en Attente' ){
                     $view = 'Login';
                     $error= 'le compte n\'est pas activé';
-                }else if($usr->getRank() == 'admin'){ // si l'admin ce co
-                    $layout ='viewAdmin';
-                    $view = 'Logged';
                 }
                 else{
                     $pwd = sha1($_POST['passwd']);
                     if($pwd == $usr->getPassword()){
                         $_SESSION['id']= $usr->getIdUser();
                         $_SESSION['name'] = $usr->getFirstName();
-                        $layout ='viewConnected';
+                        $_SESSION['rank']= $usr->getRank();
+                        if($_SESSION['rank'] == 'admin'){
+                            $layout='viewAdmin';
+                        }else
+                            $layout ='viewConnected';
                         $view = 'Logged';
                         $pagetitle = "bonjour {$usr->getFirstName()}";
 
