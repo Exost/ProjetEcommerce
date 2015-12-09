@@ -2,15 +2,19 @@
 
 
 /* Mon css */
+html{
+    background-color: whitesmoke; /* ce n'est qu'un test !!!
+    modifie ici */
+}
 
 body{ /* IDEM */
-    border:solid 1px;
-    background-color: antiquewhite;
+    /* border:solid 1px; */
+    background-color: white;
 }
 h1{
 	text-align: center;
 	text-decoration: underline;
-	color: #890000;
+	color: black;
 }
 
 
@@ -20,7 +24,7 @@ avec retour à la ligne automatique */
 .header a {
 
 	display : inline;
-	font-family: Garamond, serif;
+	ont-family: Garamond, serif;
 
 }
 
@@ -30,20 +34,9 @@ avec retour à la ligne automatique */
 	width: 100%;
 }
 
-.blockLeft {
-    float: left;
 
-}
-.image{
-    width: 40% ;
-}
 
-.blockRight{
-    float: right;
-    display: inline-block;
-}
 
-/* vue d'ensemble */
 .table{
 	display: inline;
 	padding: 1%;
@@ -62,36 +55,16 @@ avec retour à la ligne automatique */
 	height: 250px;
 }
 
+/* j'ai copié sur nico je sais pas si c'est vraiment utilse
+*/
 .table p{
 	display: block;
 	-webkit-margin-before: 1em;
 }
-
-/* vue rapproché d'un modele */
-.setModel{
-    display: inline;
-    padding: 1%;
-}
-
-.setModel div{
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-    padding:0px;
-    margin:0px;
-}
-
-.setModel div img{
-    width:90%;
-    height: 250px;
-}
-
-
-/*/////////////////////////////////////////////////////////*/
 header {
     margin-bottom:2%;
     border-radius: 2px;
-    border:outset 5px red;
+    border: 5px whitesmoke;
 }
 
 header ul{
@@ -108,7 +81,7 @@ header li {
 }
 header li a{
     display: block;
-    color: #890000;
+    color: black;
     text-decoration: none;
     padding: 8px 0 8px 16px;
 }
@@ -156,14 +129,13 @@ header ul:after{
 }
 
 footer{
-	background-color: darkkhaki; /*Couleur de fond*/
+	padding:10px 0px;/*Marge verticale*/
+	background-color: ghostwhite ; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
     border-radius: 6px;
-    border:solid 1px;
-    position: relative;
-    clear: both;
-    bottom: 0;
+    /* border: 1px; */
 }
+
 
 
 /* Test
@@ -200,12 +172,10 @@ footer{
 
 */
 
-
-/* Diapo */
 #slideshow {
     position: relative;
-    width: 800px;
-    height: 400px;
+    width: 80%;
+    height: 2%;
     padding: 15px;
     margin: 0 auto 2em;
     background-color: #FFF;
@@ -219,7 +189,7 @@ footer{
     position: absolute;
     bottom: 16px;
     z-index: -10;
-    width: 10%;
+    width: 50%;
     height: 20px;
     content: " ";
     background: rosybrown;
@@ -240,82 +210,12 @@ footer{
 #slideshow .container{
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 400px;
-}
-
-#slideshow .container:after{
-    position: absolute;
-    bottom: 0; left: 0;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-}
-
-#slideshow .slider{ /* effet diaporama */
-   position: absolute;
-    left: 0;
-    top: 0;
-    width: 400%;
-    height: 400px;
-}
-
-
-
-#slideshow figure{ /* annulation marge */
-    position: relative;
-    display: inline-block;
-
-    padding: 0;
-    margin: 0;
-}
-
-#slideshow figure:after{
-    position: absolute;
-    display: block;
-    content: " ";
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow:  0 0 65px rgba(0,0,0,0.5) inset;
+    width: 90%;
+    height: 310px;
 }
 
 .imageSlide{
-    width: 800px;
-    height: 400px;
+    width: 90%;
+    height: 310px;
 }
 
-
-/*  animer le le slide */
-@keyframes slider {
-    0%, 20%, 100% {left: 0}
-    25%, 45% {left: -100%}
-    50%, 70% {left: -200%}
-    75%, 95%    {left: 0%}
-
-}
-
-/* mise en place de l'animation
-change de slide toute les 20s
-*/
-#slideshow .slider{
-    animation: slider 32s infinite;
-}
-
-#time{
-    position: absolute;
-    background-color: red;
-    bottom: 15px;
-    left: 15px;
-    height: 3px;
-    background: rgb(214,98,13.8);
-    width: 0;
-    animation: timeliner 32s infinite;
-}
-
-@keyframes timeliner {
-    0%, 25%, 50%, 75%, 100% {width: 0;}
-    20%, 45%, 70%, 90% {width: 640px;}
-}
