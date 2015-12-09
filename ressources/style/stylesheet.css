@@ -3,18 +3,18 @@
 
 /* Mon css */
 html{
-    background-color: darkred; /* ce n'est qu'un test !!!
+    background-color: whitesmoke; /* ce n'est qu'un test !!!
     modifie ici */
 }
 
 body{ /* IDEM */
-    border:solid 1px;
-    background-color: antiquewhite;
+    /* border:solid 1px; */
+    background-color: white;
 }
 h1{
 	text-align: center;
 	text-decoration: underline;
-	color: #890000;
+	color: black;
 }
 
 
@@ -64,7 +64,7 @@ avec retour à la ligne automatique */
 header {
     margin-bottom:2%;
     border-radius: 2px;
-    border:outset 5px red;
+    border: 5px whitesmoke;
 }
 
 header ul{
@@ -81,7 +81,7 @@ header li {
 }
 header li a{
     display: block;
-    color: #890000;
+    color: black;
     text-decoration: none;
     padding: 8px 0 8px 16px;
 }
@@ -130,10 +130,10 @@ header ul:after{
 
 footer{
 	padding:10px 0px;/*Marge verticale*/
-	background-color: darkkhaki; /*Couleur de fond*/
+	background-color: ghostwhite ; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
     border-radius: 6px;
-    border:solid 1px;
+    /* border: 1px; */
 }
 
 
@@ -219,3 +219,6 @@ footer{
     height: 310px;
 }
 
+.search {
+    color : black ;
+}

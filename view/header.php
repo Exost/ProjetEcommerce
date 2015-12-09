@@ -3,7 +3,7 @@
         <div class="flotte">
             <img src='ressources/img/SneakIconXS.png' alt='icone'>
         </div>
-        Sneaker</a>
+        </a>
     <ul >
         <li>
             <a href=""> Shop</a>
@@ -13,6 +13,18 @@
         </li>
         <li>
             <a href="index.php?controller=category"> Category</a>
+            <ul class="dropdown">
+                <?php // drop down menu
+                foreach(modelCategory::getAll() as $c){
+                    ?>
+                    <li>
+                        <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$c->getNameCat()}";  ?>>
+                            <?php echo $c->getNameCat();  ?>
+                        </a>
+                    </li>
+                <?php }
+                ?>
+            </ul>
         </li>
         <li>
             <a href="index.php?controller=brand" > Brands </a>
