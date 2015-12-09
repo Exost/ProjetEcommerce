@@ -4,13 +4,12 @@
 /* Mon css */
 
 body{ /* IDEM */
-    border:solid 1px;
-    background-color: antiquewhite;
+    background-color: white;
 }
 h1{
 	text-align: center;
-	text-decoration: underline;
-	color: #890000;
+	text-decoration: bold;
+	color: black;
 }
 
 
@@ -21,6 +20,7 @@ avec retour à la ligne automatique */
 
 	display : inline;
 	font-family: Garamond, serif;
+    color : black ;
 
 }
 
@@ -91,7 +91,7 @@ avec retour à la ligne automatique */
 header {
     margin-bottom:2%;
     border-radius: 2px;
-    border:outset 5px red;
+    border: 5px whitesmoke;
 }
 
 header ul{
@@ -108,14 +108,14 @@ header li {
 }
 header li a{
     display: block;
-    color: #890000;
+    color: black;
     text-decoration: none;
     padding: 8px 0 8px 16px;
 }
 
 header li a:hover{
-    background-color: crimson;
-    color: white;
+    background-color: white;
+    color: black;
 }
 /* gestion dropdown menu */
 header .dropdown{
@@ -131,7 +131,7 @@ header .dropdown li {
 }
 
 header .dropdown li a:hover{
-    background-color: #6b727c;
+    background-color: white;
 }
 
 header ul li:hover > ul {
@@ -156,10 +156,10 @@ header ul:after{
 }
 
 footer{
-	background-color: darkkhaki; /*Couleur de fond*/
+	background-color: ghostwhite; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
     border-radius: 6px;
-    border:solid 1px;
+
     position: relative;
     clear: both;
     bottom: 0;
@@ -306,7 +306,7 @@ change de slide toute les 20s
 
 #time{
     position: absolute;
-    background-color: red;
+    background-color: darkgray;
     bottom: 15px;
     left: 15px;
     height: 3px;
