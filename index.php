@@ -31,6 +31,10 @@ session_start();
 
 if(isset($_SESSION['id'])){
     $layout ='viewConnected';
+    if($_SESSION['rank']=='admin'){
+        $layout='viewAdmin';
+    }
+
 }
     switch ($controller){
         case 'modele':
