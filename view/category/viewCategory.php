@@ -6,14 +6,21 @@
  * Time: 12:17
  */
 
+$img = "ressources{$DS}img{$DS}category{$DS}{$nameCat}.jpg";
+$desc= $category->getDescCat();
+?>
+<figure>
+    <img src='<?php  echo $img;?>' atl='<?php echo $nameCat ?>'
+         style='margin-left:100px; width:55%%;height:350px;'>
+    <figcaption>
+        Category : <?php echo $nameCat ?><br/>
+        <?php echo $desc; ?>
+    </figcaption>
+</figure>
 
-echo "<img src='ressources{$DS}img{$DS}category{$DS}{$nameCat}.jpg' alt='{$nameCat}'
-            style='margin-left:100px; width:55%%;height:350px;'><p></p>"; // load the image associated
-echo "Category : {$nameCat}
-    </Br>
-    {$category->getDescCat()}
-    </Br> ";
 
+
+<?php
 echo "Marques disponibles :";
 
 foreach($tabModelOfCat as $model ) {

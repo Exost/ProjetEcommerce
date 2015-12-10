@@ -1,6 +1,7 @@
 <head>
     <?php
         require_once "{$ROOT}{$DS}model{$DS}modelBrand.php";
+        require_once "{$ROOT}{$DS}model{$DS}modelCategory.php";
     ?>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="

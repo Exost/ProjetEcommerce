@@ -48,7 +48,23 @@ class modelModele extends Model
 
     }
 
+    public static function getModelOfCategory($name_Cat){
+        $sql ='SELECT*
+                FROM pw_modele
+                WHERE name_Cat = :cat';
+        $req_prep=null;
+        try{
+            $req_prep= Model::$pdo->prepare($sql);
+            $req_prep->bindParam(':cat', $name_Cat);
+            $req_prep->execute();
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele');
+            $req_prep->fetchAll();
 
+        }catch(PDOException $e){
+            die();
+        }
+        return $req_prep;
+    }
     /**
      * @return mixed
      */

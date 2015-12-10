@@ -6,8 +6,8 @@
  * Time: 10:57
  */
 
-//require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
-//require_once ("{$ROOT}{$DS}model{$DS}modelBrand.php");
+require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
+require_once ("{$ROOT}{$DS}model{$DS}modelBrand.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelCategory.php");
 
 
@@ -29,8 +29,8 @@ switch ($action){
         //print_r( $category);
         //print_r( " {$category->getNameCat() } " ) ;
         //print_r( " {$category->getDescCat() } wtf " ) ;
-        $tabModelOfCat = modelCategory::getModelOfCategory($nameCat);
-        print_r( $tabModelOfCat );
+        $tabModelOfCat = modelModele::getModelOfCategory($nameCat);
+
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 

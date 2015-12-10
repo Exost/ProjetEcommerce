@@ -165,42 +165,54 @@ footer{
     bottom: 0;
 }
 
-
-/* Test
-.prepOnglet{
+/*******************************************************/
+/* slide legende */
+.slideLegend{
     position: relative;
-    overflow: hidden;
     display: inline-block;
-    box-shadow: 0 0 65px #CDBE9F inset, 0 0 20px #BEAE8C inset,
-    0 0 3px #816F47;
+    padding: 5px;
+
+}
+.slideLegend figure{
+    position: relative;
+    display: inline-block;
     overflow: hidden;
-
-}
-
-.prepOnglet  a{
-    background-repeat: no-repeat;
-    text-decoration: none;
-}
-
-.prepOnglet figcaption {
-    position: absolute;
-    left: 0;
-    bottom: -1em;width: 200px;
-    height: 2.6em;
-    line-height: 1.5em;
     text-align: center;
-    color: cadetblue;
-    overflow: hidden;
-    /* preparation de la transition
-    transition: all 0.7s;
+    margin: 0;
+    padding: 0px;
 }
 
-#prepOnglet figcaption span {display: block}
+.slideLegend figure:after{
+    position: absolute;
+    display: block;
+}
 
+.slideLegend figcaption{
+    position:absolute;
+    overflow: hidden;
+    left:0; right:0; bottom: 5px;
+    padding: 20px;
+    margin:0;
+    border-top: 1px solid rgb(225,225,225);
+    text-align:center;
+    letter-spacing: 0.05em;
+    word-spacing: 0.05em;
+    font-family: Georgia, Times, serif;
+    background: #fff;
+    background: rgba(255,255,255,0.7);
+    color: #555;
+    text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
+    transition: all 0.7s;
 
-*/
+}
+@keyframes figcaptionner {
+    0%, 25%, 50%, 75%, 100%						{ bottom: -55px;	}
+    5%, 20%, 30%, 45%, 55%, 70%, 80%, 95%		{ bottom: 5px;		}
+}
 
-
+.slideLegend figure:hover figcaption{
+    animation: figcaptionner 32s infinite;
+}
 /* Diapo */
 #slideshow {
     position: relative;
@@ -317,5 +329,5 @@ change de slide toute les 20s
 
 @keyframes timeliner {
     0%, 25%, 50%, 75%, 100% {width: 0;}
-    20%, 45%, 70%, 90% {width: 640px;}
+    20%, 45%, 70%, 100% {width: 800px;}
 }

@@ -10,17 +10,22 @@ require ("{$ROOT}{$DS}view{$DS}imgDefilante.php");
         $nameModel = $model->getNameMod();
         $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
         ?>
-        <div class ='prepOnglet'>
+        <div class="slideLegend">
             <a href=<?php echo "index.php?action=read&idMod={$idMod}"; ?>>
-                <img src=<?php echo "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg"; ?>
-                     alt=<?php echo "{$idModSansEspace}";?>
-                    >
-                <figcaption> <span>test</span></figcaption>
+                <figure>
+                    <img src=<?php echo "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg"; ?>
+                         alt=<?php echo "{$idModSansEspace}";?>>
+                    <figcaption>
+                        <?php echo $nameModel; ?><br/>
+                        <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
+                                > <?php echo "{$a->getNameBrand()}";?>
+                            </a></i>
+                    </figcaption>
+                </figure>
+
             </a>
             <p>
-                <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
-                        > <?php echo "{$a->getNameBrand()}";?>
-                    </a></i>
+
             </p>
         </div>
 
