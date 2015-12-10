@@ -9,5 +9,6 @@
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <link href="<?php echo "ressources{$DS}style{$DS}stylesheet.css";?>"
           rel="stylesheet" type="text/css" media="all" />
+    <script src="<?php echo "ressources{$DS}style{$DS}form.js";?>" type="text/javascript"></script>
     <title><?php echo $pagetitle; ?></title>
 </head>

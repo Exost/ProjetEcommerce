@@ -37,7 +37,20 @@ class modelItem extends Model
 
     }
 
-    static function getItemByBrand($keyModele){
+    static public function  getAllColorOfModel($keyMod){
+        $sql = 'SELECT DISTINCT color_Item
+                FROM pw_item
+                WHERE id_Modele = :idModel';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->bindParam(':idModel', $keyMod);
+            $req_prep->execute();
+        }catch (PDOException $e){
+
+        }return $req_prep->fetchAll();
+    }
+
+    static function getItemByModele($keyModele){
         $sql = 'SELECT *
                 FROM pw_item
                 WHERe id_Modele= :idModel';
@@ -49,6 +62,29 @@ class modelItem extends Model
         }catch (PDOException $e){
 
         }return $req_prep->fetchAll();
+    }
+
+
+
+    static function getItembyColorSizeModele($model,$color, $size){
+        $sql ='SELECT *
+               FROM pw_item
+               WHERE id_Modele = :idMod AND
+                      color_Item = :color AND
+                      size_Item = :size';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $array =array(
+                ':idMod'=> $model,
+                ':color'=> $color,
+                ':size'=> $size
+            );
+            $req_prep->execute($array);
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelItem' );
+        }catch (PDOException $e){
+
+        }
+        return $req_prep->fetch();
     }
     /**
      * @return mixed

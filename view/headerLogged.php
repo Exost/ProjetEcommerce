@@ -43,7 +43,7 @@ Sneaker</a>
                         require('searchBar.php');
                         ?>
                     </li>
-                    <li><a href="index.php?controller=basket&action=readAll">Panier</a></li>
+                    <li><a href="index.php?controller=shoppingCart&action=readAll">Panier</a></li>
                     <li>
                         <a href=<?php echo "index.php?controller=user&action=read&id={$_SESSION['id']}"?> >
                             <?php echo $_SESSION['name']; ?>

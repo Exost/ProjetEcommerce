@@ -24,7 +24,8 @@ switch ($action){
     case 'read':
         $id =$_GET['idMod'];
         $modele = modelModele::select($id);
-        $tabItem = modelItem::getItemByBrand($id); // tous les article
+        $tabItem = modelItem::getItemByModele($id); // tous les article
+        $tabColor = modelItem::getAllColorOfModel($id);
         $view='';
         $pagetitle = "{$modele->getNameMod()} - {$modele->getNameBrand()}";
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");

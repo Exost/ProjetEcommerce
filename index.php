@@ -14,6 +14,8 @@ session_start();
     // DS contient le slash des chemins de fichiers, c'est-à-dire '/' sur Linux et '\' sur Windows
     $DS = DIRECTORY_SEPARATOR;
 
+require_once ("model{$DS}modelShoppingCart.php");
+
     if(!isset($_GET['action'])) // s'il n a pas d'action
         $action = "readAll";
     else
@@ -52,8 +54,8 @@ if(isset($_SESSION['id'])){
         case 'search':
             require ("controller{$DS}controllerSearch.php");
             break;
-        case 'basket':
-            require ("controller{$DS}controllerBasket.php");
+        case 'shoppingCart':
+            require ("controller{$DS}controllerShoppingCart.php");
             break;
 
     }

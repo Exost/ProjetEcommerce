@@ -24,17 +24,20 @@ $alt = "{$idModSansEspace}";
            if(!empty($tabItem)){
                ?>
                  <div class="blockLeft">
-                     <form name='selectItem' method="post" onchange="">
+                     <form name='selectItem' method="post" onchange="populate(this.id,'size')"
+                         action="index.php?controller=shoppingCart&action=addItem">
+                         Couleur:
                          <select id="color"name="color">
                              <option value=""></option>
                              <?php
-                             foreach($tabItem as $item){
-                                 echo "<option value=''>{$item->getColorItem()}</option>";
+                             foreach($tabColor as $color){
+                                 echo "<option value='$color[0]'>$color[0]</option>";
 
                              }
 
                              ?>
-                         </select>
+                         </select><br/>
+                         taille:
                          <select  id="size" name="size">
                              <option value=""></option>
                              <?php
@@ -44,7 +47,7 @@ $alt = "{$idModSansEspace}";
                              }
                              ?>
                          </select><br/>
-
+                    <input type="submit" value="ajouter au panier">
                      </form>
                  </div><p></p>
 

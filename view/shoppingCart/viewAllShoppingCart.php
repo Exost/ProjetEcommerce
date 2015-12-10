@@ -5,9 +5,12 @@
  * Date: 02/12/15
  * Time: 13:16
  */
-
-if(!empty($_SESSION['basket'])){
-
+if(!isset($_SESSION['shoppingCart'])){
+    echo "je n'existe pas";
+}
+else if(!empty($_SESSION['shoppingCart'][0])){
+    echo "je m'appelle yolo";
+    print_r($_SESSION['shoppingCart']);
 }else { ?>
     <div style="text-align: center;">
         le panier est vide :(

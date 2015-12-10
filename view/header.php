@@ -46,7 +46,7 @@
                     require ('searchBar.php');
                 ?>
             </li>
-            <li><a href="index.php?controller=basket&action=readAll">Panier</a></li>
+            <li><a href="index.php?controller=shoppingCart&action=readAll">Panier</a></li>
             <li>
                 <a href="index.php?controller=user&action=signIn">Sign In</a>
             </li>
