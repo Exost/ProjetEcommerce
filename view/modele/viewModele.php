@@ -26,6 +26,9 @@ $alt = "{$idModSansEspace}";
                  <div class="blockLeft">
                      <form name='selectItem' method="post" onchange="populate(this.id,'size')"
                          action="index.php?controller=shoppingCart&action=addItem">
+                         <input style="display: none" name="idMod" value="<?php echo $modele->getIdMod(); ?>"
+                             /> <?php /* petite astuce pour récupérer l'id du modele  display none
+                                        n'affiche rien */ ?>
                          Couleur:
                          <select id="color"name="color">
                              <option value=""></option>

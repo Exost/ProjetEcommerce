@@ -8,8 +8,7 @@
 if(!isset($_SESSION['shoppingCart'])){
     echo "je n'existe pas";
 }
-else if(!empty($_SESSION['shoppingCart'][0])){
-    echo "je m'appelle yolo";
+else if(!empty($_SESSION['shoppingCart']['idItem'])){
     print_r($_SESSION['shoppingCart']);
 }else { ?>
     <div style="text-align: center;">

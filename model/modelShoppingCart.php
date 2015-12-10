@@ -30,7 +30,7 @@ class shoppingCart
      */
     static function addItem ($item, $qteItem){
         $id =$item->getIdItem();
-        $name = $item->getNameMod();
+        $name = "modele";
         $color =$item->getSizeItem();
         $size = $item->getSizeItem();
         $price = $item->getPriceArt();

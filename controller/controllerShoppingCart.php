@@ -22,9 +22,11 @@ switch($action){
         case 'delete':
             break;
         case 'addItem':
-            $color = $_POST[''];
-            $size = $_POST[''];
-            shoppingCart::addItem();
+            $color = $_POST['color'];
+            $size = $_POST['size'];
+            $id = $_POST['idMod'];
+            $item =modelItem::getItembyColorSizeModele($id,$color,$size);
+            shoppingCart::addItem($item,1);
             $view ='All';
             break;
 }
