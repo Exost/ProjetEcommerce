@@ -24,16 +24,9 @@ $alt = "{$idModSansEspace}";
            if(!empty($tabItem)){
                ?>
                  <div class="blockLeft">
-                     <form>
-                         <select  name="size">
-                             <?php
-                             foreach($tabItem as $item){
-                                 echo "<option value='{$item->getSizeItem()}'>{$item->getSizeItem()}</option>";
-
-                             }
-                             ?>
-                         </select><br/>
-                         <select name="color">
+                     <form name='selectItem' method="post" onchange="">
+                         <select id="color"name="color">
+                             <option value=""></option>
                              <?php
                              foreach($tabItem as $item){
                                  echo "<option value=''>{$item->getColorItem()}</option>";
@@ -42,6 +35,16 @@ $alt = "{$idModSansEspace}";
 
                              ?>
                          </select>
+                         <select  id="size" name="size">
+                             <option value=""></option>
+                             <?php
+                             foreach($tabItem as $item){
+                                 echo "<option value='{$item->getSizeItem()}'>{$item->getSizeItem()}</option>";
+
+                             }
+                             ?>
+                         </select><br/>
+
                      </form>
                  </div><p></p>
 

@@ -11,10 +11,11 @@ require ("{$ROOT}{$DS}view{$DS}imgDefilante.php");
         $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
         ?>
         <div class="slideLegend">
-            <a href=<?php echo "index.php?action=read&idMod={$idMod}"; ?>>
+
                 <figure>
+                    <a href=<?php echo "index.php?action=read&idMod={$idMod}"; ?>>
                     <img src=<?php echo "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg"; ?>
-                         alt=<?php echo "{$idModSansEspace}";?>>
+                         alt=<?php echo "{$idModSansEspace}";?>> </a>
                     <figcaption>
                         <?php echo $nameModel; ?><br/>
                         <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
@@ -23,7 +24,7 @@ require ("{$ROOT}{$DS}view{$DS}imgDefilante.php");
                     </figcaption>
                 </figure>
 
-            </a>
+
             <p>
 
             </p>

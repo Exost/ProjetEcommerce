@@ -8,7 +8,6 @@ body{ /* IDEM */
 }
 h1{
 	text-align: center;
-	text-decoration: bold;
 	color: black;
 }
 
@@ -190,9 +189,11 @@ footer{
 .slideLegend figcaption{
     position:absolute;
     overflow: hidden;
-    left:0; right:0; bottom: 5px;
+    left:0; right:0;
+    bottom: -30%; /* caché */
     padding: 20px;
     margin:0;
+
     border-top: 1px solid rgb(225,225,225);
     text-align:center;
     letter-spacing: 0.05em;
@@ -202,7 +203,6 @@ footer{
     background: rgba(255,255,255,0.7);
     color: #555;
     text-shadow: -1px -1px 0 rgba(255,255,255,0.3);
-    transition: all 0.7s;
 
 }
 @keyframes figcaptionner {
@@ -211,7 +211,7 @@ footer{
 }
 
 .slideLegend figure:hover figcaption{
-    animation: figcaptionner 32s infinite;
+    animation: figcaptionner 8s ;
 }
 /* Diapo */
 #slideshow {
@@ -223,7 +223,7 @@ footer{
     background-color: #FFF;
     border-radius: 2px 2px 2px 2px;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
-    background: linear-gradient(#FFF, #FF 20%, #EE 80%, #DDD);
+
 }
 
 #slideshow:before,
