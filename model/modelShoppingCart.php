@@ -10,7 +10,7 @@ class shoppingCart
 {
 
     static function createBasket(){ // creation du shoppingCart
-        if(!isset($_SESSION['shoppingCart'])){
+        if(!isset($_SESSION['shoppingCart'])){ // si le panier n'exsite pas on le creer
             $_SESSION['shoppingCart']=array();
             $_SESSION['shoppingCart']['idItem']= array();
             $_SESSION['shoppingCart']['nameModele']= array();
@@ -31,7 +31,7 @@ class shoppingCart
     static function addItem ($item, $qteItem){
         $id =$item->getIdItem();
         $name = "modele";
-        $color =$item->getSizeItem();
+        $color =$item->getSizeItem();// color
         $size = $item->getSizeItem();
         $price = $item->getPriceArt();
         if(self::createBasket()){

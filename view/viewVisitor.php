@@ -2,11 +2,13 @@
 <html>
 <?php
     require ('head.php');
+
 ?>
 <body>
 <?php
+require ("header.php");
+require ('navVisitor.php');
 
-    require ("header.php");
 
 
 /**
