@@ -50,8 +50,8 @@ header {
 }
 
 #searchSubmit:hover  {
-    background-color:#fafafa;
-    color:#207cca;
+    background-color: white;
+    color: black ;
 }
 /* Fin barre de recherche */
 
@@ -114,6 +114,7 @@ avec retour à la ligne automatique */
 	display: block;
 	-webkit-margin-before: 1em;
 }
+/* FIn vue ensemble */
 
 /* vue rapproché d'un modele */
 .setModel{
