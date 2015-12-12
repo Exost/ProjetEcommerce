@@ -116,6 +116,8 @@ avec retour à la ligne automatique */
 }
 
 /* vue rapproché d'un modele */
+
+
 .setModel{
     display: inline;
     padding: 1%;
@@ -171,6 +173,9 @@ nav li a:hover{
     border-radius: 3px;
     color: black;
 }
+
+
+
 /* gestion dropdown menu */
 nav .dropdown{
     display: none;
@@ -220,9 +225,6 @@ nav ul:after{
     height: 50%;
 }
 
-.header {
-
-}
 
 footer{
 	background-color: ghostwhite; /*Couleur de fond*/
@@ -401,8 +403,14 @@ change de slide toute les 20s
     0%, 25%, 50%, 75%, 100% {width: 0;}
     20%, 45%, 70%, 100% {width: 800px;}
 
-
-
-
 }
+
+.imgModele {
+    width: 20%;
+    height: 20%;
+}
+
+/* CSS Category */
+
+/* FIN Category */
 

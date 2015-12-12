@@ -16,37 +16,41 @@ echo "Category : {$nameCat}
 
 echo "Modèles disponibles :";
 
-print_r(  $tabModelOfCat );
 
-foreach($tabModelOfCat as $model ) {
+if(!empty($tabModelOfCat)){
 
-$idMod = $model->getIdMod();
-$model =modelModele::select($idMod);
-$nameModel = $model->getNameMod();
-$idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
+    foreach ($tabModelOfCat as $m){
 
-    echo " test ";
-// TODO Affichage liste modèles
+        /*$idMod = $m->getIdMod() ;
+        $nameMod = $m->getNameMod();
+        $priceMod = $m->getPriceMod();
+        $descMod = $m->getDescMod();
+        $nameCat = $m->getCatMod() ;
+        $nameBrand = $m->getNameBrand();
 
+        /*$modele = new modelModele($a['id_Mod'],$a['name_Mod'],$a['price_Mod'],
+            $a['desc_Mod'],$a['name_Cat'],$a['name_Brand']); */
+        /* $model = new modelModele( $idMod , $nameMod , $priceMod , $descMod , $nameCat , $nameBrand);*/
 
-    /*echo "
-        <div class ='prepOnglet'>
-            <a href= index.php?action=read&idMod={$idMod} >
-                <img src=  "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg ?>
-                     alt= "{$idModSansEspace}";?>
+        $nomModele = $m->getNameMod() ;
+        $nomImg = str_replace(' ','_',$nomModele);
+        ?>
+        <div>
+            <a href=<?php echo"index.php?action=read&idMod={$m->getIdMod()}"; ?>
+                >
+                <img class="imgModele"
+                    src=<?php echo"ressources/img{$DS}modele{$DS}{$nomImg}.jpg";?>
+                    alt=<?php echo"{$m->getNameMod()}"; ?>
                     >
-                <figcaption> <span>test</span></figcaption>
             </a>
-            <p>
-                <i>by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$a->getNameBrand()}";?>
-                        > <?php echo "{$a->getNameBrand()}";?>
-                    </a></i>
-            </p>
         </div>
-        " ;
-    */
 
+    <?php
+    }
 
+}
+else{
+    echo "<i>Actuellement aucun modèle n'est proposé dans cette catégorie </i>";
 
 }
 
