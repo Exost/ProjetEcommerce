@@ -26,7 +26,7 @@ header {
 /* Barre de recherche */
 
 .searchForm {
-    margin: 0px 225px ;
+    margin: 0px 25px ;
 
     padding: 2px ;
     background:rgba(50, 50, 50, 0.2);
@@ -50,8 +50,8 @@ header {
 }
 
 #searchSubmit:hover  {
-    background-color: white;
-    color: black ;
+    background-color:#fafafa;
+    color:#207cca;
 }
 /* Fin barre de recherche */
 
@@ -114,7 +114,6 @@ avec retour à la ligne automatique */
 	display: block;
 	-webkit-margin-before: 1em;
 }
-/* FIn vue ensemble */
 
 /* vue rapproché d'un modele */
 .setModel{

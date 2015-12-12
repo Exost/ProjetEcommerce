@@ -2,6 +2,8 @@
 
 <div class="table">
     <?php
+
+     print_r( $tab_modele );
     require "{$ROOT}{$DS}model{$DS}modelModele.php";
     if(!empty($tab_modele)){
         foreach ($tab_modele as $a){

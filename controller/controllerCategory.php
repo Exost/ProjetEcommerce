@@ -29,7 +29,7 @@ switch ($action){
         //print_r( $category);
         //print_r( " {$category->getNameCat() } " ) ;
         //print_r( " {$category->getDescCat() } wtf " ) ;
-        $tabModelOfCat = modelModele::getModelOfCategory($nameCat);
+        $tabModelOfCat = modelModele::getModelOfCat($nameCat);
 
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;

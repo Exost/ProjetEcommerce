@@ -1,10 +1,10 @@
 <nav>
     <ul >
         <li>
-            <a href=""> Shop</a>
+            <a href="index.php"> Acceuil </a>
         </li>
         <li>
-            <a href=""> News</a>
+            <a href=""> News</a> <!-- Afficher les 5 derniers modèles ajoutés -->
         </li>
         <li>
             <a href="index.php?controller=category"> Category</a>
