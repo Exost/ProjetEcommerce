@@ -21,30 +21,29 @@ if(!empty($tabModelOfCat)){
 
     foreach ($tabModelOfCat as $m){
 
-        /*$idMod = $m->getIdMod() ;
-        $nameMod = $m->getNameMod();
-        $priceMod = $m->getPriceMod();
-        $descMod = $m->getDescMod();
-        $nameCat = $m->getCatMod() ;
-        $nameBrand = $m->getNameBrand();
-
-        /*$modele = new modelModele($a['id_Mod'],$a['name_Mod'],$a['price_Mod'],
-            $a['desc_Mod'],$a['name_Cat'],$a['name_Brand']); */
-        /* $model = new modelModele( $idMod , $nameMod , $priceMod , $descMod , $nameCat , $nameBrand);*/
-
-        $nomModele = $m->getNameMod() ;
-        $nomImg = str_replace(' ','_',$nomModele);
+        $nameModele = $m->getNameMod() ;
+        $nameImg = str_replace(' ','_',$nameModele);
         ?>
-        <div>
-            <a href=<?php echo"index.php?action=read&idMod={$m->getIdMod()}"; ?>
-                >
+        <div class="slideLegend">
+        <figure>
+            <a href=<?php echo"index.php?action=read&idMod={$m->getIdMod()}"; ?> >
                 <img class="imgModele"
-                    src=<?php echo"ressources/img{$DS}modele{$DS}{$nomImg}.jpg";?>
-                    alt=<?php echo"{$m->getNameMod()}"; ?>
-                    >
+                    src=<?php echo"ressources/img{$DS}modele{$DS}{$nameImg}.jpg";?>
+                    alt=<?php echo"{$m->getNameMod()}"; ?> >
             </a>
-        </div>
+            <figcaption>
+                <?php echo $nameModele; ?><br/>
+                <i> by <a href=<?php echo "index.php?controller=brand&action=read&idBrand={$m->getNameBrand()}";?>
+                        > <?php echo "{$m->getNameBrand()}";?>
+                    </a></i>
+            </figcaption>
+        </figure>
 
+            <p>
+
+            </p>
+
+        </div>
     <?php
     }
 

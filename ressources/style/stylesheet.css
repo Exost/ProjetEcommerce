@@ -7,6 +7,7 @@ body{ /* IDEM */
     background-color: white;
     padding: 0;
     margin: 0;
+    font-family: "Helvetica Neue";
 }
 
 /*  titre */
@@ -187,7 +188,8 @@ nav .dropdown li {
     float: none;
     position: relative;
     border-top: 1px solid #6b727c;
-    background-color: transparent;
+    background-color: white;
+    opacity:0.85;
     //text-overline-color : #222222;
 
 }
@@ -227,9 +229,9 @@ nav ul:after{
 
 
 footer{
-	background-color: ghostwhite; /*Couleur de fond*/
+	background-color: #222 ; /*Couleur de fond*/
 	text-align:center;/*texte centré*/
-    border-radius: 6px;
+    color : white ;
 
     position: relative;
     clear: both;
