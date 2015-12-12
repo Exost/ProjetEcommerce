@@ -23,10 +23,53 @@ header {
 }
 
 
+/* Barre de recherche */
 
+.searchForm {
+    margin: 0px 225px ;
+
+    padding: 2px ;
+    background:rgba(50, 50, 50, 0.2);
+    border:0px solid #dbdbdb;
+}
+
+#searchBar {
+    padding:8px 15px;
+    background:White ;
+    border:0px solid #dbdbdb;
+}
+
+
+#searchSubmit {
+    position:relative;
+    padding:6px 15px;
+    left:-8px;
+    border:2px solid white ;
+    background-color: black;
+    color:white ;
+}
+
+#searchSubmit:hover  {
+    background-color:#fafafa;
+    color:#207cca;
+}
+/* Fin barre de recherche */
 
 /* permet d'afficher toute les chaussure en ligne
 avec retour à la ligne automatique */
+
+.liNavBar {
+    margin-left: 18px ;
+}
+
+#Login {
+    margin-right: 50px ;
+}
+
+
+
+/* fin navbar */
+
 
 
 #underHeader {
@@ -139,12 +182,19 @@ nav .dropdown li {
     float: none;
     position: relative;
     border-top: 1px solid #6b727c;
-    background-color: red;
+    background-color: transparent;
+    //text-overline-color : #222222;
 
 }
 
+
+nav .dropdown li a{
+    color : black ;
+}
+
 nav .dropdown li a:hover{
-    background-color: red;
+    color : white ;
+    background-color: black ;
 
 }
 
@@ -154,6 +204,8 @@ nav ul li:hover > ul {
     z-index: 40;
 
 }
+/* Fin dropdown menu */
+
 
 nav ul:after{
     content: "";
@@ -348,4 +400,9 @@ change de slide toute les 20s
 @keyframes timeliner {
     0%, 25%, 50%, 75%, 100% {width: 0;}
     20%, 45%, 70%, 100% {width: 800px;}
+
+
+
+
 }
+

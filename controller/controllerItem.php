@@ -9,10 +9,11 @@ require("{$ROOT}{$DS}model{$DS}modelItem.php");
 
 switch ($action){
     case 'readAll':
-        $tabArticles = modelArticle::getAllarticles();
+        $tabItem = modelArticle::getAllarticles();
         $view = "All";
         $pagetitle = "Liste Articles";
-        require("{$ROOT}{$DS}view{$DS}viewVisitor.php");
+        require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
+        //require("{$ROOT}{$DS}view{$DS}viewVisitor.php");
         break;
     case 'read':
         $id =$_GET['idArt'];

@@ -6,27 +6,20 @@
  * Time: 12:17
  */
 
-$img = "ressources{$DS}img{$DS}category{$DS}{$nameCat}.jpg";
-$desc= $category->getDescCat();
-?>
-<figure>
-    <img src='<?php  echo $img;?>' atl='<?php echo $nameCat ?>'
-         style='margin-left:100px; width:55%%;height:350px;'>
-    <figcaption>
-        Category : <?php echo $nameCat ?><br/>
-        <?php echo $desc; ?>
-    </figcaption>
-</figure>
 
+echo "<img src='ressources{$DS}img{$DS}category{$DS}{$nameCat}.jpg' alt='{$nameCat}'
+            style='margin-left:100px; width:55%%;height:350px;'><p></p>"; // load the image associated
+echo "Category : {$nameCat}
+    </Br>
+    {$category->getDescCat()}
+    </Br> ";
 
-
-<?php
-echo "Marques disponibles :";
+echo "Maodèles disponibles :";
 
 foreach($tabModelOfCat as $model ) {
 
-    $idMod = $model->getNameMod();
-    $model =modelModele::select($idMod);
+$idMod = $model->getIdMod();
+$model =modelModele::select($idMod);
 $nameModel = $model->getNameMod();
 $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
 
