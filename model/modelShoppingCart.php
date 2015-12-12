@@ -31,7 +31,7 @@ class shoppingCart
     static function addItem ($item, $qteItem){
         $id =$item->getIdItem();
         $name = "modele";
-        $color =$item->getSizeItem();// color
+        $color =$item->getColorItem();// color
         $size = $item->getSizeItem();
         $price = $item->getPriceArt();
         if(self::createBasket()){

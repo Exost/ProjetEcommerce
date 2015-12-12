@@ -5,11 +5,29 @@
  * Date: 02/12/15
  * Time: 13:16
  */
-if(!isset($_SESSION['shoppingCart'])){
-    echo "je n'existe pas";
-}
-else if(!empty($_SESSION['shoppingCart']['idItem'])){
-    print_r($_SESSION['shoppingCart']);
+if(!empty($_SESSION['shoppingCart']['idItem'])){
+    echo '<table>';
+    echo "<tr>
+            <td> taille</td>
+            <td> prix</td>
+            <td>couleur</td>
+             </tr>";
+
+  foreach($_SESSION['shoppingCart'] as $cart=> $shop){
+      echo '<tr>';
+    foreach($shop as $c =>$value){
+        echo '<td>';
+        echo $value;
+        echo '</td>';
+    }
+      echo '</tr>';
+  }
+
+    echo '</table>';
+  ?>
+
+    <a href=""> commander</a>
+    <?php
 }else { ?>
     <div style="text-align: center;">
         le panier est vide :(
