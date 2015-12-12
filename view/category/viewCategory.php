@@ -14,7 +14,9 @@ echo "Category : {$nameCat}
     {$category->getDescCat()}
     </Br> ";
 
-echo "Maodèles disponibles :";
+echo "Modèles disponibles :";
+
+print_r(  $tabModelOfCat );
 
 foreach($tabModelOfCat as $model ) {
 
@@ -23,6 +25,7 @@ $model =modelModele::select($idMod);
 $nameModel = $model->getNameMod();
 $idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
 
+    echo " test ";
 // TODO Affichage liste modèles
 
 

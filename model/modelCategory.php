@@ -44,30 +44,33 @@ class modelCategory extends Model
     }
 
 
-    public static function  getModelOfCategory($category)
+    /* public static function  getModelOfCategory($category)
     {
-        $sql = 'SELECT *
+        $sql = "SELECT *
                         FROM pw_modele
-                         WHERE name_Cat =:category';
-        try
-        {
+                         WHERE name_Cat =:category ";
+        try {
             $req_prep = Model::$pdo->prepare($sql);
-        }catch (PDOException $e)
-            {
-                if (Conf::getDebug())
-                {
-                    echo $e->getMessage(); // affiche un message d'erreur
-                } else {
+            $req_prep->bindParam(':category', $category);
+            $req_prep->execute();
+            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele'); // on cast les fetch en modèles
+            if ($req_prep->rowCount() == 0) {
+                return null;
+                die();// Vérifier si $req_prep->rowCount() != 0
+            } else {
+                $result = $req_prep->fetchall();
+                return $result;
+            }
+        } catch (PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
                 echo 'Une erreur est survenue <a href="index.php"> retour a la page d\'accueil </a>';
             }
             die();
         }
-                $req_prep->bindParam(':category',$category);
-                $req_prep->execute();
-                $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele'); // on cast les fetch en modèles
-                return $req_prep->fetchAll();
-    }
 
+    } */
 
 
 }

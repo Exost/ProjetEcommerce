@@ -48,23 +48,7 @@ class modelModele extends Model
 
     }
 
-    public static function getModelOfCategory($name_Cat){
-        $sql ='SELECT*
-                FROM pw_modele
-                WHERE name_Cat = :cat';
-        $req_prep=null;
-        try{
-            $req_prep= Model::$pdo->prepare($sql);
-            $req_prep->bindParam(':cat', $name_Cat);
-            $req_prep->execute();
-            $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele');
-            $req_prep->fetchAll();
 
-        }catch(PDOException $e){
-            die();
-        }
-        return $req_prep;
-    }
     /**
      * @return mixed
      */
@@ -113,6 +97,25 @@ class modelModele extends Model
         return $this->name_Brand;
     }
 
+    public static function getModelOfCat($cat){
+        $sql = 'SELECT *
+                FROM pw_modele
+                 WHERE name_Cat =:cat';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+        }catch (PDOException $e){
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            } else {
+                echo 'Une erreur est survenue <a href="index.php"> retour a la page d\'accueil </a>';
+            }
+            die();
+        }
+        $req_prep->bindParam(':cat',$cat);
+        $req_prep->execute();
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele'); //transforme les row en objet
+        return $req_prep->fetchAll();
+    }
 
 
 
