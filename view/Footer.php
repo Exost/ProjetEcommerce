@@ -1,4 +1,2 @@
 
-
-<footer> réalisé par Fabre Enzo  et Afanou Jefferson
-</html>
+<footer> réalisé par Fabre Enzo  et Afanou Jefferson</footer>
