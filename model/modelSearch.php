@@ -45,7 +45,7 @@ class modelSearch
     private static function searchModele($param){
         $sql = 'SELECT *
                 FROM pw_modele
-                 WHERE name_Mod like :elem';
+                 WHERE name_Mod like :param';
         try{
             $req_prep = Model::$pdo->prepare($sql);
         }catch (PDOException $e){
@@ -57,7 +57,7 @@ class modelSearch
             die();
         }
 
-        $req_prep->execute(array('elem'=>'%'.$param.'%'));
+        $req_prep->execute(array('param'=>'%'.$param.'%'));
         $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele');
         return $req_prep->fetchAll();
     }

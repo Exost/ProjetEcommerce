@@ -1,9 +1,20 @@
-<header class="navigation">
-    <a href="index.php">
-        <div class="flotte">
+<header>
+    <table style="width:500px;margin:auto;">
+        <tr>
+            <td>
+                <img src='ressources/img/SneakIconXS.png' alt='icone'>
+            </td>
+            <td>
+                <h1 id="enseigne">Watch my Kicks</h1>
+            </td>
+        </tr>
+    </table>
+    <!--<a href="index.php">
+        <div>
             <img src='ressources/img/SneakIconXS.png' alt='icone'>
+            <p id="enseigne">Watch my Kicks </p>
         </div>
-    </a>
+    </a>-->
     </header>
 
 <?php

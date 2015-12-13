@@ -9,12 +9,12 @@
         //$nameModel = $model->getNameMod();
         //$idModSansEspace=str_replace(' ','_',$nameModel); // permet d'enlever les espace pour retrouver le nom des img
         ?>
-        <div class ='prepOnglet'>
-            <a href=<?php echo "index.php?controller=category&action=read&nameCat={$nameCat}"; ?>>
-                <img src=<?php echo "ressources{$DS}img{$DS}category{$DS}{$nameCat}.jpg"; ?>
+        <div >
+            <a style="text-decoration: none" href=<?php echo "index.php?controller=category&action=read&nameCat={$nameCat}"; ?>>
+                <img id="AllCat" src=<?php echo "ressources{$DS}img{$DS}category{$DS}{$nameCat}.jpg"; ?>
                      alt=<?php echo "{$nameCat}";?>
                     >
-                <figcaption> <span><?php echo "$nameCat" ?></span></figcaption>
+                <figcaption> <p id="AllCat"><?php echo "$nameCat" ?></p></figcaption>
             </a>
             <p>
         </div>

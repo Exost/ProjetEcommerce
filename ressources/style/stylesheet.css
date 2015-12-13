@@ -1,90 +1,55 @@
 
+/* CSS classé plus au moin de haut en bas puis gauche à droite ( sur l'écran ) */
 
+@font-face { /* Import de police*/
+    font-family: "cubic";
+    src: url(cubic.ttf) format("truetype");
+}
 
-/* Mon css */
+* {
+   box-sizing: border-box;
+}
 
 body{ /* IDEM */
     background-color: white;
     padding: 0;
     margin: 0;
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue"; /* font générale */
 }
 
-/*  titre */
-h1{
-    text-align: center;
-    color: black;
-}
+/* Image + Nom du site */
 
+#enseigne { /*  Nom du site*/
+    font-family: cubic, sans-serif ;
+    text-decoration: none;
+    font-size: 2em;
+    color : #222222;
+    display: inline-block;
+    margin: 0;
+}
 
 header {
-    border-radius: 2px;
     width: 100%;
-    background-color: #F5F5F5;
+    background-color: white;
+}
+
+header img {
+    width : 70px ;
+    height: 70px ;
 }
 
 
-/* Barre de recherche */
-
-.searchForm {
-    margin: 0px 25px ;
-
-    padding: 2px ;
-    background:rgba(50, 50, 50, 0.2);
-    border:0px solid #dbdbdb;
-}
-
-#searchBar {
-    padding:8px 15px;
-    background:White ;
-    border:0px solid #dbdbdb;
-}
 
 
-#searchSubmit {
-    position:relative;
-    padding:6px 15px;
-    left:-8px;
-    border:2px solid white ;
-    background-color: black;
-    color:white ;
-}
-
-#searchSubmit:hover  {
-    background-color:#fafafa;
-    color:#207cca;
-}
-/* Fin barre de recherche */
+/* Fin header */
 
 /* permet d'afficher toute les chaussure en ligne
 avec retour à la ligne automatique */
 
-.liNavBar {
-    margin-left: 18px ;
-}
 
-#Login {
-    margin-right: 50px ;
-}
-
-
-
-/* fin navbar */
-
-
-
-#underHeader {
-	background-color: lightgray;
-	height: 0.3em;
-	width: 100%;
-}
 
 .blockLeft {
     float: left;
-
-}
-.image{
-    width: 40% ;
 }
 
 .blockRight{
@@ -92,92 +57,232 @@ avec retour à la ligne automatique */
     display: inline-block;
 }
 
-/* vue d'ensemble */
-.table{
-	display: inline;
-	padding: 1%;
-}
-
-.table div{
-	display: inline-block;
-	width: 30%;
-	text-align: center;
-	padding:0px;
-	margin:0px;
-}
-
-.table div img{
-	width:90%;
-	height: 250px;
-}
-
-.table p{
-	display: block;
-	-webkit-margin-before: 1em;
-}
-
-/* vue rapproché d'un modele */
-
-
-.setModel{
-    display: inline;
-    padding: 1%;
-}
-
-.setModel div{
-    display: inline-block;
-    width: 50%;
-    text-align: center;
-    padding:0px;
-    margin:0px;
-}
-
-.setModel div img{
-    width:90%;
-    height: 250px;
+.image{
+    width: 40% ;
 }
 
 
-/*/////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* NAVIGATION */
 
 nav {
     background-color: #222;
     color: white;
 }
-nav ul{
+
+    nav table{
+        width:100%;
+        height: 2.7em ;
+        margin:auto;
+    }
+
+    nav td {
+        width: 33%;
+        text-align: center; /* Search Bar */
+    }
+
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     border-radius: 10px;
-    text-align:center;
+    text-align: center;
     color: white;
 }
 
 nav li {
     float: left;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-align:center;
+    margin-top: 0.2em ;
+    margin-bottom: 0.2em;
+    padding-left: 0.5em ;
+    padding-right: 0.5em;
+    text-align: center;
     color: white;
+    font-size: 1.1em;
 }
-nav li a{
+
+
+
+nav li a {
     display: block;
     color: black;
     text-decoration: none;
-    padding: 8px;
-    text-align:center;
+    padding: 0.5em;
+    text-align: center;
     color: white;
 }
 
-nav li a:hover{
+nav li a:hover {
     background-color: white;
     border-radius: 3px;
     color: black;
 }
 
+#firstRight { /* Panier */
+    margin-left: 13em;
+    margin-right: 4em;
+    font-size: 1.1em;
+    background-color: white ;
+    border-radius: 5px;
+    color: black;
+}
+
+
+#basket { /*Panier*/
+    color : #222222;
+}
+
+#basket:hover {
+    color : darkgray;
+}
+
+#firstLeft { /* Acceuil */
+    margin-left: 3em;
+}
+
+/* Barre de recherche */
+
+ .searchForm {
+     background:rgba(50, 50, 50, 0.2);
+     border:0px solid #dbdbdb;
+ }
+
+ #searchBar {
+     padding: 0.6em 1em;
+     background:White ;
+     border:0px solid #dbdbdb;
+ }
+
+
+ #searchSubmit {
+     position:relative;
+     padding:6px 15px;
+     left:-8px;
+     border:2px solid white ;
+     background-color: black;
+     color:white ;
+ }
+
+ #searchSubmit:hover  {
+     background-color:#fafafa;
+     color:#207cca;
+ }
+
+/* Fin barre de recherche */
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Responsive design : Affichage de modèles ( liste )  */
+
+@media screen and (max-width : 1440px)
+{
+        .table {
+            display: inline;
+        }
+
+        .table div {
+            display: inline-block;
+            width: 30%;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .table div img {
+            width: 90%;
+            height: 250px;
+        }
+
+        .table p {
+            display: block;
+            -webkit-margin-before: 1em;
+        }
+}
+
+@media screen and (min-width : 1441px ) and (max-width : 1920px)
+{
+    .table {
+        display: inline;
+        padding: 0%;
+    }
+
+    .table div {
+        display: inline-block;
+        width: 30%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .table div img {
+        width: 95%;
+        height: 350px ;
+    }
+
+    .table p {
+        display: block;
+        -webkit-margin-before: 1em;
+    }
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Responsive design : vue rapproché d'un modele */
+
+@media screen and (max-width : 1440px)
+{
+
+    .setModel {
+        display: inline;
+        padding: 1%;
+    }
+
+    .setModel div {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .setModel div img {
+        width: 70%;
+        height: 70%;
+    }
+
+}
+
+@media screen and (min-width : 1441px ) and (max-width : 1920px)
+{
+
+    .setModel {
+        display: inline;
+        padding: 1%;
+    }
+
+    .setModel div {
+        display: inline-block;
+        width: 50%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .setModel div img {
+        width: 50%;
+        height: 50%;
+    }
+
+}
 
 
 /* gestion dropdown menu */
+
 nav .dropdown{
     display: none;
     border-radius: 0px;
@@ -211,8 +316,6 @@ nav ul li:hover > ul {
     z-index: 40;
 
 }
-/* Fin dropdown menu */
-
 
 nav ul:after{
     content: "";
@@ -220,6 +323,29 @@ nav ul:after{
     display: block;
 }
 
+/* Fin dropdown menu */
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+#AllCat {
+    margin-left: 7.5em;
+    color : black;
+    font-style: italic;
+
+}
+
+#AllCat:hover {
+    color : cornflowerblue;
+}
+
+#AllCat:link {
+    text-decoration: none;
+}
 
 
 .viewModelOfBrand img{
@@ -243,7 +369,7 @@ footer{
 .slideLegend{
     position: relative;
     display: inline-block;
-    padding: 5px;
+    padding: 05px;
 
 }
 .slideLegend figure{
@@ -287,125 +413,284 @@ footer{
 .slideLegend figure:hover figcaption{
     animation: figcaptionner 8s ;
 }
-/* Diapo */
-#slideshow {
-    position: relative;
-    width: 800px;
-    height: 400px;
-    padding: 15px;
-    margin: 0 auto 2em;
-    background-color: #FFF;
-    border-radius: 2px 2px 2px 2px;
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
 
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* Diapo Acceuil */
+
+@media screen and (min-width : 1441px) and ( max-width: 1920px) { /* 1441-1920 */
+
+    #slideshow {
+        position: relative;
+        width: 55em;
+        height: 35em;
+        padding: 15px;
+        margin: 2em auto 7em;
+        background-color: #FFF;
+        border-radius: 2px 2px 2px 2px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+
+    }
+
+    #slideshow:before,
+    #slideshow:after {
+        position: absolute;
+        bottom: 16px;
+        z-index: -10;
+        width: 10%;
+        height: 20px;
+        content: " ";
+        background: rosybrown;
+        border-radius: 50%;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.4), 0 20px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    #slideshow:before {
+        left: 0;
+        transform: rotate(-4deg);
+    }
+
+    #slideshow:after {
+        right: 0;
+        transform: rotate(4deg);
+    }
+
+    #slideshow .container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 35em;
+        margin-top: 0;
+    }
+
+    #slideshow .container:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: " ";
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+    }
+
+    #slideshow .slider {
+        /* effet diaporama */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 400%;
+        height: 400px;
+    }
+
+    #slideshow figure {
+        /* annulation marge */
+        position: relative;
+        display: inline-block;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    #slideshow figure:after {
+        position: absolute;
+        display: block;
+        content: " ";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 65px rgba(0, 0, 0, 0.5) inset;
+    }
+
+    .imageSlide { /* Taille image slide */
+        width: 55em;
+        height: 35em;
+    }
+
+    /*  animer le le slide */
+    @keyframes slider {
+        0%, 20%, 100% {
+            left: 0
+        }
+        25%, 45% {
+            left: -100%
+        }
+        50%, 70% {
+            left: -200%
+        }
+        75%, 95% {
+            left: 0%
+        }
+
+    }
+
+    /* mise en place de l'animation
+    change de slide toute les 20s
+    */
+    #slideshow .slider {
+        animation: slider 15s infinite;
+    }
+
+    #time {
+        position: absolute;
+        background-color: darkgray;
+        bottom: 15px;
+        left: 15px;
+        height: 3px;
+        background: rgb(214, 98, 13.8);
+        width: 400px;
+        animation: timeliner 32s infinite;
+    }
+
+    @keyframes timeliner {
+        0%, 25%, 50%, 75%, 100% {
+            width: 0;
+        }
+        20%, 45%, 70%, 100% {
+            width: 600px;
+        }
+
+    }
 }
 
-#slideshow:before,
-#slideshow:after{
-    position: absolute;
-    bottom: 16px;
-    z-index: -10;
-    width: 10%;
-    height: 20px;
-    content: " ";
-    background: rosybrown;
-    border-radius: 50%;
-    box-shadow: 0 0 3px rgba(0,0,0,0.4), 0 20px 10px rgba(0,0,0,0.7);
-}
+@media screen and (max-width : 1440px) {
 
-#slideshow:before{
-    left: 0;
-    transform: rotate(-4deg);
-}
+    #slideshow {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        padding: 15px;
+        margin: 2em auto 7em;
+        background-color: #FFF;
+        border-radius: 2px 2px 2px 2px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 
-#slideshow:after{
-    right: 0;
-    transform: rotate(4deg);
-}
+    }
 
-#slideshow .container{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 400px;
-}
+    #slideshow:before,
+    #slideshow:after {
+        position: absolute;
+        bottom: 16px;
+        z-index: -10;
+        width: 10%;
+        height: 20px;
+        content: " ";
+        background: rosybrown;
+        border-radius: 50%;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.4), 0 20px 10px rgba(0, 0, 0, 0.7);
+    }
 
-#slideshow .container:after{
-    position: absolute;
-    bottom: 0; left: 0;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: #fff;
-}
+    #slideshow:before {
+        left: 0;
+        transform: rotate(-4deg);
+    }
 
-#slideshow .slider{ /* effet diaporama */
-   position: absolute;
-    left: 0;
-    top: 0;
-    width: 400%;
-    height: 400px;
-}
+    #slideshow:after {
+        right: 0;
+        transform: rotate(4deg);
+    }
 
+    #slideshow .container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 400px;
+        margin-top: 0;
+    }
 
+    #slideshow .container:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: " ";
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+    }
 
-#slideshow figure{ /* annulation marge */
-    position: relative;
-    display: inline-block;
+    #slideshow .slider {
+        /* effet diaporama */
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 400%;
+        height: 400px;
+    }
 
-    padding: 0;
-    margin: 0;
-}
+    #slideshow figure {
+        /* annulation marge */
+        position: relative;
+        display: inline-block;
 
-#slideshow figure:after{
-    position: absolute;
-    display: block;
-    content: " ";
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    box-shadow:  0 0 65px rgba(0,0,0,0.5) inset;
-}
+        padding: 0;
+        margin: 0;
+    }
 
-.imageSlide{
-    width: 800px;
-    height: 400px;
-}
+    #slideshow figure:after {
+        position: absolute;
+        display: block;
+        content: " ";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 0 65px rgba(0, 0, 0, 0.5) inset;
+    }
 
+    .imageSlide {
+        width: 600px;
+        height: 400px;
+    }
 
-/*  animer le le slide */
-@keyframes slider {
-    0%, 20%, 100% {left: 0}
-    25%, 45% {left: -100%}
-    50%, 70% {left: -200%}
-    75%, 95%    {left: 0%}
+    /*  animer le le slide */
+    @keyframes slider {
+        0%, 20%, 100% {
+            left: 0
+        }
+        25%, 45% {
+            left: -100%
+        }
+        50%, 70% {
+            left: -200%
+        }
+        75%, 95% {
+            left: 0%
+        }
 
-}
+    }
 
-/* mise en place de l'animation
-change de slide toute les 20s
-*/
-#slideshow .slider{
-    animation: slider 32s infinite;
-}
+    /* mise en place de l'animation
+    change de slide toute les 20s
+    */
+    #slideshow .slider {
+        animation: slider 15s infinite;
+    }
 
-#time{
-    position: absolute;
-    background-color: darkgray;
-    bottom: 15px;
-    left: 15px;
-    height: 3px;
-    background: rgb(214,98,13.8);
-    width: 0;
-    animation: timeliner 32s infinite;
-}
+    #time {
+        position: absolute;
+        background-color: darkgray;
+        bottom: 15px;
+        left: 15px;
+        height: 3px;
+        background: rgb(214, 98, 13.8);
+        width: 400px;
+        animation: timeliner 32s infinite;
+    }
 
-@keyframes timeliner {
-    0%, 25%, 50%, 75%, 100% {width: 0;}
-    20%, 45%, 70%, 100% {width: 800px;}
+    @keyframes timeliner {
+        0%, 25%, 50%, 75%, 100% {
+            width: 0;
+        }
+        20%, 45%, 70%, 100% {
+            width: 600px;
+        }
 
-}
+    }
+} /* 1440px et moin */
 
 .imgModele {
     width: 20%;
@@ -415,4 +700,6 @@ change de slide toute les 20s
 /* CSS Category */
 
 /* FIN Category */
+
+
 
