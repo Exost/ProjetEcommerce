@@ -6,25 +6,32 @@
  * Time: 13:16
  */
 if(!empty($_SESSION['shoppingCart']['idItem'])){
-    echo '<table>';
-    echo "<tr>
-            <td> taille</td>
-            <td> prix</td>
-            <td>couleur</td>
-             </tr>";
+    $table="<table>";
+    $table .="<tr>
+            <th> id</th>
+            <th>nom du modele</th>
+            <th>couleur</th>
+            <th>taille</th>
+            <th>nombre</th>
+            <th>prix du modele</th>
+           </tr>";
+
 
   foreach($_SESSION['shoppingCart'] as $cart=> $shop){
-      echo '<tr>';
+       $table .= "<tr>";
     foreach($shop as $c =>$value){
-        echo '<td>';
-        echo $value;
-        echo '</td>';
+        if(!empty($value))
+        $table .= "<td>$value</td>";
     }
-      echo '</tr>';
+      $table .= '</tr>';
   }
 
-    echo '</table>';
+    $table .= '</table>';
+    echo $table;
+
+    echo "prix total";
   ?>
+
 
     <a href=""> commander</a>
     <?php
