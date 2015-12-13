@@ -97,8 +97,8 @@ nav li {
     float: left;
     margin-top: 0.2em ;
     margin-bottom: 0.2em;
-    padding-left: 0.5em ;
-    padding-right: 0.5em;
+    padding-left: 0.2em ;
+    padding-right: 0.2em;
     text-align: center;
     color: white;
     font-size: 1.1em;
@@ -122,7 +122,7 @@ nav li a:hover {
 }
 
 #firstRight { /* Panier */
-    margin-left: 13em;
+    margin-left: 9em;
     margin-right: 4em;
     font-size: 1.1em;
     background-color: white ;
@@ -426,10 +426,10 @@ footer{
 
     #slideshow {
         position: relative;
-        width: 55em;
+        width: 50em;
         height: 35em;
         padding: 15px;
-        margin: 2em auto 7em;
+        margin: 2em auto 4em;
         background-color: #FFF;
         border-radius: 2px 2px 2px 2px;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -507,8 +507,8 @@ footer{
     }
 
     .imageSlide { /* Taille image slide */
-        width: 55em;
-        height: 35em;
+        width: 50em;
+        height: 33.3em;
     }
 
     /*  animer le le slide */
@@ -517,10 +517,10 @@ footer{
             left: 0
         }
         25%, 45% {
-            left: -100%
+            left: -108%
         }
         50%, 70% {
-            left: -200%
+            left: -210%
         }
         75%, 95% {
             left: 0%
@@ -551,7 +551,7 @@ footer{
             width: 0;
         }
         20%, 45%, 70%, 100% {
-            width: 600px;
+            width: 48em;
         }
 
     }
@@ -561,10 +561,10 @@ footer{
 
     #slideshow {
         position: relative;
-        width: 600px;
-        height: 400px;
+        width: 50em;
+        height: 35em;
         padding: 15px;
-        margin: 2em auto 7em;
+        margin: 2em auto 4em;
         background-color: #FFF;
         border-radius: 2px 2px 2px 2px;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -598,7 +598,7 @@ footer{
         position: relative;
         overflow: hidden;
         width: 100%;
-        height: 400px;
+        height: 35em;
         margin-top: 0;
     }
 
@@ -641,9 +641,9 @@ footer{
         box-shadow: 0 0 65px rgba(0, 0, 0, 0.5) inset;
     }
 
-    .imageSlide {
-        width: 600px;
-        height: 400px;
+    .imageSlide { /* Taille image slide */
+        width: 50em;
+        height: 33.3em;
     }
 
     /*  animer le le slide */
@@ -652,10 +652,10 @@ footer{
             left: 0
         }
         25%, 45% {
-            left: -100%
+            left: -108%
         }
         50%, 70% {
-            left: -200%
+            left: -210%
         }
         75%, 95% {
             left: 0%
@@ -686,10 +686,12 @@ footer{
             width: 0;
         }
         20%, 45%, 70%, 100% {
-            width: 600px;
+            width: 48em;
         }
 
     }
+}
+
 } /* 1440px et moin */
 
 .imgModele {
