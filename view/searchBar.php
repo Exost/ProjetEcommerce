@@ -1,5 +1,5 @@
 <form class="searchForm" method="post" action="index.php?controller=search" >
-    <input id="searchBar" name="the_research" type="text" placeholder="Marque, Modèle ..." >
+    <input id="searchBar" type="text" placeholder="Marque, Modèle ..." >
     <input id="searchSubmit" type="submit" value="Rechercher">
 </form>
 

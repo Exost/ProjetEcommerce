@@ -9,6 +9,12 @@
             </td>
         </tr>
     </table>
+    <!--<a href="index.php">
+        <div>
+            <img src='ressources/img/SneakIconXS.png' alt='icone'>
+            <p id="enseigne">Watch my Kicks </p>
+        </div>
+    </a>-->
     </header>
 
 <?php

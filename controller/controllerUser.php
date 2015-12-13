@@ -81,6 +81,7 @@ switch ($action){
         if(isset($_SESSION['id'])){
             $pagetitle='Logged Out';
             $name = $_SESSION['name'];
+            session_destroy();
             $view ='LogOut';
         }else{
             $pagetitle ='Login';
