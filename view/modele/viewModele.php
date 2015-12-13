@@ -5,6 +5,7 @@ $idModSansEspace=str_replace(' ','_',$modele->getNameMod()); // permet d'enlever
 $img = "ressources{$DS}img{$DS}modele{$DS}{$idModSansEspace}.jpg";
 $alt = "{$idModSansEspace}";
 ?>
+
 <div class="setModel">
        <div>
            <figure>
@@ -24,13 +25,13 @@ $alt = "{$idModSansEspace}";
            if(!empty($tabItem)){
                ?>
                  <div class="blockLeft">
-                     <form name='selectItem' method="post" onchange="populate(this.id,'size')"
+                     <form name='selectItem' method="post"
                          action="index.php?controller=shoppingCart&action=addItem">
-                         <input style="display: none" name="idMod" value="<?php echo $modele->getIdMod(); ?>"
+                         <input style="display: none" id="idMod" name="idMod" value="<?php echo $modele->getIdMod(); ?>"
                              /> <?php /* petite astuce pour récupérer l'id du modele  display none
                                         n'affiche rien */ ?>
                          Couleur:
-                         <select id="color"name="color">
+                         <select id="color" name="color" onchange="populate(this.value)">
                              <option value=""></option>
                              <?php
                              foreach($tabColor as $color){
@@ -41,15 +42,7 @@ $alt = "{$idModSansEspace}";
                              ?>
                          </select><br/>
                          taille:
-                         <select  id="size" name="size">
-                             <option value=""></option>
-                             <?php
-                             foreach($tabItem as $item){
-                                 echo "<option value='{$item->getSizeItem()}'>{$item->getSizeItem()}</option>";
-
-                             }
-                             ?>
-                         </select><br/>
+                         <select  id="size" name="size"></select><br/>
                     <input type="submit" value="ajouter au panier">
                      </form>
                  </div><p></p>
