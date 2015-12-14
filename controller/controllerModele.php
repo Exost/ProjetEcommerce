@@ -12,10 +12,10 @@ require_once ("{$ROOT}{$DS}model{$DS}modelBrand.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelCategory.php");
 require_once ("{$ROOT}{$DS}model{$DS}modelItem.php");
 
-
+$pagetitle ='Watch My kicks';
 switch ($action){
     case 'readAll':
-        $pagetitle ='Sneaker';
+
         $tabModele = modelModele::getAll();
         $view = "All";
         require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
@@ -61,6 +61,26 @@ switch ($action){
         {
             require("{$ROOT}{$DS}view{$DS}{$layout}.php");
         }
+        break;
+    case 'filterBySize':
+        if(isset($_GET['size'])){
+            $tabModele = modelModele::filterBySize($_GET['size']);
+            $view = 'All';
+        }else{
+            $view='Error';
+            $error='Aucun resultat';
+        }
+        require("{$ROOT}{$DS}view{$DS}{$layout}.php");
+    break;
+    case 'filterByPrice':
+        if(isset($_GET['price'])){
+            $tabModele = modelModele::filterByPrice($_GET['price']);
+            $view = 'All';
+        }else{
+            $view='Error';
+            $error='Aucun resultat';
+        }
+        require("{$ROOT}{$DS}view{$DS}{$layout}.php");
         break;
 
 }

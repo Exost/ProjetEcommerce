@@ -73,7 +73,7 @@ switch ($action){
 
                     }else{
                         $view='login';
-                        $error='Erreur de mot de passe ';
+                        $error="l'identifiant n'existe pas ou le mot de passe n'est pas valide";
                     }
                 }
 

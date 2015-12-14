@@ -15,6 +15,10 @@ class modelItem extends Model
     private $color_Item;
     private $stock_item;
 
+
+    static $table = "pw_item" ;
+    static $primary = "id_Item" ;
+
     /**
      * modelItem constructor.
      * @param $id_Item

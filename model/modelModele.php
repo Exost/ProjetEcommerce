@@ -118,6 +118,50 @@ class modelModele extends Model
     }
 
 
+    public static function filterBySize($size){
+        $sql = 'SELECT * FROM
+                pw_modele M, pw_item I
+                WHERE M.id_Mod = I.id_Modele AND
+                    I.size_Item = :size
+                ORDER BY price_Mod DESC ';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->bindParam(":size", $size);
+            $req_prep->execute();
+        } catch(PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            }die();
+        }
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele');
+        return $req_prep->fetchAll();
+    }
+
+
+    /**
+     * @param $price
+     * @return mixed
+     * filtre les modele en fonction du prix
+     */
+    public static function filterByPrice($price){
+        $sql = 'SELECT * FROM
+                pw_modele
+                WHERE price_Mod <= :p
+                ORDER BY price_Mod DESC ';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $req_prep->bindParam(":p", $price);
+            $req_prep->execute();
+        } catch(PDOException $e) {
+            if (Conf::getDebug()) {
+                echo $e->getMessage(); // affiche un message d'erreur
+            }die();
+        }
+        $req_prep->setFetchMode(PDO::FETCH_CLASS, 'modelModele');
+        return $req_prep->fetchAll();
+    }
+
+
 
 
 

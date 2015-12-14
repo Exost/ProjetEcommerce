@@ -177,6 +177,7 @@ class modelUser extends Model
     }
 
 
+
     private static function sendMail ($id,$mail,$code){
 
         // Génération aléatoire d'une clé
