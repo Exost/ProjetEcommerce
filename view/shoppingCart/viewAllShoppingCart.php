@@ -6,8 +6,8 @@
  * Time: 13:16
  */
 if(!empty($_SESSION['shoppingCart']['idItem'])){
-    $table="<table>";
-    $table .="<tr>
+    $table="<table style='border:solid 1px'>";
+    $table .="<tr style='border: solid 2px red'>
             <th> id</th>
             <th>nom du modele</th>
             <th>couleur</th>
@@ -15,16 +15,22 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
             <th>nombre</th>
             <th>prix du modele</th>
            </tr>";
-
-
+    $table .= "<tr>";
   foreach($_SESSION['shoppingCart'] as $cart=> $shop){
-       $table .= "<tr>";
+       //
     foreach($shop as $c =>$value){
-        if(!empty($value))
-        $table .= "<td>$value</td>";
-    }
-      $table .= '</tr>';
-  }
+        if(is_array($value)){ // un problme de requete
+            $table .= "<td>";
+            $table .= $value[0];
+            $table .="</td>";
+
+        }else{
+            $table .= "<td>$value</td>";
+        }
+
+    }//
+
+  }$table .= '</tr>';
 
     $table .= '</table>';
     echo $table;
