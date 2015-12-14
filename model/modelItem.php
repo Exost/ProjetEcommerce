@@ -64,6 +64,30 @@ class modelItem extends Model
         }return $req_prep->fetchAll();
     }
 
+    /**
+     * @param $idMod
+     * @param $color
+     * donne les taille disponible pour un modele et une couleur
+     */
+    static function getSizebyColor($idMod,$color){
+        $sql = 'SELECT size_Item
+                FROM pw_item
+                WHERE id_Modele = :mod AND
+                      color_Item = :color';
+        try{
+            $req_prep = Model::$pdo->prepare($sql);
+            $array =array(
+                ':mod'=> $idMod,
+                ':color'=> $color,
+            );
+            $req_prep->execute($array);
+        }catch (PDOException $e){
+
+        }
+        return $req_prep->fetchAll();
+    }
+
+
 
 
     static function getItembyColorSizeModele($model,$color, $size){

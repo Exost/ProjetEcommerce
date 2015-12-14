@@ -20,6 +20,7 @@
     </fieldset>
 </form>
 <a href="index.php?controller=user&action=signIn">vous n'avez pas encore de compte?</a>
+<br/>
 <?php
-    echo $error;
+    echo "<div style='text-align: center;color:red'>$error</div>";
 ?>

@@ -44,14 +44,16 @@ switch ($action){
         $view ='Login';
         break;
     case 'logged':
-        if(!isset($_POST['id'])|!isset($_POST['passwd'])){ // si on n'a rien recuperer
+        $pagetitle ='Login';
+        if(!isset($_POST['id'])|!isset($_POST['passwd'])){ // s'il n'est pas encore connecté
             $view = 'Login';
             $layout = 'viewVisitor';
-            $pagetitle ='Login';
+
         }else{
             $id =$_POST['id'];
-            if(modelUser::exist($id)){ // s'il existe
-                $usr =modelUser::select($id);
+            $usr =modelUser::select($id);
+            if(!is_null($usr)){ // s'il existe
+
                 if($usr->getStateUsr() == 'en Attente' ){
                     $view = 'Login';
                     $error= 'le compte n\'est pas activé';
@@ -69,9 +71,16 @@ switch ($action){
                         $view = 'Logged';
                         $pagetitle = "bonjour {$usr->getFirstName()}";
 
+                    }else{
+                        $view='login';
+                        $error='Erreur de mot de passe ';
                     }
                 }
 
+            }else{
+
+                $view='login';
+                $error="l'identifiant n'existe pas ou le mot de passe n'est pas valide";
             }
         }
 

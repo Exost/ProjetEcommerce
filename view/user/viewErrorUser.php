@@ -6,6 +6,5 @@
  * Time: 23:37
  */
 
-session_start();
 
 echo $error;

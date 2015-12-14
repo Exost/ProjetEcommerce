@@ -16,19 +16,22 @@
     <script type="text/javascript">
       function populate(valSelected){
 
-
+          var id = $("#idMod").val();
           $.ajax({
                type: 'post',
                url: 'view/selectOption.php',
                data: {
-                   get_option: valSelected
+                   color: valSelected,
+                   id_mod: id
                },
                success: function (feedback){
                    print(feedback);
                    document.getElementById("size").innerHTML=feedback;
-               }
+               },
 
+              error : function(){ // en  cas d'erreur
 
+              }
            });
            alert(val);
 
