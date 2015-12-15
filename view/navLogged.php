@@ -48,12 +48,12 @@
 
             <td>
                 <ul>
-                    <li>
-                        <a href="index.php?controller=shoppingCart&action=readAll">Panier</a>
+                    <li id="firstRight">
+                        <a id="basket" href="index.php?controller=shoppingCart&action=readAll">Panier</a>
                     </li>
                     <li>
                         <a href=<?php echo "index.php?controller=user&action=read&id={$_SESSION['id']}"?> >
-                            <?php echo $_SESSION['name']; ?>
+                            Mon Compte : <?php echo $_SESSION['name']; ?>
                         </a>
                         <ul class="dropdown">
                             <li>

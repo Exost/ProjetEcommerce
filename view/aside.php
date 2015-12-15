@@ -8,11 +8,14 @@
 require_once ("{$ROOT}{$DS}model{$DS}modelItem.php");
 require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
 ?>
-<b>filtrer par</b>
+
 <p></p>
 <aside>
 
-            Taille
+    <h2>Filtres </h2>
+
+
+            <h3>Taille</h3>
 
                 <?php
                     foreach(modelItem::getAll() as $item){
@@ -23,7 +26,7 @@ require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
 
             <p></p>
 
-            Prix
+            <h3>Prix</h3>
 
                 <?php
                 foreach(modelModele::getAll() as $modele){
@@ -33,3 +36,5 @@ require_once("{$ROOT}{$DS}model{$DS}modelModele.php");
 
 
 </aside>
+
+

@@ -222,7 +222,7 @@ aside {
             width: 30%;
             text-align: center;
             padding: 0px;
-            margin: 0px;
+            margin-bottom: 2.5em;
         }
 
         .table div img {
@@ -452,7 +452,7 @@ nav ul:after{
         width: 50em;
         height: 35em;
         padding: 15px;
-        margin: 1em auto 1em;
+        margin: 2em auto 2em;
         background-color: #FFF;
         border-radius: 2px 2px 2px 2px;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -723,7 +723,11 @@ nav ul:after{
 }
 
 
-
+aside {
+    margin-right: 0.3em;
+    padding: 0.1em;
+    height : 35em ;
+}
 
 /* FIN Category */
 

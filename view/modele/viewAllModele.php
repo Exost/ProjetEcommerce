@@ -1,5 +1,5 @@
 
-<h1> Modèles disponibles </h1>
+<h1>Modèles Disponibles</h1>
 <?php require ("{$ROOT}{$DS}view{$DS}aside.php") ?>
 <div class="table">
     <?php
