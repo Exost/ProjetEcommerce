@@ -17,6 +17,7 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
            </tr>";
     $table .= "<tr>";
     for($i=0;$i< count($_SESSION['shoppingCart']['idItem']); $i++){
+        $table .= "<tr>";
         //$idModele =$_SESSION['idMod'][$i];
         $idItem =$_SESSION['shoppingCart']['idItem'][$i];
         $name =$_SESSION['shoppingCart']['nameModele'][$i];
@@ -44,13 +45,14 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
         <input type='submit' value='-'>
            </form>";
         $table .="</td>";
+        $table .= '</tr>';
     }
 
 
 
 
 
-    $table .= '</tr>';
+
 
     $table .= '</table>';
     echo $table;
