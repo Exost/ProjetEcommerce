@@ -7,10 +7,10 @@
                        <a href="index.php"> Acceuil </a>
                    </li>
                    <li>
-                       <a href=""> News</a> <!-- Afficher les 5 derniers modèles ajoutés -->
+                       <a href="index.php?controller=modele"> Sneakers</a> <!-- Afficher les 5 derniers modèles ajoutés -->
                    </li>
                     <li>
-                        <a href="index.php?controller=category"> Category </a>
+                        <a href="index.php?controller=category"> Categories </a>
                             <ul class="dropdown">
                                     <?php // drop down menu
                                     foreach(modelCategory::getAll() as $c){
@@ -24,7 +24,7 @@
                                     ?>
                             </ul>
                    <li>
-                       <a href="index.php?controller=brand" > Brands </a>
+                       <a href="index.php?controller=brand" > Marques </a>
                            <ul class="dropdown">
                                <?php // drop down menu
                                foreach(modelBrand::getAll() as $b){
