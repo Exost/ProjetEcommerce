@@ -18,6 +18,7 @@ class shoppingCart
             $_SESSION['shoppingCart']['size']= array();
             $_SESSION['shoppingCart']['nbItem']= array();
             $_SESSION['shoppingCart']['priceItem']= array();
+            $_SESSION['shoppingCart']['idMod']= array();
 
         }
         return true;
@@ -30,10 +31,11 @@ class shoppingCart
      */
     static function addItem ($item, $qteItem){
         $id =$item->getIdItem();
-        $name = "modele";
+        $name = $item->getNameModele();
         $color =$item->getColorItem();// color
         $size = $item->getSizeItem();
         $price = $item->getPriceArt();
+        $idMod = $item->getIdModele();
         if(self::createBasket()){
             //Si le produit existe déjà on ajoute seulement la quantité
             $index = array_search($id,  $_SESSION['shoppingCart']['idItem']);
@@ -48,6 +50,7 @@ class shoppingCart
                 array_push($_SESSION['shoppingCart']['size'], $size);
                 array_push( $_SESSION['shoppingCart']['nbItem'],$qteItem);
                 array_push($_SESSION['shoppingCart']['priceItem'],$price);
+                array_push($_SESSION['shoppingCart']['idMod'],$idMod);
 
             }
         }

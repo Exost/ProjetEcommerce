@@ -5,10 +5,10 @@
  * Date: 02/12/15
  * Time: 13:16
  */
+
 if(!empty($_SESSION['shoppingCart']['idItem'])){
     $table="<table style='border:solid 1px'>";
     $table .="<tr style='border: solid 2px red'>
-            <th> id</th>
             <th>nom du modele</th>
             <th>couleur</th>
             <th>taille</th>
@@ -16,21 +16,29 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
             <th>prix du modele</th>
            </tr>";
     $table .= "<tr>";
-  foreach($_SESSION['shoppingCart'] as $cart=> $shop){
-       //
-    foreach($shop as $c =>$value){
-        if(is_array($value)){ // un problme de requete
-            $table .= "<td>";
-            $table .= $value[0];
-            $table .="</td>";
+    foreach($_SESSION['shoppingCart']['nameModele'] as $name){
+        $nameSansEspace=str_replace(' ','_',$name[0]);
+        $id =$_SESSION['shoppingCart']['idMod'][0];
+        $table .= "<td>
+                    <a href='index.php?action=read&idMod=$id'><img src='ressources{$DS}img{$DS}modele{$DS}$nameSansEspace.jpg'
+style='width: 70px'/></a></td>";
+    }
+    foreach($_SESSION['shoppingCart']['color'] as $color){
+        $table .= "<td>$color</td>";
+    }
+    foreach($_SESSION['shoppingCart']['size'] as $size){
+        $table .= "<td>$size</td>";
+    }
 
-        }else{
-            $table .= "<td>$value</td>";
-        }
+    foreach($_SESSION['shoppingCart']['nbItem'] as $nb){
+        $table .= "<td>$nb</td>";
+    }
 
-    }//
+    foreach($_SESSION['shoppingCart']['priceItem'] as $price){
+        $table .= "<td>{$price[0]}</td>";
+    }
 
-  }$table .= '</tr>';
+    $table .= '</tr>';
 
     $table .= '</table>';
     echo $table;

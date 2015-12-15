@@ -164,6 +164,15 @@ class modelItem extends Model
         $req_prep->execute();
         return $req_prep->fetch();
 
+    }
 
+    public function getNameModele(){
+        $sql = 'SELECT name_Mod
+                FROM pw_modele
+                 WHERE id_Mod =:id';
+        $req_prep = Model::$pdo->prepare($sql);
+        $req_prep->bindParam(':id',$this->id_Modele);
+        $req_prep->execute();
+        return $req_prep->fetch();
     }
 }
