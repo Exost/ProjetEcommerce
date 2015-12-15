@@ -5,15 +5,15 @@
  * Date: 02/12/15
  * Time: 13:16
  */
-
+require_once ("{$ROOT}{$DS}model{$DS}modelShoppingCart.php");
 if(!empty($_SESSION['shoppingCart']['idItem'])){
-    $table="<table style='border:solid 1px'>";
+    $table="<table style='position: relative;border:solid 1px'>";
     $table .="<tr style='border: solid 2px red'>
             <th>nom du modele</th>
             <th>couleur</th>
             <th>taille</th>
-            <th>nombre</th>
             <th>prix du modele</th>
+            <th>quantité</th>
            </tr>";
     $table .= "<tr>";
     foreach($_SESSION['shoppingCart']['nameModele'] as $name){
@@ -30,22 +30,23 @@ style='width: 70px'/></a></td>";
         $table .= "<td>$size</td>";
     }
 
-    foreach($_SESSION['shoppingCart']['nbItem'] as $nb){
-        $table .= "<td>$nb</td>";
-    }
 
     foreach($_SESSION['shoppingCart']['priceItem'] as $price){
         $table .= "<td>{$price[0]}</td>";
+    }
+    foreach($_SESSION['shoppingCart']['nbItem'] as $nb){
+        $table .= "<td>$nb</td>";
     }
 
     $table .= '</tr>';
 
     $table .= '</table>';
     echo $table;
-
-    echo "prix total";
+    $prixTot = shoppingCart::getTotalPrice();
+    echo "<div style='text-align: right; padding-right: 5%;'>prix total :$prixTot</div>";
   ?>
 
+    <br/>
 
     <a href=""> commander</a>
     <?php

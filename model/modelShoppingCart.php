@@ -93,4 +93,15 @@ class shoppingCart
         } else
             echo "Un problème est survenu veuillez contacter l'administrateur du site.";
     }
+
+    public static function getTotalPrice(){
+        $total=0;
+        $i=0;
+        while( $i<count($_SESSION['shoppingCart']['idItem'])){
+            $price=$_SESSION['shoppingCart']['priceItem'][$i][0];
+            $total += $_SESSION['shoppingCart']['nbItem'][$i]*$price;
+            $i++;
+        }
+        return $total;
+    }
 }
