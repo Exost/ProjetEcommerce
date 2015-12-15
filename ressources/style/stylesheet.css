@@ -8,6 +8,11 @@
 
 * {
    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html {
+    height: 100%;
 }
 
 body{ /* IDEM */
@@ -15,6 +20,10 @@ body{ /* IDEM */
     padding: 0;
     margin: 0;
     font-family: "Helvetica Neue"; /* font générale */
+    min-height: 100%;
+    position: relative;
+    display : table;
+    width: 100%;
 }
 
 /* Image + Nom du site */
@@ -23,7 +32,7 @@ body{ /* IDEM */
     font-family: cubic, sans-serif ;
     text-decoration: none;
     font-size: 2em;
-    color : #222222;
+    color : #121212;
     display: inline-block;
     margin: 0;
 }
@@ -38,10 +47,24 @@ header img {
     height: 70px ;
 }
 
-
-
-
 /* Fin header */
+
+footer{
+    background-color: #121212 ; /*Couleur de fond*/
+    text-align:center;/*texte centré*/
+    color : white ;
+    display : table-row;
+    height : auto;
+    position: relative;
+    clear: both;
+    bottom: 0;
+    position: absolute; bottom: 0; left: 0; right: 0;
+}
+
+
+
+
+
 
 /* permet d'afficher toute les chaussure en ligne
 avec retour à la ligne automatique */
@@ -69,7 +92,7 @@ avec retour à la ligne automatique */
 /* NAVIGATION */
 
 nav {
-    background-color: #222;
+    background-color: #121212;
     color: white;
 }
 
@@ -108,7 +131,7 @@ nav li {
 
 nav li a {
     display: block;
-    color: black;
+    color: #121212;
     text-decoration: none;
     padding: 0.5em;
     text-align: center;
@@ -168,7 +191,7 @@ nav li a:hover {
 
  #searchSubmit:hover  {
      background-color:#fafafa;
-     color:#207cca;
+     color: #121212;
  }
 
 /* Fin barre de recherche */
@@ -363,16 +386,6 @@ nav ul:after{
     height: 50%;
 }
 
-
-footer{
-	background-color: #222 ; /*Couleur de fond*/
-	text-align:center;/*texte centré*/
-    color : white ;
-
-    position: relative;
-    clear: both;
-    bottom: 0;
-}
 
 /*******************************************************/
 /* slide legende */
@@ -574,7 +587,7 @@ footer{
         width: 50em;
         height: 35em;
         padding: 15px;
-        margin: 2em auto 4em;
+        margin: 1em auto 1em;
         background-color: #FFF;
         border-radius: 2px 2px 2px 2px;
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -709,7 +722,8 @@ footer{
     height: 20%;
 }
 
-/* CSS Category */
+
+
 
 /* FIN Category */
 

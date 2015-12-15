@@ -14,6 +14,14 @@ require_once ("{$ROOT}{$DS}model{$DS}modelItem.php");
 
 $pagetitle ='Watch My kicks';
 switch ($action){
+
+    case 'welcome' : // page d'acceuil
+    {
+       $view = "Welcome";
+        require ("{$ROOT}{$DS}view{$DS}{$layout}.php");
+        break ;
+    }
+
     case 'readAll':
 
         $tabModele = modelModele::getAll();

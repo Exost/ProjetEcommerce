@@ -1,6 +1,4 @@
-<?php
-require ("{$ROOT}{$DS}view{$DS}imgDefilante.php"); // le slide d'image
-?>
+
 <h1>All Models</h1>
 <?php require ("{$ROOT}{$DS}view{$DS}aside.php") ?>
 <div class="table">

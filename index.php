@@ -16,7 +16,12 @@ session_start();
 
 require_once ("model{$DS}modelShoppingCart.php");
 
-    if(!isset($_GET['action'])) // s'il n a pas d'action
+    if ( !isset($_GET['action']) && !isset($_GET["controller"]) ) /* soit page d'acceuil */
+    {
+        $action = "welcome" ;
+    }
+
+    else if(!isset($_GET['action'])) // s'il n a pas d'action
         $action = "readAll";
     else
         $action = $_GET["action"]; // on recupère l'action
