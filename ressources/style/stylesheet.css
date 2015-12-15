@@ -145,8 +145,8 @@ nav li a:hover {
 }
 
 #firstRight { /* Panier */
-    margin-left: 4em;
-    margin-right: 4em;
+    margin-left: 1em;
+    margin-right: 2em;
     font-size: 1.1em;
     background-color: white ;
     border-radius: 5px;
@@ -163,7 +163,7 @@ nav li a:hover {
 }
 
 #firstLeft { /* Acceuil */
-    margin-left: 3em;
+    margin-left: 1.5em;
 }
 
 /* Barre de recherche */
