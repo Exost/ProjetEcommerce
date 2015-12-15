@@ -60,7 +60,7 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
 
     <br/>
 
-    <a href=""> commander</a>
+    <a href="index.php?controller=shoppingCart&action=purchase"> commander</a>
     <?php
 }else { ?>
     <div style="text-align: center;">

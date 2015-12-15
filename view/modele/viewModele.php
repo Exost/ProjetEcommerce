@@ -61,7 +61,8 @@ $alt = "{$idModSansEspace}";
 
 
 
-</div>
+</div><p></p>
+<a href="index.php?controller=modele" style="float: right;padding:1%; "> voir tout les modeles </a>
 
 
 

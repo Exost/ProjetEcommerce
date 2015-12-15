@@ -17,7 +17,14 @@ switch($action){
             break;
         case 'read':
             break;
-        case 'addArticle':
+        case 'purchase':
+            if(!isset($_SESSION['id'])){ // si l'utilisateur n'est pas co
+                $controller='user';
+                $view='Login';
+                $error= 'veuillez vous connecter afin de poursuivre';
+            }else{
+                $view='Purchase';
+            }
             break;
         case 'delete':
             if(isset($_GET['idItem'])){

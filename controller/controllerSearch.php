@@ -11,8 +11,8 @@ require("{$ROOT}{$DS}model{$DS}modelSearch.php");
 
 $pagetitle='search';
 $view = 'Empty';
-if(isset($_POST['the_research'])){
-    $array = modelSearch::search($_POST['the_research']);
+if(isset($_POST['search'])){
+    $array = modelSearch::search($_POST['search']);
     if(!empty($array))
         $view ='Result';
 }
