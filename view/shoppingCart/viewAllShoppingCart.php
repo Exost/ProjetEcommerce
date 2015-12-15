@@ -18,13 +18,11 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
     $table .= "<tr>";
     for($i=0;$i< count($_SESSION['shoppingCart']['idItem']); $i++){
         $table .= "<tr>";
-        //$idModele =$_SESSION['idMod'][$i];
         $idItem =$_SESSION['shoppingCart']['idItem'][$i];
         $name =$_SESSION['shoppingCart']['nameModele'][$i];
         $nameSansEspace=str_replace(' ','_',$name[0]);
         $price=$_SESSION['shoppingCart']['priceItem'][$i];
         $nbItem =$_SESSION['shoppingCart']['nbItem'][$i];
-        echo $nameSansEspace;
         $color =$_SESSION['shoppingCart']['color'][$i];
         $size = $_SESSION['shoppingCart']['size'][$i];
         $table .= "<td>

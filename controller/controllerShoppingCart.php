@@ -32,7 +32,6 @@ switch($action){
                 $color = $_POST['color'];
                 $size = $_POST['size'];
                 $id = $_POST['idMod'];
-                echo $id;
                 $item =modelItem::getItembyColorSizeModele($id,$color,$size);
                 shoppingCart::addItem($item,1);
             }
