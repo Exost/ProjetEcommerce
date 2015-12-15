@@ -52,10 +52,10 @@
                         <a id="basket" href="index.php?controller=shoppingCart&action=readAll">Panier</a>
                     </li>
                     <li class="liNavBar">
-                        <a href="index.php?controller=user&action=signIn">Sign In</a>
+                        <a href="index.php?controller=user&action=signIn"> S'inscrire </a>
                     </li>
                     <li  class="liNavBar" id ="Login">
-                        <a href="index.php?controller=user&action=logIn">Log in</a>
+                        <a href="index.php?controller=user&action=logIn"> Se Connecter</a>
                     </li>
                 </ul>
             </td>
