@@ -18,7 +18,7 @@ class shoppingCart
             $_SESSION['shoppingCart']['size']= array();
             $_SESSION['shoppingCart']['nbItem']= array();
             $_SESSION['shoppingCart']['priceItem']= array();
-            $_SESSION['shoppingCart']['idMod']= array();
+           // $_SESSION['idMod']= array();
 
         }
         return true;
@@ -50,7 +50,7 @@ class shoppingCart
                 array_push($_SESSION['shoppingCart']['size'], $size);
                 array_push( $_SESSION['shoppingCart']['nbItem'],$qteItem);
                 array_push($_SESSION['shoppingCart']['priceItem'],$price);
-                array_push($_SESSION['shoppingCart']['idMod'],$idMod);
+              // array_push($_SESSION['idMod'][0],$idMod[0]);
 
             }
         }
@@ -61,8 +61,9 @@ class shoppingCart
     static function delItem ($item)
     { // supprimer un Article du panier
         $id = $item->getIdItem();
+
         //Si le shoppingCart existe
-        if (createBasket()) {
+        if (self::createBasket()) {
             //creation shoppingCart temporaire
             $tmp = array();
             $tmp['idItem'] = array();
@@ -73,7 +74,7 @@ class shoppingCart
             $tmp['size'] = array();
 
             for ($i = 0; $i < count($_SESSION['shoppingCart']['idItem']); $i++) {
-                if ($_SESSION['shoppingCart']['idItem'][$i] !== $id) {
+                if ($_SESSION['shoppingCart']['idItem'][$i] != $id) {
                 // si l'article n'est pas celui que l'on veut supprmier
                     // on l'ajoute au panier temporaire
                     array_push($tmp['idItem'], $_SESSION['shoppingCart']['idItem'][$i]);
@@ -83,7 +84,17 @@ class shoppingCart
                     array_push($tmp['nbItem'], $_SESSION['shoppingCart']['nbItem'][$i]);
                     array_push($tmp['priceItem'], $_SESSION['shoppingCart']['priceItem'][$i]);
 
+                }else {
+                    if($_SESSION['shoppingCart']['nbItem'][$i] >1){
+                        array_push($tmp['idItem'], $_SESSION['shoppingCart']['idItem'][$i]);
+                        array_push($tmp['nameModele'], $_SESSION['shoppingCart']['nameModele'][$i]);
+                        array_push($tmp['color'], $_SESSION['shoppingCart']['color'][$i]);
+                        array_push($tmp['size'], $_SESSION['shoppingCart']['size'][$i]);
+                        array_push($tmp['nbItem'], $_SESSION['shoppingCart']['nbItem'][$i]-1);
+                        array_push($tmp['priceItem'], $_SESSION['shoppingCart']['priceItem'][$i]);
+                    }
                 }
+
 
             }
             //On remplace le shoppingCart en session par notre shoppingCart temporaire à jour

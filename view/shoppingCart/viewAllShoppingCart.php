@@ -16,27 +16,39 @@ if(!empty($_SESSION['shoppingCart']['idItem'])){
             <th>quantité</th>
            </tr>";
     $table .= "<tr>";
-    foreach($_SESSION['shoppingCart']['nameModele'] as $name){
+    for($i=0;$i< count($_SESSION['shoppingCart']['idItem']); $i++){
+        //$idModele =$_SESSION['idMod'][$i];
+        $idItem =$_SESSION['shoppingCart']['idItem'][$i];
+        $name =$_SESSION['shoppingCart']['nameModele'][$i];
         $nameSansEspace=str_replace(' ','_',$name[0]);
-        $id =$_SESSION['shoppingCart']['idMod'][0];
+        $price=$_SESSION['shoppingCart']['priceItem'][$i];
+        $nbItem =$_SESSION['shoppingCart']['nbItem'][$i];
+        echo $nameSansEspace;
+        $color =$_SESSION['shoppingCart']['color'][$i];
+        $size = $_SESSION['shoppingCart']['size'][$i];
         $table .= "<td>
-                    <a href='index.php?action=read&idMod=$id'><img src='ressources{$DS}img{$DS}modele{$DS}$nameSansEspace.jpg'
-style='width: 70px'/></a></td>";
-    }
-    foreach($_SESSION['shoppingCart']['color'] as $color){
+                    <figure>
+                    <img src='ressources{$DS}img{$DS}modele{$DS}$nameSansEspace.jpg'
+                     style='width: 70px'/>
+                     <figcaption>
+                        $name[0]
+                    </figcaption>
+                    </figure>
+
+                    </td>";
         $table .= "<td>$color</td>";
-    }
-    foreach($_SESSION['shoppingCart']['size'] as $size){
         $table .= "<td>$size</td>";
-    }
-
-
-    foreach($_SESSION['shoppingCart']['priceItem'] as $price){
         $table .= "<td>{$price[0]}</td>";
+        $table .= "<td><div style='float: left'>$nbItem</div>";
+        $table .= "<form method='post' style='float: right;' action='index.php?controller=shoppingCart&action=delete&idItem=$idItem'>
+        <input type='submit' value='-'>
+           </form>";
+        $table .="</td>";
     }
-    foreach($_SESSION['shoppingCart']['nbItem'] as $nb){
-        $table .= "<td>$nb</td>";
-    }
+
+
+
+
 
     $table .= '</tr>';
 

@@ -20,13 +20,23 @@ switch($action){
         case 'addArticle':
             break;
         case 'delete':
+            if(isset($_GET['idItem'])){
+                $id =$_GET['idItem'];
+                $item =modelItem::select($id);
+                shoppingCart::delItem($item);
+            }
+            $view='All';
             break;
         case 'addItem':
-            $color = $_POST['color'];
-            $size = $_POST['size'];
-            $id = $_POST['idMod'];
-            $item =modelItem::getItembyColorSizeModele($id,$color,$size);
-            shoppingCart::addItem($item,1);
+            if(isset($_POST['color'])&&isset($_POST['size'])&&isset($_POST['idMod'])){
+                $color = $_POST['color'];
+                $size = $_POST['size'];
+                $id = $_POST['idMod'];
+                echo $id;
+                $item =modelItem::getItembyColorSizeModele($id,$color,$size);
+                shoppingCart::addItem($item,1);
+            }
+
             $view ='All';
             break;
 }

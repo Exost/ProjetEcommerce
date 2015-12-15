@@ -25,7 +25,6 @@
                    id_mod: id
                },
                success: function (feedback){
-                   print(feedback);
                    document.getElementById("size").innerHTML=feedback;
                },
 
@@ -33,7 +32,6 @@
 
               }
            });
-           alert(val);
 
         }
 
